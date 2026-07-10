@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Involved | Vanguard STEM Academy — Partner, Sponsor &amp; Mentor</title>
+<meta name="description" content="Partner with Vanguard STEM Academy, sponsor a student, become a mentor, or reach out with a question. There's a role for you in preparing the next generation of innovators.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   VANGUARD STEM ACADEMY — SHARED DESIGN SYSTEM
+   ============================================================ */
+:root{
+  --navy:#0b2251;
+  --navy-2:#123063;
+  --navy-deep:#06163a;
+  --navy-panel:#0f2a57;
+  --navy-soft:#123063;
+  --gold:#C9A341;
+  --gold-2:#D4AF37;
+  --gold-light:#E4C874;
+  --gold-deep:#A9842E;
+  --white:#FFFFFF;
+  --cream:#F8F6F1;
+  --cream-2:#F1ECE1;
+  --burgundy:#6E1E2C;
+  --burgundy-2:#8a2a3a;
+  --ink:#1c2530;
+  --muted:#5b6675;
+  --line:#e6e0d3;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Source Sans 3',system-ui,-apple-system,sans-serif;
+  --gold-grad:linear-gradient(135deg,#E4C874 0%,#C9A341 42%,#A9842E 100%);
+  --gold-sheen:linear-gradient(120deg,#A9842E 0%,#E9D089 25%,#C9A341 50%,#F0DA97 72%,#A9842E 100%);
+  --shadow-sm:0 4px 18px rgba(2,25,52,.08);
+  --shadow-md:0 14px 40px rgba(2,25,52,.14);
+  --shadow-lg:0 26px 70px rgba(2,25,52,.22);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:var(--sans);color:var(--ink);
+  background:var(--cream);line-height:1.6;font-size:17px;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.12;margin:0;color:var(--navy)}
+p{margin:0 0 1rem}
+a{color:var(--burgundy);text-decoration:none;transition:color .25s}
+a:hover{color:var(--gold-deep)}
+img{max-width:100%;display:block}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,44px)}
+section{position:relative}
+:focus-visible{outline:3px solid var(--gold-2);outline-offset:3px;border-radius:2px}
+
+/* ---------- Small-caps label & ribbon ---------- */
+.eyebrow{
+  font-family:var(--sans);font-weight:700;font-size:.78rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--gold-deep);margin:0 0 1rem;display:inline-flex;
+  align-items:center;gap:.7rem;
+}
+.eyebrow::before,.eyebrow.center::after{content:"";width:34px;height:1px;background:var(--gold-grad)}
+.eyebrow.on-navy{color:var(--gold-light)}
+
+/* ---------- Two-tone serif titles ---------- */
+.title-2 .l1{display:block;color:var(--navy)}
+.title-2 .l2{display:block;background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
+.section-title{font-size:clamp(2rem,4.4vw,3.3rem);letter-spacing:-.01em}
+.lead{font-size:1.16rem;color:var(--muted);max-width:60ch}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  font-family:var(--sans);font-weight:700;font-size:.86rem;letter-spacing:.1em;
+  text-transform:uppercase;padding:1rem 1.9rem;border-radius:2px;cursor:pointer;
+  border:1.5px solid var(--gold);transition:all .3s var(--ease);position:relative;
+  white-space:nowrap;text-align:center;
+}
+.btn-primary{background:var(--navy);color:#fff;border-color:var(--gold)}
+.btn-primary:hover{color:#fff;box-shadow:0 0 0 1px var(--gold),0 12px 30px rgba(201,163,65,.4);border-color:var(--gold-light);background:linear-gradient(var(--navy),var(--navy)) padding-box,var(--gold-grad) border-box}
+.btn-primary:hover{background:#12305f}
+.btn-secondary{background:#fff;color:var(--navy);border-color:var(--gold)}
+.btn-secondary:hover{background:var(--gold-grad);color:var(--navy);border-color:var(--gold-deep);box-shadow:0 12px 30px rgba(201,163,65,.35)}
+.btn-gold{background:var(--gold-grad);color:var(--navy);border-color:var(--gold-deep)}
+.btn-gold:hover{box-shadow:0 12px 34px rgba(201,163,65,.5);filter:brightness(1.06)}
+.btn-ghost-gold{background:transparent;color:var(--gold-light);border-color:var(--gold)}
+.btn-ghost-gold:hover{background:var(--gold-grad);color:var(--navy)}
+
+/* ---------- Crest icon ---------- */
+.crest{
+  width:66px;height:66px;border-radius:50%;background:var(--navy);
+  display:grid;place-items:center;position:relative;flex:none;
+  box-shadow:inset 0 0 0 1px rgba(201,163,65,.5);
+}
+.crest::after{content:"";position:absolute;inset:5px;border-radius:50%;border:1px solid var(--gold)}
+.crest svg{width:30px;height:30px;stroke:var(--gold-2);fill:none;stroke-width:1.6;position:relative;z-index:1}
+.crest.lg{width:82px;height:82px}
+.crest.lg svg{width:38px;height:38px}
+
+/* ============================================================
+   UTILITY BAR
+   ============================================================ */
+.utilbar{background:#06163a;color:#cdd6e4;position:relative;z-index:60;border-bottom:1px solid rgba(201,163,65,.25)}
+.utilbar .container{display:flex;justify-content:flex-end;align-items:center;gap:.2rem;height:40px}
+.utilbar a{color:#cdd6e4;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:.4rem .95rem;position:relative}
+.utilbar a:not(:last-child)::after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);height:12px;width:1px;background:rgba(201,163,65,.35)}
+.utilbar a:hover{color:var(--gold-light)}
+.utilbar a.donate{color:var(--gold-light)}
+
+/* ============================================================
+   MAIN NAV
+   ============================================================ */
+.nav{position:sticky;top:0;z-index:55;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:box-shadow .3s,background .3s}
+.nav.scrolled{box-shadow:0 6px 26px rgba(2,25,52,.12);background:rgba(255,255,255,.95)}
+.nav .container{display:flex;align-items:center;justify-content:space-between;height:82px;gap:1.5rem}
+.brand{display:flex;align-items:center;line-height:1;text-decoration:none}
+.brand img{height:58px;width:auto;display:block}
+.navlinks{display:flex;align-items:center;gap:.3rem;list-style:none;margin:0;padding:0}
+.navlinks>li{position:relative}
+.navlinks>li>a,.navlinks>li>button{
+  font-family:var(--sans);font-weight:600;font-size:.9rem;color:var(--navy);
+  padding:.6rem .85rem;display:inline-flex;align-items:center;gap:.35rem;background:none;
+  border:none;cursor:pointer;letter-spacing:.01em;position:relative;
+}
+.navlinks>li>a::after{content:"";position:absolute;left:.85rem;right:.85rem;bottom:.3rem;height:2px;background:var(--gold-grad);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.navlinks>li>a:hover{color:var(--navy)}
+.navlinks>li>a:hover::after{transform:scaleX(1)}
+.navlinks .caret{width:9px;height:9px;stroke:var(--gold-deep);stroke-width:2.4;fill:none;transition:transform .3s}
+.navlinks li:hover .caret{transform:rotate(180deg)}
+.nav-cta{border:1.5px solid var(--gold)!important;border-radius:2px;color:var(--navy)!important;padding:.55rem 1.15rem!important;font-weight:700!important;transition:all .3s}
+.nav-cta:hover{background:var(--gold-grad);box-shadow:0 6px 18px rgba(201,163,65,.35)}
+.search-btn{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;transition:all .3s}
+.search-btn:hover{border-color:var(--gold);box-shadow:0 6px 16px rgba(201,163,65,.25)}
+.search-btn svg{width:18px;height:18px;stroke:var(--navy);fill:none;stroke-width:2}
+
+/* Dropdown */
+.dropdown{
+  position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(10px);
+  min-width:270px;background:var(--navy);border:1px solid rgba(201,163,65,.4);border-radius:14px;
+  padding:.6rem;opacity:0;visibility:hidden;transition:all .3s var(--ease);box-shadow:var(--shadow-lg);
+  z-index:60;
+}
+.dropdown::before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:var(--navy);border-left:1px solid rgba(201,163,65,.4);border-top:1px solid rgba(201,163,65,.4)}
+.navlinks>li:hover .dropdown,.navlinks>li:focus-within .dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.dropdown a{display:flex;flex-direction:column;gap:2px;padding:.7rem .95rem;border-radius:3px;color:#e8edf5;transition:all .25s;border-left:2px solid transparent}
+.dropdown a strong{font-weight:600;font-size:.92rem;color:#fff;font-family:var(--sans)}
+.dropdown a span{font-size:.76rem;color:#9fb0c6}
+.dropdown a:hover{background:rgba(201,163,65,.14);border-left-color:var(--gold);padding-left:1.15rem}
+.dropdown a:hover strong{color:var(--gold-light)}
+
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;border:1.5px solid var(--line);border-radius:4px;background:#fff;cursor:pointer;padding:0}
+.hamburger span{width:22px;height:2px;background:var(--navy);margin:0 auto;transition:all .3s;border-radius:2px}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile panel */
+.mobile-panel{position:fixed;inset:0 0 0 auto;width:min(90vw,400px);background:var(--navy);z-index:80;transform:translateX(100%);transition:transform .4s var(--ease);overflow-y:auto;padding:1.5rem 1.4rem 3rem;box-shadow:var(--shadow-lg)}
+.mobile-panel.open{transform:translateX(0)}
+.mobile-panel .mp-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:1.2rem;margin-bottom:1rem;border-bottom:1px solid rgba(201,163,65,.3)}
+.mp-close{width:42px;height:42px;border:1px solid rgba(201,163,65,.4);background:none;border-radius:50%;color:var(--gold-light);font-size:1.5rem;cursor:pointer;line-height:1}
+.mp-links{list-style:none;margin:0;padding:0}
+.mp-links>li{border-bottom:1px solid rgba(255,255,255,.08)}
+.mp-links>li>a,.mp-links>li>button{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1rem .3rem;color:#eaf0f8;font-family:var(--sans);font-weight:600;font-size:1.05rem;background:none;border:none;text-align:left;cursor:pointer}
+.mp-links .sub{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.mp-links .sub.open{max-height:400px}
+.mp-links .sub a{display:block;padding:.6rem 1rem;color:#a9b8cd;font-size:.95rem}
+.mp-links .sub a:hover{color:var(--gold-light)}
+.mp-links button .caret{width:11px;height:11px;stroke:var(--gold);stroke-width:2.4;fill:none;transition:transform .3s}
+.mp-links button.open .caret{transform:rotate(180deg)}
+.mp-util{margin-top:1.5rem;display:flex;flex-direction:column;gap:.6rem}
+.overlay-dim{position:fixed;inset:0;background:rgba(6,17,42,.55);z-index:75;opacity:0;visibility:hidden;transition:.35s;backdrop-filter:blur(2px)}
+.overlay-dim.show{opacity:1;visibility:visible}
+
+/* Search overlay */
+.search-overlay{position:fixed;inset:0;background:rgba(9,28,68,.97);z-index:90;display:grid;place-items:center;opacity:0;visibility:hidden;transition:.4s;backdrop-filter:blur(6px)}
+.search-overlay.open{opacity:1;visibility:visible}
+.search-overlay .sc-inner{width:min(760px,90vw);text-align:center}
+.search-overlay .eyebrow{justify-content:center;color:var(--gold-light)}
+.search-overlay input{width:100%;background:none;border:none;border-bottom:2px solid var(--gold);color:#fff;font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.6rem);padding:.6rem .2rem;text-align:center;outline:none}
+.search-overlay input::placeholder{color:rgba(255,255,255,.35)}
+.sc-close{position:absolute;top:2rem;right:2rem;width:54px;height:54px;border-radius:50%;border:1px solid rgba(201,163,65,.5);background:none;color:var(--gold-light);font-size:1.8rem;cursor:pointer}
+.sc-suggest{margin-top:2rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
+.sc-suggest a{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#b9c6d8;border:1px solid rgba(201,163,65,.35);padding:.5rem 1rem;border-radius:40px}
+.sc-suggest a:hover{background:var(--gold-grad);color:var(--navy);border-color:transparent}
+
+/* Image placeholder */
+.ph{background:
+  linear-gradient(135deg,rgba(255,255,255,.04),transparent),
+  repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0 2px,transparent 2px 22px),
+  linear-gradient(160deg,#173a72,#0b2251);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;
+  color:#8ea3c0;text-align:center;padding:1.5rem;position:relative}
+.ph svg{width:40px;height:40px;stroke:var(--gold);fill:none;stroke-width:1.4;opacity:.9}
+.ph .phl{font-family:var(--sans);font-size:.8rem;letter-spacing:.08em;color:#aab9cf;max-width:26ch;font-style:italic}
+
+/* ============================================================
+   SECTION SHELLS + DIVIDERS
+   ============================================================ */
+.sec{padding:clamp(4rem,8vw,7rem) 0}
+.sec.cream{background:var(--cream)}
+.sec.white{background:#fff}
+.sec.navy{background:var(--navy);color:#fff}
+.sec-head{text-align:center;max-width:760px;margin:0 auto clamp(2.5rem,5vw,4rem)}
+.sec-head .eyebrow{justify-content:center}
+.sec-head .lead{margin:1.2rem auto 0}
+.sec.navy h2,.sec.navy h3{color:#fff}
+.sec.navy .lead{color:#b9c6d8}
+.wave{display:block;width:100%;height:auto;line-height:0}
+.wave svg{display:block;width:100%;height:clamp(50px,7vw,110px)}
+
+/* ============================================================
+   IAM-STYLE TILES (reused for ways to get involved)
+   ============================================================ */
+.iam-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
+.iam-tile{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:20px;padding:1.8rem 1.3rem;text-align:center;transition:.35s var(--ease);display:flex;flex-direction:column;align-items:center;gap:.9rem;text-decoration:none}
+.iam-tile:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:var(--shadow-md);background:linear-gradient(180deg,#fff,#fdfbf5)}
+.iam-tile .crest{width:56px;height:56px}
+.iam-tile .crest svg{width:26px;height:26px}
+.iam-tile .il{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--burgundy);font-weight:700}
+.iam-tile h4{font-size:1.05rem;color:var(--navy)}
+.iam-tile p{font-size:.88rem;color:var(--muted);margin:0}
+.iam-tile .igo{font-size:.78rem;color:var(--gold-deep);font-weight:700;letter-spacing:.06em;display:flex;align-items:center;gap:.3rem;margin-top:auto}
+.iam-tile:hover .igo{gap:.6rem}
+
+/* ============================================================
+   FIRESIDE PANEL (reused for partner)
+   ============================================================ */
+.fireside{background:linear-gradient(135deg,#0b2251,#12305f);border-radius:24px;padding:clamp(2.4rem,5vw,3.6rem);color:#fff;position:relative;overflow:hidden;border:1px solid rgba(201,163,65,.35)}
+.fireside::before{content:"";position:absolute;top:-40%;right:-10%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,163,65,.16),transparent 70%)}
+.fire-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:2.5rem;align-items:center;position:relative;z-index:1}
+.fireside h2{color:#fff;font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:1rem}
+.fireside h2 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fireside p{color:#c6d2e2}
+.logo-chips{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.6rem 0 2rem}
+.logo-chip{border:1px solid rgba(201,163,65,.4);border-radius:4px;padding:.6rem 1.1rem;font-weight:700;font-size:.82rem;letter-spacing:.06em;color:#e8edf5;background:rgba(255,255,255,.04)}
+.fire-side-ph{border:1px solid var(--gold);padding:8px;background:rgba(255,255,255,.03)}
+.fire-side-ph .ph{aspect-ratio:4/3.4}
+
+/* ============================================================
+   PRICING-STYLE CARDS (reused for sponsor tiers)
+   ============================================================ */
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;align-items:stretch}
+.price-card{position:relative;background-image:linear-gradient(#fff,#fff),var(--gold-sheen);background-origin:border-box;background-clip:padding-box,border-box;border:6px solid transparent;padding:2.2rem 1.7rem 2rem;display:flex;flex-direction:column;transition:transform .4s var(--ease),box-shadow .4s;border-radius:20px;overflow:hidden;box-shadow:0 14px 34px rgba(180,142,42,.16),0 6px 16px rgba(6,17,42,.06)}
+.price-card:hover{transform:translateY(-6px);box-shadow:0 24px 54px rgba(6,17,42,.18)}
+.price-card.popular{border-width:9px;box-shadow:0 20px 50px rgba(6,17,42,.2);transform:translateY(-8px)}
+.price-card.popular::before{content:"Most Chosen";position:absolute;top:-1px;left:50%;transform:translate(-50%,-50%);background:var(--gold-grad);color:var(--navy);font-size:.64rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:.4rem 1.2rem;border-radius:50px;white-space:nowrap;z-index:3;box-shadow:0 6px 16px rgba(201,163,65,.4)}
+.price-card .pc-name{font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--navy);margin-bottom:.3rem}
+.price-card .pc-price{font-family:var(--serif);font-size:2.2rem;font-weight:800;color:var(--navy);line-height:1;margin-bottom:.3rem}
+.price-card .pc-divider{height:1px;background:var(--gold-grad);margin:1.1rem 0;opacity:.5}
+.price-card p{color:var(--muted);font-size:.92rem;flex:1;margin-bottom:1.4rem}
+.price-card .btn{width:100%}
+
+/* ============================================================
+   MENTOR / ELIGIBILITY LIST (reused who-list styling)
+   ============================================================ */
+.who-list{list-style:none;padding:0;margin:1.5rem 0 0}
+.who-list li{display:flex;gap:.9rem;align-items:flex-start;margin-bottom:1rem;color:var(--muted)}
+.who-list li svg{width:22px;height:22px;stroke:var(--gold-deep);fill:none;stroke-width:2;flex:none;margin-top:3px}
+.who-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:center}
+.apply-card{background-image:linear-gradient(var(--navy),var(--navy)),var(--gold-sheen);background-origin:border-box;background-clip:padding-box,border-box;border:6px solid transparent;border-radius:20px;padding:2.4rem;color:#fff;display:flex;flex-direction:column;justify-content:center;gap:1.1rem;box-shadow:var(--shadow-lg)}
+.apply-card h3{color:#fff;font-size:1.6rem}
+.apply-card p{color:#c3cee0}
+.apply-card .btn{width:100%}
+
+/* ============================================================
+   CONTACT FORM
+   ============================================================ */
+.contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:3rem;align-items:start}
+.contact-form{background-image:linear-gradient(#fff,#fff),var(--gold-sheen);background-origin:border-box;background-clip:padding-box,border-box;border:6px solid transparent;padding:2.4rem;position:relative;border-radius:20px;overflow:hidden;box-shadow:0 14px 34px rgba(180,142,42,.16),0 6px 16px rgba(6,17,42,.06)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:1.2rem}
+.form-field{display:flex;flex-direction:column;gap:.4rem;margin-bottom:1.2rem}
+.form-field label{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--navy)}
+.form-field input,.form-field select,.form-field textarea{
+  font-family:var(--sans);font-size:1rem;padding:.85rem 1rem;border:1px solid var(--line);
+  border-radius:10px;outline:none;background:var(--cream);color:var(--ink);transition:.25s;
+}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--gold);background:#fff}
+.form-field textarea{resize:vertical;min-height:120px;font-family:var(--sans)}
+.contact-info{display:flex;flex-direction:column;gap:1.4rem}
+.info-card{background:var(--navy);border-radius:20px;padding:2rem;color:#fff}
+.info-card h4{color:#fff;font-size:1.2rem;margin-bottom:1rem}
+.info-list{list-style:none;margin:0;padding:0}
+.info-list li{display:flex;gap:.7rem;align-items:center;color:#c3cee0;font-size:.94rem;margin-bottom:.9rem}
+.info-list li svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:1.8;flex:none}
+.form-success{display:none;text-align:center;padding:2rem}
+.form-success.show{display:block}
+.form-success .crest{margin:0 auto 1.2rem}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.final-cta{background:var(--navy);color:#fff;text-align:center;padding:clamp(4rem,8vw,6.5rem) 0;position:relative;overflow:hidden}
+.final-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,163,65,.12),transparent 60%)}
+.final-cta .laurel-head{display:flex;align-items:center;justify-content:center;gap:1.4rem;margin-bottom:1.4rem;position:relative;z-index:1}
+.final-cta .laurel-head svg{width:46px;height:66px;fill:var(--gold)}
+.final-cta .laurel-head svg.r{transform:scaleX(-1)}
+.final-cta h2{color:#fff;font-size:clamp(2rem,4.5vw,3.2rem);position:relative;z-index:1}
+.final-cta h2 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
+.final-cta .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.2rem;position:relative;z-index:1}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{background:#0b2251;color:#c6d2e2;border-top:3px solid;border-image:var(--gold-grad) 1;padding-top:3rem;position:relative;overflow:hidden}
+.footer::before,.footer::after{content:"";position:absolute;top:0;bottom:0;width:clamp(110px,17vw,240px);background-repeat:no-repeat;background-position:center;background-size:contain;pointer-events:none;z-index:0}
+.footer::before{left:0;background-image:url('assets/left-laurel.png')}
+.footer::after{right:0;background-image:url('assets/right-laurel.png')}
+.footer-inner{max-width:940px;margin:0 auto;position:relative;z-index:1}
+.footer-badge{display:flex;justify-content:center;margin-bottom:.4rem}
+.footer-badge img{width:clamp(108px,14vw,146px);height:auto;filter:drop-shadow(0 12px 26px rgba(0,0,0,.45))}
+.footer-tagline{text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.2vw,1.35rem);background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;margin:0 0 1.8rem}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;padding:2.4rem 0;border-top:1px solid rgba(201,163,65,.22);border-bottom:1px solid rgba(201,163,65,.22);text-align:center}
+.footer-cols>div{display:flex;flex-direction:column;align-items:center}
+.footer h5{color:#fff;font-family:var(--serif);font-weight:700;font-size:1.05rem;letter-spacing:.02em;margin:0 0 1.1rem;position:relative;padding-bottom:.7rem}
+.footer h5::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:0;width:34px;height:2px;background:var(--gold-grad)}
+.footer ul{list-style:none;margin:0;padding:0}
+.footer ul li{margin-bottom:.7rem}
+.footer ul a{color:#b3c1d4;font-size:.92rem}
+.footer ul a:hover{color:var(--gold-light);padding-left:5px}
+.footer ul a{transition:.25s;display:inline-flex;align-items:center;gap:.5rem}
+.fcontact li{display:flex;gap:.6rem;align-items:center;justify-content:center;color:#b3c1d4;font-size:.92rem;margin-bottom:.9rem}
+.fcontact li svg{width:17px;height:17px;stroke:var(--gold);fill:none;stroke-width:1.8;flex:none;margin-top:3px}
+.fsocial{display:flex;gap:.7rem;margin-top:1.4rem;justify-content:center}
+.footer-social-row{display:flex;justify-content:center;margin:2rem 0 .5rem}
+.fsocial a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(201,163,65,.45);display:grid;place-items:center;transition:.3s}
+.fsocial a:hover{background:var(--gold-grad);border-color:transparent}
+.fsocial a svg{width:18px;height:18px;fill:var(--gold-light);transition:.3s}
+.fsocial a:hover svg{fill:var(--navy)}
+.footer-newsletter{padding:0 0 2.2rem;display:flex;justify-content:center;align-items:center;gap:1.5rem;flex-wrap:wrap;text-align:center;flex-direction:column}
+.footer-newsletter .fn-txt h4{color:#fff;font-size:1.4rem}
+.footer-newsletter .fn-txt p{color:#9fb0c6;margin:.3rem 0 0;font-size:.92rem}
+.footer-newsletter form{display:flex;gap:.6rem;flex:1;max-width:440px;min-width:280px}
+.footer-newsletter input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(201,163,65,.4);border-radius:3px;padding:.9rem 1.1rem;color:#fff;outline:none;font-family:var(--sans)}
+.footer-newsletter input:focus{border-color:var(--gold)}
+.footer-bottom{padding:1.6rem 0 2rem;text-align:center;font-size:.82rem;color:#a9b8cd;display:flex;justify-content:center;gap:.4rem;flex-wrap:wrap;align-items:center}
+.footer-bottom a{color:#8195ac}
+.footer-bottom a:hover{color:var(--gold-light)}
+.footer-bottom .sep{color:rgba(201,163,65,.5)}
+
+/* ============================================================
+   FLOATING PILL + BACK TO TOP
+   ============================================================ */
+.apply-pill{position:fixed;bottom:26px;right:26px;z-index:50;background:var(--gold-grad);color:var(--navy);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:1rem 1.6rem;border-radius:50px;box-shadow:0 12px 34px rgba(201,163,65,.5);display:inline-flex;align-items:center;gap:.6rem;opacity:0;visibility:hidden;transform:translateY(20px);transition:.4s var(--ease);border:1px solid var(--gold-deep)}
+.apply-pill.show{opacity:1;visibility:visible;transform:translateY(0)}
+.apply-pill:hover{color:var(--navy);filter:brightness(1.07);transform:translateY(-3px)}
+.apply-pill svg{width:16px;height:16px;stroke:var(--navy);fill:none;stroke-width:2.4}
+.to-top{position:fixed;bottom:26px;left:26px;z-index:50;width:50px;height:50px;border-radius:50%;background:var(--navy);border:1.5px solid var(--gold);color:var(--gold-light);cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(20px);transition:.4s var(--ease)}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:var(--gold-grad);color:var(--navy)}
+.to-top svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.4}
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(30px);filter:blur(7px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
+.reveal.in{opacity:1;transform:none;filter:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}.reveal.d4{transition-delay:.4s}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* ============================================================
+   RESPONSIVE (shared)
+   ============================================================ */
+@media(max-width:1024px){
+  .navlinks{gap:0}
+  .navlinks>li>a,.navlinks>li>button{padding:.6rem .6rem;font-size:.84rem}
+  .iam-grid{grid-template-columns:repeat(2,1fr)}
+  .pricing-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:1024px){
+  .desktop-only{display:none!important}
+  .hamburger{display:flex}
+  .fire-grid,.who-grid,.contact-grid{grid-template-columns:1fr}
+  .footer-cols{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  body{font-size:16px}
+  .utilbar .container{justify-content:center;gap:0;overflow-x:auto}
+  .utilbar a{padding:.4rem .6rem;font-size:.68rem;white-space:nowrap}
+  .cta-btns .btn{flex:1;min-width:100%}
+  .iam-grid,.pricing-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-cols{grid-template-columns:1fr}
+  .fireside{padding:1.8rem}
+  .apply-pill{bottom:16px;right:16px;padding:.85rem 1.2rem;font-size:.74rem}
+  .to-top{bottom:16px;left:16px;width:44px;height:44px}
+  .footer::before,.footer::after{width:70px;opacity:.5}
+  .footer-cols{grid-template-columns:1fr;gap:1.8rem}
+}
+
+/* ============================================================
+   MOBILE TOUCH TARGETS + READABILITY POLISH
+   ============================================================ */
+@media(max-width:640px){
+  .search-btn{width:44px;height:44px}
+  .hamburger{width:48px;height:48px}
+  .mp-close{width:48px;height:48px}
+  .utilbar a{min-height:44px;display:inline-flex;align-items:center;font-size:.72rem}
+  .filter-chip{min-height:44px;display:inline-flex;align-items:center}
+  .faq-q{min-height:44px}
+  .portal-tab{min-height:44px}
+  .fsocial a{width:44px;height:44px}
+  .hc-arrow{width:44px;height:44px}
+  .lc-toggle,.msub,.mp-links>li>a,.mp-links>li>button{min-height:44px}
+}
+
+/* ============================================================
+   SENIOR-POLISH ENHANCEMENTS
+   ============================================================ */
+.crest{
+  background:radial-gradient(circle at 32% 26%, #1c3d76 0%, #0b2251 56%, #071a40 100%);
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.16), inset 0 0 0 1px rgba(201,163,65,.25), 0 8px 20px rgba(6,17,42,.38);
+  transition:transform .55s var(--ease), box-shadow .55s var(--ease);
+}
+.crest::before{
+  content:"";position:absolute;inset:-1.5px;border-radius:50%;padding:2px;
+  background:conic-gradient(from 128deg,#9a7a2c,#F4E3A6,#C9A341,#EAD08c,#9a7a2c,#F4E3A6,#9a7a2c);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  transition:transform 1.3s var(--ease), filter .5s;
+  filter:saturate(1.04) drop-shadow(0 0 3px rgba(201,163,65,.25));
+}
+.crest::after{inset:6px;border:1px solid rgba(201,163,65,.42)}
+.crest svg{stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4));transition:transform .55s var(--ease)}
+.crest:hover,.iam-tile:hover .crest{transform:translateY(-2px) scale(1.06)}
+.crest:hover::before,.iam-tile:hover .crest::before{transform:rotate(132deg);filter:saturate(1.15) drop-shadow(0 0 6px rgba(201,163,65,.5))}
+.crest:hover svg,.iam-tile:hover .crest svg{transform:scale(1.09)}
+
+@keyframes goldShimmer{0%{background-position:0% 50%}100%{background-position:-200% 50%}}
+.title-2 .l2,.fireside h2 .gold,.final-cta h2 .gold,.footer-tagline,.page-hero h1 .gold{
+  background-size:200% auto;animation:goldShimmer 7s linear infinite;
+}
+.btn{overflow:hidden}
+.btn>*{position:relative;z-index:1}
+.btn::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-18deg);pointer-events:none;z-index:0}
+.btn:hover::after{animation:btnSweep .85s var(--ease)}
+@keyframes btnSweep{to{left:150%}}
+.btn-gold::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent)}
+.nav-cta,.search-btn{will-change:transform}
+.nav-cta:hover{transform:translateY(-1px)}
+
+@media(prefers-reduced-motion:reduce){
+  .title-2 .l2,.fireside h2 .gold,.final-cta h2 .gold,.footer-tagline,.page-hero h1 .gold{animation:none}
+  .btn:hover::after{animation:none;display:none}
+  .reveal{filter:none;transform:none}
+  .crest,.crest::before,.crest svg{transition:none}
+}
+</style>
+<style>
+/* ============================================================
+   GET INVOLVED PAGE
+   ============================================================ */
+.crumbs{background:var(--cream);border-bottom:1px solid var(--line)}
+.crumbs .container{display:flex;align-items:center;gap:.55rem;height:48px;font-size:.82rem;flex-wrap:wrap}
+.crumbs a{color:var(--muted);font-weight:600;letter-spacing:.02em}
+.crumbs a:hover{color:var(--gold-deep)}
+.crumbs .sep{color:var(--gold);opacity:.7}
+.crumbs .cur{color:var(--navy);font-weight:700}
+
+.page-hero{background:var(--navy);color:#fff;text-align:center;padding:clamp(3.4rem,6vw,5.4rem) 0 clamp(4.4rem,7vw,6rem);position:relative;overflow:hidden}
+.page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% -10%,rgba(201,163,65,.16),transparent 55%);pointer-events:none}
+.page-hero .container{position:relative;z-index:1;max-width:900px}
+.page-hero .eyebrow{justify-content:center;color:var(--gold-light)}
+.page-hero h1{font-size:clamp(2.4rem,5vw,3.8rem);letter-spacing:-.01em;margin-bottom:1.2rem}
+.page-hero h1 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
+.page-hero .lead{color:#c3cee0;margin:0 auto;font-size:1.15rem}
+.page-hero .laurel-head{display:flex;align-items:center;justify-content:center;gap:1.2rem;margin-bottom:1.3rem}
+.page-hero .laurel-head svg{width:34px;height:48px;fill:var(--gold)}
+.page-hero .laurel-head svg.r{transform:scaleX(-1)}
+</style>
+</head>
+<body>
+
+<!-- ============ SKIP LINK ============ -->
+<a href="#main" class="btn" style="position:absolute;left:-9999px;top:0;z-index:200;background:var(--navy);color:#fff" onfocus="this.style.left='10px';this.style.top='10px'" onblur="this.style.left='-9999px'">Skip to content</a>
+
+<!-- ============ UTILITY BAR ============ -->
+<div class="utilbar">
+  <div class="container">
+    <a href="index.html#apply">Apply</a>
+    <a href="portal.html">Portal Login</a>
+    <a href="get-involved.html#inquire">Contact</a>
+    <a href="get-involved.html#sponsor" class="donate">Sponsor a Student</a>
+  </div>
+</div>
+
+<!-- ============ MAIN NAV ============ -->
+<header>
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="container">
+    <a href="index.html" class="brand" aria-label="Vanguard STEM Academy home">
+      <img src="assets/vanguard-logo-transparent.png" alt="Vanguard STEM Academy crest logo">
+    </a>
+    <ul class="navlinks desktop-only">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="leadership.html">Leadership</a></li>
+      <li>
+        <a href="programs.html">Programs <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
+        <div class="dropdown" role="menu">
+          <a href="programs.html#coaching" role="menuitem"><strong>Individual Coaching</strong><span>Students &amp; professionals</span></a>
+          <a href="academy.html" role="menuitem"><strong>Youth STEM Academy</strong><span>Grades 8–12</span></a>
+          <a href="programs.html#bi" role="menuitem"><strong>Business Intelligence Academy</strong><span>Adults &amp; professionals</span></a>
+          <a href="programs.html#mentorship" role="menuitem"><strong>Executive Mentorship</strong><span>Fireside chats &amp; panels</span></a>
+          <a href="programs.html#workforce" role="menuitem"><strong>Corporate &amp; Workforce Training</strong><span>Organizations</span></a>
+          <a href="programs.html#ai" role="menuitem"><strong>AI Innovation Academy</strong><span>Coming soon</span></a>
+        </div>
+      </li>
+      <li>
+        <a href="academy.html">The Academy <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
+        <div class="dropdown" role="menu">
+          <a href="academy.html#overview" role="menuitem"><strong>Overview</strong><span>Who it serves &amp; the model</span></a>
+          <a href="academy.html#experiences" role="menuitem"><strong>Signature Experiences</strong><span>Consulting capstones</span></a>
+          <a href="academy.html#cohorts" role="menuitem"><strong>Future Cohorts</strong><span>Learning pathways</span></a>
+          <a href="academy.html#apply" role="menuitem"><strong>Apply</strong><span>Admissions steps</span></a>
+        </div>
+      </li>
+      <li>
+        <a href="impact.html">Our Impact <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
+        <div class="dropdown" role="menu">
+          <a href="impact.html#metrics" role="menuitem"><strong>Metrics</strong><span>By the numbers</span></a>
+          <a href="impact.html#stories" role="menuitem"><strong>Success Stories</strong><span>Student outcomes</span></a>
+          <a href="impact.html#recognition" role="menuitem"><strong>Recognition</strong><span>Honors &amp; invitations</span></a>
+        </div>
+      </li>
+      <li><a href="get-involved.html" aria-current="page">Get Involved</a></li>
+      <li><a href="portal.html" class="nav-cta">Login / Portal</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:.7rem">
+      <button class="search-btn" id="searchOpen" aria-label="Open search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<!-- ============ MOBILE PANEL ============ -->
+<div class="overlay-dim" id="dim"></div>
+<aside class="mobile-panel" id="mobilePanel" aria-label="Mobile menu">
+  <div class="mp-head">
+    <img src="assets/footer-badge.png" alt="Vanguard STEM Academy" style="height:52px;width:auto;border-radius:8px">
+    <button class="mp-close" id="mpClose" aria-label="Close menu">&times;</button>
+  </div>
+  <ul class="mp-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="leadership.html">Leadership</a></li>
+    <li>
+      <button class="msub" aria-expanded="false">Programs <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></button>
+      <div class="sub">
+        <a href="programs.html#coaching">Individual Coaching</a>
+        <a href="academy.html">Youth STEM Academy</a>
+        <a href="programs.html#bi">Business Intelligence Academy</a>
+        <a href="programs.html#mentorship">Executive Mentorship</a>
+        <a href="programs.html#workforce">Corporate &amp; Workforce Training</a>
+        <a href="programs.html#ai">AI Innovation Academy</a>
+      </div>
+    </li>
+    <li>
+      <button class="msub" aria-expanded="false">The Academy <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></button>
+      <div class="sub">
+        <a href="academy.html#overview">Overview</a>
+        <a href="academy.html#experiences">Signature Experiences</a>
+        <a href="academy.html#cohorts">Future Cohorts</a>
+        <a href="academy.html#apply">Apply</a>
+      </div>
+    </li>
+    <li>
+      <button class="msub" aria-expanded="false">Our Impact <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></button>
+      <div class="sub">
+        <a href="impact.html#metrics">Metrics</a>
+        <a href="impact.html#stories">Success Stories</a>
+        <a href="impact.html#recognition">Recognition</a>
+      </div>
+    </li>
+    <li><a href="get-involved.html">Get Involved</a></li>
+  </ul>
+  <div class="mp-util">
+    <a href="portal.html" class="btn btn-secondary">Login / Portal</a>
+    <a href="academy.html#apply" class="btn btn-gold">Apply to the Academy</a>
+  </div>
+  <div style="margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.8rem">
+    <a href="get-involved.html#inquire" style="color:#9fb0c6">Contact</a>
+    <a href="get-involved.html#sponsor" style="color:var(--gold-light)">Sponsor a Student</a>
+  </div>
+</aside>
+
+<!-- ============ SEARCH OVERLAY ============ -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search">
+  <button class="sc-close" id="scClose" aria-label="Close search">&times;</button>
+  <div class="sc-inner">
+    <p class="eyebrow center">Search Vanguard</p>
+    <form onsubmit="return false">
+      <input type="search" id="searchInput" placeholder="Search programs, impact, people…" aria-label="Search the site">
+    </form>
+    <div class="sc-suggest">
+      <a href="academy.html">The Academy</a>
+      <a href="programs.html#coaching">Coaching</a>
+      <a href="impact.html">Our Impact</a>
+      <a href="get-involved.html">Partner With Us</a>
+      <a href="leadership.html">Leadership</a>
+    </div>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- ============ BREADCRUMBS ============ -->
+<nav class="crumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <a href="index.html">Home</a><span class="sep">/</span><span class="cur">Get Involved</span>
+  </div>
+</nav>
+
+<!-- ============ PAGE HERO ============ -->
+<section class="page-hero" aria-labelledby="ph-h" data-screen-label="Get Involved — Hero">
+  <div class="container">
+    <div class="laurel-head">
+      <svg viewBox="0 0 40 60" aria-hidden="true"><path d="M20 58C20 40 8 34 6 20c8 3 14 10 14 20M20 44C20 30 12 26 10 16c6 2 10 7 10 14M20 30C20 20 14 17 12 10c5 1.5 8 5 8 12"/></svg>
+      <p class="eyebrow center on-navy" style="margin:0">Join the Mission</p>
+      <svg class="r" viewBox="0 0 40 60" aria-hidden="true"><path d="M20 58C20 40 8 34 6 20c8 3 14 10 14 20M20 44C20 30 12 26 10 16c6 2 10 7 10 14M20 30C20 20 14 17 12 10c5 1.5 8 5 8 12"/></svg>
+    </div>
+    <h1 id="ph-h">Get <span class="gold">Involved</span></h1>
+    <p class="lead">Vanguard's work is only possible because of partners, sponsors, and mentors who invest in students before the world does. There's a role here for you.</p>
+  </div>
+</section>
+
+<div class="wave" aria-hidden="true" style="margin-top:-1px"><svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0 0 C 360 90 1080 90 1440 0 L1440 100 L0 100 Z" fill="#0b2251"/></svg><svg viewBox="0 0 1440 90" preserveAspectRatio="none" style="margin-top:-1px"><path d="M0 90 C 360 10 1080 10 1440 90 Z" fill="#F8F6F1"/></svg></div>
+
+<!-- ============ WAYS TO GET INVOLVED ============ -->
+<section class="sec cream" aria-labelledby="ways-h" style="padding-top:1rem" data-screen-label="Get Involved — Overview">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow center">Ways to Help</p>
+      <h2 class="section-title title-2" id="ways-h"><span class="l1">Choose Your</span><span class="l2">Way to Contribute</span></h2>
+    </div>
+    <div class="iam-grid">
+      <a class="iam-tile reveal" href="#partner"><span class="crest"><svg viewBox="0 0 24 24"><path d="M20 7h-3V5a2 2 0 00-2-2H9a2 2 0 00-2 2v2H4a1 1 0 00-1 1v11a1 1 0 001 1h16a1 1 0 001-1V8a1 1 0 00-1-1z"/></svg></span><span class="il">Organizations</span><h4>Partner With Us</h4><p>Executive engagement, workforce training, and strategic collaboration.</p><span class="igo">Learn More →</span></a>
+      <a class="iam-tile reveal d1" href="#sponsor"><span class="crest"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 5 5.6.8-4 4 1 5.6L12 20l-5 2.4 1-5.6-4-4 5.6-.8z"/></svg></span><span class="il">Invest in Talent</span><h4>Sponsor a Student</h4><p>Fund tuition, materials, and travel for students who need it most.</p><span class="igo">Give Now →</span></a>
+      <a class="iam-tile reveal d2" href="#mentor"><span class="crest"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span><span class="il">Give Back</span><h4>Become a Mentor</h4><p>Share your expertise through panels, fireside chats, and 1:1 guidance.</p><span class="igo">Get Started →</span></a>
+      <a class="iam-tile reveal d3" href="#inquire"><span class="crest"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg></span><span class="il">Have a Question</span><h4>Contact Us</h4><p>Not sure where to start? Reach out and we'll point you in the right direction.</p><span class="igo">Send a Message →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARTNER WITH US ============ -->
+<section class="sec white" id="partner" aria-labelledby="partner-h" data-screen-label="Get Involved — Partner">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow center">For Organizations</p>
+      <h2 class="section-title title-2" id="partner-h"><span class="l1">Partner With</span><span class="l2">Vanguard</span></h2>
+      <p class="lead">Companies and institutions engage with Vanguard through executive mentorship, workforce training, and capstone sponsorship &mdash; and walk away having met their next generation of hires.</p>
+    </div>
+    <div class="fireside reveal">
+      <div class="fire-grid">
+        <div>
+          <p class="ribbon" style="margin-bottom:1.2rem">Executive Engagement</p>
+          <h2>Leadership &amp; Innovation <span class="gold">Fireside Chat</span></h2>
+          <p>Executives from Microsoft, Google, American Express, ACT Engineers, the NAACP, and other leading organizations have engaged directly with Vanguard students &mdash; and said they'd hire them.</p>
+          <div class="logo-chips" aria-label="Participating organizations">
+            <span class="logo-chip">Microsoft</span>
+            <span class="logo-chip">Google</span>
+            <span class="logo-chip">American Express</span>
+            <span class="logo-chip">ACT Engineers</span>
+            <span class="logo-chip">NAACP</span>
+          </div>
+          <a href="#inquire" class="btn btn-gold">Request a Proposal</a>
+        </div>
+        <div class="fire-side-ph">
+          <div class="ph" role="img" aria-label="Executives engaging with Vanguard students"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20h8M12 16v4"/></svg><span class="phl">Executive engagement photo</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" aria-hidden="true"><svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0 90 C 360 10 1080 10 1440 90 Z" fill="#F8F6F1"/></svg></div>
+
+<!-- ============ SPONSOR A STUDENT ============ -->
+<section class="sec cream" id="sponsor" aria-labelledby="sponsor-h" style="padding-top:1rem" data-screen-label="Get Involved — Sponsor">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow center">Invest in Talent</p>
+      <h2 class="section-title title-2" id="sponsor-h"><span class="l1">Sponsor a</span><span class="l2">Student</span></h2>
+      <p class="lead">Every gift covers real costs &mdash; tuition, materials, mentorship, and the travel that gets a student in front of an executive panel. Choose the level that fits, and our team will follow up to complete your gift.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="pc-name">Supporter</div>
+        <div class="pc-price">$250</div>
+        <div class="pc-divider"></div>
+        <p>Covers materials and technology for one student's capstone project.</p>
+        <a href="#inquire" class="btn btn-secondary">Give at This Level</a>
+      </div>
+      <div class="price-card popular reveal d1">
+        <div class="pc-name">Champion</div>
+        <div class="pc-price">$750</div>
+        <div class="pc-divider"></div>
+        <p>Sponsors a full cohort term of tuition for one student.</p>
+        <a href="#inquire" class="btn btn-gold">Give at This Level</a>
+      </div>
+      <div class="price-card reveal d2">
+        <div class="pc-name">Partner</div>
+        <div class="pc-price">$2,500</div>
+        <div class="pc-divider"></div>
+        <p>Funds tuition, mentorship, and travel for a student to present to an executive panel.</p>
+        <a href="#inquire" class="btn btn-secondary">Give at This Level</a>
+      </div>
+      <div class="price-card reveal d3">
+        <div class="pc-name">Cohort Partner</div>
+        <div class="pc-price">$10,000+</div>
+        <div class="pc-divider"></div>
+        <p>Underwrites an entire cohort &mdash; tuition, mentorship, and capstone delivery for every student.</p>
+        <a href="#inquire" class="btn btn-secondary">Give at This Level</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BECOME A MENTOR ============ -->
+<section class="sec white" id="mentor" aria-labelledby="mentor-h" data-screen-label="Get Involved — Mentor">
+  <div class="container who-grid">
+    <div class="reveal">
+      <p class="eyebrow">Give Back</p>
+      <h2 class="section-title" id="mentor-h" style="margin-bottom:1.2rem">Become a Mentor</h2>
+      <p class="lead" style="margin-bottom:1rem">Vanguard mentors share real expertise with students who are hungry to learn how the working world actually operates &mdash; through fireside chats, capstone panels, and one-on-one guidance.</p>
+      <ul class="who-list">
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Evaluate and coach student capstone presentations</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Join panels and fireside chats a few times per cohort</span></li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>Optionally provide ongoing 1:1 mentorship to a student</span></li>
+      </ul>
+    </div>
+    <div class="reveal d1">
+      <div class="apply-card">
+        <h3>Ready to Mentor?</h3>
+        <p>Tell us about your background and availability &mdash; we'll match you with the right cohort.</p>
+        <a href="#inquire" class="btn btn-gold">Apply to Mentor</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" aria-hidden="true" style="margin-bottom:-1px"><svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0 0 C 360 90 1080 90 1440 0 L1440 100 L0 100 Z" fill="#021934"/></svg></div>
+
+<!-- ============ CONTACT / INQUIRE ============ -->
+<section class="sec navy" id="inquire" aria-labelledby="inq-h" style="padding-top:2rem" data-screen-label="Get Involved — Contact">
+  <div class="container">
+    <div class="sec-head reveal">
+      <p class="eyebrow center on-navy">Get in Touch</p>
+      <h2 class="section-title title-2" id="inq-h"><span class="l1" style="color:#fff">Let's Start a</span><span class="l2">Conversation</span></h2>
+      <p class="lead">Whether you're partnering, sponsoring, mentoring, or just curious &mdash; send us a message and a Vanguard team member will follow up.</p>
+    </div>
+    <div class="contact-grid reveal">
+      <div class="contact-form">
+        <form id="inquireForm" onsubmit="return handleInquire(this)">
+          <div class="form-row">
+            <div class="form-field"><label for="fname">Full Name</label><input type="text" id="fname" required placeholder="Jane Doe"></div>
+            <div class="form-field"><label for="femail">Email</label><input type="email" id="femail" required placeholder="jane@example.com"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-field"><label for="forg">Organization (optional)</label><input type="text" id="forg" placeholder="Company or school"></div>
+            <div class="form-field"><label for="finterest">I'm Interested In</label>
+              <select id="finterest">
+                <option>Partnering as an Organization</option>
+                <option>Sponsoring a Student</option>
+                <option>Becoming a Mentor</option>
+                <option>General Inquiry</option>
+                <option>Media / Press</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-field"><label for="fmsg">Message</label><textarea id="fmsg" required placeholder="Tell us a bit about how you'd like to get involved…"></textarea></div>
+          <button type="submit" class="btn btn-gold" style="width:100%">Send Message</button>
+        </form>
+        <div class="form-success" id="formSuccess">
+          <div class="crest lg"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <h3>Thank You!</h3>
+          <p style="color:var(--muted)">Your message has been received. A Vanguard team member will reach out shortly.</p>
+        </div>
+      </div>
+      <div class="contact-info">
+        <div class="info-card">
+          <h4>Contact Details</h4>
+          <ul class="info-list">
+            <li><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg><a href="/cdn-cgi/l/email-protection#9df4f3fbf2ddebeee9f8f0fcfefcf9b3f2effa" style="color:#c3cee0"><span class="__cf_email__" data-cfemail="b0d9ded6dff0c6c3c4d5ddd1d3d1d49edfc2d7">[email&#160;protected]</span></a></li>
+            <li><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-3 2c1 3 3 5 6 6l2-3 5 2v4c0 1-1 2-2 2C10 24 0 14 0 5c0-1 1-2 2-2z" transform="translate(2 1)"/></svg><a href="tel:+12017100269" style="color:#c3cee0">(201) 710-0269</a></li>
+            <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Atlantic City, NJ</span></li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h4>Prefer a Direct Route?</h4>
+          <p style="color:#c3cee0;font-size:.94rem;margin-bottom:1.1rem">Jump straight to the right place.</p>
+          <div style="display:flex;flex-direction:column;gap:.6rem">
+            <a href="#sponsor" class="btn btn-ghost-gold" style="width:100%">Sponsor a Student</a>
+            <a href="#mentor" class="btn btn-ghost-gold" style="width:100%">Become a Mentor</a>
+            <a href="academy.html#apply" class="btn btn-ghost-gold" style="width:100%">Apply to the Academy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta" aria-labelledby="cta-h">
+  <div class="container">
+    <div class="laurel-head reveal">
+      <svg viewBox="0 0 40 60" aria-hidden="true"><path d="M20 58C20 40 8 34 6 20c8 3 14 10 14 20M20 44C20 30 12 26 10 16c6 2 10 7 10 14M20 30C20 20 14 17 12 10c5 1.5 8 5 8 12"/></svg>
+      <p class="eyebrow center on-navy" style="margin:0">Equip. Empower. Excel. Impact.</p>
+      <svg class="r" viewBox="0 0 40 60" aria-hidden="true"><path d="M20 58C20 40 8 34 6 20c8 3 14 10 14 20M20 44C20 30 12 26 10 16c6 2 10 7 10 14M20 30C20 20 14 17 12 10c5 1.5 8 5 8 12"/></svg>
+    </div>
+    <h2 id="cta-h" class="reveal">Students Are Waiting. <span class="gold">Join Us.</span></h2>
+    <div class="cta-btns reveal d1">
+      <a href="#sponsor" class="btn btn-gold">Sponsor a Student</a>
+      <a href="#mentor" class="btn btn-ghost-gold">Become a Mentor</a>
+      <a href="academy.html#apply" class="btn btn-ghost-gold">Apply to the Academy</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner container">
+    <div class="footer-badge">
+      <a href="index.html" aria-label="Vanguard STEM Academy home"><img src="assets/footer-badge.png" alt="Vanguard STEM Academy crest"></a>
+    </div>
+    <p class="footer-tagline">Real Projects. Real Experience. Real Impact.</p>
+    <div class="footer-newsletter">
+      <div class="fn-txt">
+        <h4 style="color:#fff;font-family:var(--serif);font-size:1.5rem">Stay Connected</h4>
+        <p style="color:#c3cee0;margin:.3rem 0 0;font-size:.92rem">News, events, and student achievements — straight to your inbox.</p>
+      </div>
+      <form onsubmit="return handleSubscribe(this)" style="display:flex;gap:.6rem;width:100%;max-width:460px;flex-wrap:wrap;justify-content:center">
+        <input type="email" required placeholder="Your email address" aria-label="Email address" style="flex:1;min-width:220px;background:rgba(255,255,255,.07);border:1px solid rgba(201,163,65,.4);border-radius:3px;padding:.9rem 1.1rem;color:#fff;outline:none;font-family:var(--sans)">
+        <button type="submit" class="btn btn-gold">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="academy.html">The Academy</a></li>
+          <li><a href="impact.html">Our Impact</a></li>
+          <li><a href="get-involved.html">Get Involved</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="portal.html">Login / Portal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Take Action</h5>
+        <ul>
+          <li><a href="academy.html#apply">Apply</a></li>
+          <li><a href="get-involved.html">Partner</a></li>
+          <li><a href="get-involved.html#sponsor">Sponsor</a></li>
+          <li><a href="get-involved.html#mentor">Mentor</a></li>
+          <li><a href="get-involved.html#sponsor">Donate</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul class="fcontact">
+          <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><a href="https://www.vstemacad.org" target="_blank" rel="noopener">www.vstemacad.org</a></li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg><a href="/cdn-cgi/l/email-protection#f49d9a929bb4828780919995979590da9b8693"><span class="__cf_email__" data-cfemail="01686f676e41777275646c606260652f6e7366">[email&#160;protected]</span></a></li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-3 2c1 3 3 5 6 6l2-3 5 2v4c0 1-1 2-2 2C10 24 0 14 0 5c0-1 1-2 2-2z" transform="translate(2 1)"/></svg><a href="tel:+12017100269">(201) 710-0269</a></li>
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Atlantic City, NJ</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-social-row">
+      <div class="fsocial">
+        <a href="https://www.instagram.com/vstemacad/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="7" r="1.4"/></svg></a>
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V8c0-.6.4-1 1-1z"/></svg></a>
+        <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M3 3l7.5 9.5L3.5 21H6l6-6.7L17 21h4l-8-10 7-8h-2.5L13 8.5 8 3z"/></svg></a>
+        <a href="https://www.youtube.com/channel/UCQhTJAYMKgtvEDZnjvGesVw/featured" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 9l5 3-5 3z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Vanguard STEM Academy</span><span class="sep">·</span>
+      <span>501(c)(3) Nonprofit</span><span class="sep">·</span>
+      <a href="#">Privacy</a><span class="sep">·</span>
+      <a href="#">Accessibility</a>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING PILL + BACK TO TOP ============ -->
+<a href="academy.html#apply" class="apply-pill" id="applyPill"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Apply to the Academy</a>
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ============ NAV SCROLL SHADOW ============ */
+const nav=document.getElementById('nav');
+const applyPill=document.getElementById('applyPill');
+const toTop=document.getElementById('toTop');
+const pageHero=document.querySelector('.page-hero');
+function onScroll(){
+  const y=window.scrollY;
+  nav.classList.toggle('scrolled',y>20);
+  const heroBottom=pageHero?pageHero.offsetHeight:400;
+  const past=y>heroBottom-100;
+  applyPill.classList.toggle('show',past);
+  toTop.classList.toggle('show',y>700);
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ============ MOBILE MENU ============ */
+const hamburger=document.getElementById('hamburger');
+const mobilePanel=document.getElementById('mobilePanel');
+const dim=document.getElementById('dim');
+const mpClose=document.getElementById('mpClose');
+function openMenu(){mobilePanel.classList.add('open');dim.classList.add('show');hamburger.classList.add('open');hamburger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}
+function closeMenu(){mobilePanel.classList.remove('open');dim.classList.remove('show');hamburger.classList.remove('open');hamburger.setAttribute('aria-expanded','false');document.body.style.overflow=''}
+hamburger.addEventListener('click',()=>mobilePanel.classList.contains('open')?closeMenu():openMenu());
+mpClose.addEventListener('click',closeMenu);
+dim.addEventListener('click',closeMenu);
+document.querySelectorAll('.msub').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const sub=btn.nextElementSibling;const open=sub.classList.contains('open');
+    document.querySelectorAll('.mp-links .sub').forEach(s=>s.classList.remove('open'));
+    document.querySelectorAll('.msub').forEach(b=>b.classList.remove('open'));
+    if(!open){sub.classList.add('open');btn.classList.add('open')}
+    btn.setAttribute('aria-expanded',String(!open));
+  });
+});
+document.querySelectorAll('.mobile-panel a').forEach(a=>a.addEventListener('click',closeMenu));
+
+/* ============ SEARCH OVERLAY ============ */
+const searchOverlay=document.getElementById('searchOverlay');
+const searchInput=document.getElementById('searchInput');
+document.getElementById('searchOpen').addEventListener('click',()=>{searchOverlay.classList.add('open');setTimeout(()=>searchInput.focus(),200);document.body.style.overflow='hidden'});
+document.getElementById('scClose').addEventListener('click',closeSearch);
+function closeSearch(){searchOverlay.classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeSearch();closeMenu()}});
+
+/* ============ SCROLL REVEAL ============ */
+const revObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+/* ============ NEWSLETTER ============ */
+function handleSubscribe(form){
+  form.reset();const b=form.querySelector('button');const t=b.textContent;b.textContent='Subscribed ✓';setTimeout(()=>b.textContent=t,3000);
+  return false;
+}
+
+/* ============ INQUIRE FORM ============ */
+function handleInquire(form){
+  form.style.display='none';
+  document.getElementById('formSuccess').classList.add('show');
+  return false;
+}
+</script>
+</body>
+</html>

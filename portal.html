@@ -93,47 +93,7 @@ section{position:relative}
 .crest.lg{width:78px;height:78px}
 .crest.lg svg{width:34px;height:34px}
 
-/* ============================================================
-   UTILITY BAR + NAV
-   ============================================================ */
-.utilbar{background:#06163a;color:#cdd6e4;position:relative;z-index:60;border-bottom:1px solid rgba(201,163,65,.25)}
-.utilbar .container{display:flex;justify-content:flex-end;align-items:center;gap:.2rem;height:40px}
-.utilbar a{color:#cdd6e4;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:.4rem .95rem;position:relative}
-.utilbar a:not(:last-child)::after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);height:12px;width:1px;background:rgba(201,163,65,.35)}
-.utilbar a:hover{color:var(--gold-light)}
-.utilbar a.donate{color:var(--gold-light)}
-
-.nav{position:sticky;top:0;z-index:55;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav .container{display:flex;align-items:center;justify-content:space-between;height:104px;gap:1.5rem}
-.brand{display:flex;align-items:center;line-height:1;text-decoration:none;flex:none}
-.brand img{height:94px;width:auto;display:block}
-.navlinks{display:flex;align-items:center;gap:.3rem;list-style:none;margin:0;padding:0}
-.navlinks>li{position:relative}
-.navlinks>li>a,.navlinks>li>button{
-  font-family:'Oswald',sans-serif;font-weight:600;font-size:clamp(.78rem,.85vw,.95rem);text-transform:uppercase;color:var(--navy);
-  padding:.55rem .5rem;display:inline-flex;align-items:center;gap:.35rem;background:none;
-  border:none;cursor:pointer;letter-spacing:.01em;position:relative;white-space:nowrap;
-}
-.navlinks>li>a::after{content:"";position:absolute;left:.85rem;right:.85rem;bottom:.3rem;height:2px;background:var(--gold-grad);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
-.navlinks>li>a:hover::after{transform:scaleX(1)}
-.nav-cta{border:1.5px solid var(--gold)!important;border-radius:2px;color:var(--navy)!important;padding:.55rem 1.15rem!important;font-weight:700!important}
-.nav-cta:hover{background:var(--gold-grad);box-shadow:0 6px 18px rgba(201,163,65,.35)}
-.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;border:1.5px solid var(--line);border-radius:4px;background:#fff;cursor:pointer;padding:0}
-.hamburger span{width:22px;height:2px;background:var(--navy);margin:0 auto;transition:all .3s;border-radius:2px}
-.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.open span:nth-child(2){opacity:0}
-.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-
-.mobile-panel{position:fixed;inset:0 0 0 auto;width:min(90vw,400px);background:var(--navy);z-index:80;transform:translateX(100%);transition:transform .4s var(--ease);overflow-y:auto;padding:1.5rem 1.4rem 3rem;box-shadow:var(--shadow-lg)}
-.mobile-panel.open{transform:translateX(0)}
-.mobile-panel .mp-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:1.2rem;margin-bottom:1rem;border-bottom:1px solid rgba(201,163,65,.3)}
-.mp-close{width:42px;height:42px;border:1px solid rgba(201,163,65,.4);background:none;border-radius:50%;color:var(--gold-light);font-size:1.5rem;cursor:pointer;line-height:1}
-.mp-links{list-style:none;margin:0;padding:0}
-.mp-links>li{border-bottom:1px solid rgba(255,255,255,.08)}
-.mp-links>li>a{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1rem .3rem;color:#eaf0f8;font-family:var(--sans);font-weight:600;font-size:1.05rem}
-.mp-util{margin-top:1.5rem;display:flex;flex-direction:column;gap:.6rem}
-.overlay-dim{position:fixed;inset:0;background:rgba(6,17,42,.55);z-index:75;opacity:0;visibility:hidden;transition:.35s;backdrop-filter:blur(2px)}
-.overlay-dim.show{opacity:1;visibility:visible}
+/* UTILITY BAR + MAIN NAV: moved to assets/nav.css */
 
 /* Breadcrumbs */
 .crumbs{background:var(--cream);border-bottom:1px solid var(--line)}
@@ -214,14 +174,7 @@ section{position:relative}
   .mp-links>li>a{min-height:44px}
 }
 </style>
-<style>
-/* ---- Nav consistency: match home page (index.html) ---- */
-.nav>.container{max-width:1560px}
-.navlinks{gap:clamp(0px,.35vw,.4rem)}
-.navlinks>li>a:hover{color:var(--gold-deep)}
-.navlinks>li>a::after{left:.5rem!important;right:.5rem!important}
-@media(max-width:1360px){.navlinks.desktop-only{display:none!important}.hamburger{display:flex!important}}
-</style>
+<link rel="stylesheet" href="assets/nav.css">
 </head>
 <body>
 

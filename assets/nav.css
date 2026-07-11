@@ -112,7 +112,7 @@
   /* px-anchored clamp: never smaller than 12px, never larger than 15px */
   font-size: clamp(12px, .85vw, 15px);
   text-transform: uppercase;
-  color: var(--navy);
+  color: #000;
   padding: .55rem .5rem;
   display: inline-flex;
   align-items: center;
@@ -128,7 +128,7 @@
 /* Active page link */
 .navlinks > li > a[aria-current],
 .navlinks > li > a[aria-current="page"] {
-  color: var(--gold-deep);
+  color: #000;
 }
 
 /* Hover underline animation */
@@ -144,7 +144,7 @@
   transform-origin: left;
   transition: transform .3s var(--ease);
 }
-.navlinks > li > a:hover { color: var(--gold-deep); }
+.navlinks > li > a:hover { color: #000; }
 .navlinks > li > a:hover::after { transform: scaleX(1); }
 
 /* Dropdown caret */

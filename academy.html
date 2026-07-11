@@ -7,7 +7,7 @@
 <meta name="description" content="The Vanguard Academy is a project-based STEM and workforce program for grades 8–12. Students form consulting teams, solve authentic challenges, and present to executives.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    VANGUARD STEM ACADEMY — SHARED DESIGN SYSTEM
@@ -529,6 +529,19 @@ section{position:relative}
   .model-grid,.track-grid{grid-template-columns:1fr}
 }
 </style>
+<style>
+/* ===== Nav consistency: match home page (index.html) ===== */
+.nav .container{height:104px}
+.nav>.container{max-width:1560px}
+.brand{flex:none}
+.brand img{height:94px}
+.navlinks{gap:clamp(0px,.35vw,.4rem)}
+.navlinks>li>a,.navlinks>li>button{font-family:'Oswald',sans-serif;font-weight:600;font-size:clamp(.78rem,.85vw,.95rem);text-transform:uppercase;padding:.55rem .5rem;letter-spacing:.01em;white-space:nowrap}
+.navlinks>li>a[aria-current="page"],.navlinks>li>a[aria-current]{color:var(--gold-deep)}
+.navlinks>li>a:hover{color:var(--gold-deep)}
+.navlinks>li>a::after{left:.5rem!important;right:.5rem!important}
+@media(max-width:1360px){.navlinks.desktop-only{display:none!important}.hamburger{display:flex!important}}
+</style>
 </head>
 <body>
 
@@ -554,12 +567,12 @@ section{position:relative}
     </a>
     <ul class="navlinks desktop-only">
       <li><a href="index.html">Home</a></li>
-      <li><a href="leadership.html">Leadership</a></li>
+      <li><a href="leadership.html">The Leadership Team</a></li>
       <li>
-        <a href="programs.html">Programs <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
+        <a href="programs.html">Individual Coaching Program (ICP) <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
         <div class="dropdown" role="menu">
           <a href="programs.html#coaching" role="menuitem"><strong>Individual Coaching</strong><span>Students &amp; professionals</span></a>
-          <a href="academy.html" role="menuitem"><strong>Youth STEM Academy</strong><span>Grades 8–12</span></a>
+          <a href="academy.html" role="menuitem"><strong>Youth STEM Academy</strong><span>Grades 8&ndash;12</span></a>
           <a href="programs.html#bi" role="menuitem"><strong>Business Intelligence Academy</strong><span>Adults &amp; professionals</span></a>
           <a href="programs.html#mentorship" role="menuitem"><strong>Executive Mentorship</strong><span>Fireside chats &amp; panels</span></a>
           <a href="programs.html#workforce" role="menuitem"><strong>Corporate &amp; Workforce Training</strong><span>Organizations</span></a>
@@ -575,8 +588,9 @@ section{position:relative}
           <a href="academy.html#apply" role="menuitem"><strong>Apply</strong><span>Admissions steps</span></a>
         </div>
       </li>
+      <li><a href="academy.html#apply">Apply to the Academy</a></li>
       <li>
-        <a href="impact.html">Our Impact <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
+        <a href="impact.html">Our Success Stories <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
         <div class="dropdown" role="menu">
           <a href="impact.html#metrics" role="menuitem"><strong>Metrics</strong><span>By the numbers</span></a>
           <a href="impact.html#stories" role="menuitem"><strong>Success Stories</strong><span>Student outcomes</span></a>
@@ -584,7 +598,6 @@ section{position:relative}
         </div>
       </li>
       <li><a href="get-involved.html">Get Involved</a></li>
-      <li><a href="portal.html" class="nav-cta">Login / Portal</a></li>
     </ul>
     <div style="display:flex;align-items:center;gap:.7rem">
       <button class="search-btn" id="searchOpen" aria-label="Open search">
@@ -605,9 +618,9 @@ section{position:relative}
   </div>
   <ul class="mp-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="leadership.html">Leadership</a></li>
+    <li><a href="leadership.html">The Leadership Team</a></li>
     <li>
-      <button class="msub" aria-expanded="false">Programs <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></button>
+      <button class="msub" aria-expanded="false">Individual Coaching Program (ICP) <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></button>
       <div class="sub">
         <a href="programs.html#coaching">Individual Coaching</a>
         <a href="academy.html">Youth STEM Academy</a>
@@ -626,8 +639,9 @@ section{position:relative}
         <a href="academy.html#apply">Apply</a>
       </div>
     </li>
+    <li><a href="academy.html#apply">Apply to the Academy</a></li>
     <li>
-      <button class="msub" aria-expanded="false">Our Impact <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></button>
+      <button class="msub" aria-expanded="false">Our Success Stories <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></button>
       <div class="sub">
         <a href="impact.html#metrics">Metrics</a>
         <a href="impact.html#stories">Success Stories</a>

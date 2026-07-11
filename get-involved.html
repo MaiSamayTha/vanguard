@@ -470,6 +470,14 @@ section{position:relative}
 .page-hero .laurel-head svg{width:34px;height:48px;fill:var(--gold)}
 .page-hero .laurel-head svg.r{transform:scaleX(-1)}
 </style>
+<style>
+/* ---- Nav consistency: match home page (index.html) ---- */
+.nav>.container{max-width:1560px}
+.navlinks{gap:clamp(0px,.35vw,.4rem)}
+.navlinks>li>a:hover{color:var(--gold-deep)}
+.navlinks>li>a::after{left:.5rem!important;right:.5rem!important}
+@media(max-width:1360px){.navlinks.desktop-only{display:none!important}.hamburger{display:flex!important}}
+</style>
 </head>
 <body>
 

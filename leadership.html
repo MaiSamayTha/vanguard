@@ -953,7 +953,7 @@ section{position:relative}
 
 /* ---- Original-style all-caps nav ---- */
 .nav>.container{max-width:1560px}
-.navlinks{gap:.1rem}
+.navlinks{gap:clamp(0px,.35vw,.4rem)}
 .navlinks>li>a:hover{color:var(--gold-deep)}
 .navlinks>li>a::after{left:.5rem!important;right:.5rem!important}
 @media(max-width:1360px){.navlinks.desktop-only{display:none!important}.hamburger{display:flex!important}}

@@ -128,18 +128,18 @@ section{position:relative}
    ============================================================ */
 .nav{position:sticky;top:0;z-index:55;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:box-shadow .3s,background .3s}
 .nav.scrolled{box-shadow:0 6px 26px rgba(2,25,52,.12);background:rgba(255,255,255,.95)}
-.nav .container{display:flex;align-items:center;justify-content:space-between;height:82px;gap:1.5rem}
-.brand{display:flex;align-items:center;line-height:1;text-decoration:none}
-.brand img{height:58px;width:auto;display:block}
+.nav .container{display:flex;align-items:center;justify-content:space-between;height:104px;gap:1.5rem}
+.brand{display:flex;align-items:center;line-height:1;text-decoration:none;flex:none}
+.brand img{height:94px;width:auto;display:block}
 .brand .bw{font-family:var(--serif);font-weight:800;font-size:1.36rem;letter-spacing:.02em;color:var(--navy)}
 .brand .bw em{font-style:normal;color:var(--navy)}
 .brand .bsub{font-family:var(--sans);font-weight:700;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-deep);margin-top:5px;padding-top:5px;border-top:2px solid;border-image:var(--gold-grad) 1;width:fit-content}
 .navlinks{display:flex;align-items:center;gap:.3rem;list-style:none;margin:0;padding:0}
 .navlinks>li{position:relative}
 .navlinks>li>a,.navlinks>li>button{
-  font-family:var(--sans);font-weight:600;font-size:.9rem;color:var(--navy);
-  padding:.6rem .85rem;display:inline-flex;align-items:center;gap:.35rem;background:none;
-  border:none;cursor:pointer;letter-spacing:.01em;position:relative;
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:clamp(.78rem,.85vw,.95rem);text-transform:uppercase;color:var(--navy);
+  padding:.55rem .5rem;display:inline-flex;align-items:center;gap:.35rem;background:none;
+  border:none;cursor:pointer;letter-spacing:.01em;position:relative;white-space:nowrap;
 }
 .navlinks>li>a::after{content:"";position:absolute;left:.85rem;right:.85rem;bottom:.3rem;height:2px;background:var(--gold-grad);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
 .navlinks>li>a:hover{color:var(--navy)}
@@ -357,11 +357,10 @@ section{position:relative}
 /* ============================================================
    RESPONSIVE (shared)
    ============================================================ */
-@media(max-width:1024px){
+@media(max-width:1360px){
   .navlinks{gap:0}
-  .navlinks>li>a,.navlinks>li>button{padding:.6rem .6rem;font-size:.84rem}
 }
-@media(max-width:1024px){
+@media(max-width:1360px){
   .desktop-only{display:none!important}
   .hamburger{display:flex}
   .fire-grid{grid-template-columns:1fr}

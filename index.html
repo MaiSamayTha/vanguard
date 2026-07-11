@@ -41,7 +41,7 @@
   --maxw:1240px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;font-size:16px}
 body{
   margin:0;font-family:var(--sans);color:var(--ink);
   background:var(--cream);line-height:1.6;font-size:17px;
@@ -129,7 +129,7 @@ section{position:relative}
 .nav{position:sticky;top:0;z-index:55;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:box-shadow .3s,background .3s}
 .nav.scrolled{box-shadow:0 6px 26px rgba(2,25,52,.12);background:rgba(255,255,255,.95)}
 .nav .container{display:flex;align-items:center;justify-content:space-between;height:104px;gap:1.5rem}
-.brand{display:flex;align-items:center;line-height:1;text-decoration:none}
+.brand{display:flex;align-items:center;line-height:1;text-decoration:none;flex:none}
 .brand img{height:94px;width:auto;display:block}
 .brand .bw{font-family:var(--serif);font-weight:800;font-size:1.36rem;letter-spacing:.02em;color:var(--navy)}
 .brand .bw em{font-style:normal;color:var(--navy)}
@@ -137,7 +137,7 @@ section{position:relative}
 .navlinks{display:flex;align-items:center;gap:.3rem;list-style:none;margin:0;padding:0}
 .navlinks>li{position:relative}
 .navlinks>li>a,.navlinks>li>button{
-  font-family:'Oswald',sans-serif;font-weight:600;font-size:.95rem;text-transform:uppercase;color:var(--navy);
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:clamp(.78rem,.85vw,.95rem);text-transform:uppercase;color:var(--navy);
   padding:.55rem .5rem;display:inline-flex;align-items:center;gap:.35rem;background:none;
   border:none;cursor:pointer;letter-spacing:.01em;position:relative;white-space:nowrap;
 }
@@ -213,8 +213,8 @@ section{position:relative}
 .welcome-hero{position:relative;min-height:min(88vh,760px);display:grid;place-items:center;text-align:center;padding:2rem clamp(1rem,4vw,2.5rem);background:#04101f url('assets/welcome-hero.webp') center/cover no-repeat}
 .welcome-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,12,28,.5),rgba(4,12,28,.42) 45%,rgba(4,12,28,.66))}
 .welcome-inner{position:relative;z-index:1;max-width:1120px}
-.welcome-pre{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.3rem,3vw,2.15rem);color:#EAD08A;margin:0 0 .5rem;text-shadow:0 2px 16px rgba(0,0,0,.65)}
-.welcome-title{font-family:var(--serif);font-weight:700;text-transform:uppercase;letter-spacing:.02em;line-height:1.04;margin:0;font-size:clamp(2.1rem,7.4vw,5.6rem);color:#E7C56B;text-shadow:0 3px 22px rgba(0,0,0,.72),0 1px 3px rgba(0,0,0,.6)}
+.welcome-pre{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(18px,2.2vw,30px);color:#EAD08A;margin:0 0 .5rem;text-shadow:0 2px 16px rgba(0,0,0,.65)}
+.welcome-title{font-family:var(--serif);font-weight:700;text-transform:uppercase;letter-spacing:.02em;line-height:1.04;margin:0;font-size:clamp(30px,5.5vw,72px);color:#E7C56B;text-shadow:0 3px 22px rgba(0,0,0,.72),0 1px 3px rgba(0,0,0,.6)}
 .hero::before{content:"";position:absolute;top:-10%;right:-8%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(201,163,65,.1),transparent 68%);pointer-events:none}
 .hero-grid{display:grid;grid-template-columns:1fr;justify-items:center;text-align:center;max-width:960px;margin:0 auto}
 .hero h1{font-size:clamp(2.4rem,5vw,4rem);letter-spacing:-.015em;margin-bottom:1.4rem}
@@ -644,13 +644,14 @@ section{position:relative}
 .hh-media{position:absolute;top:0;right:0;bottom:0;width:66%}
 .hh-media .ph{height:100%;width:100%}
 .hh-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#081a3c 0%,rgba(8,26,60,.72) 14%,rgba(8,26,60,.15) 42%,transparent 60%);pointer-events:none}
-.hh-content{position:relative;z-index:2;max-width:520px;padding:clamp(3rem,6vw,5rem) 0}
+.hh-content{position:relative;z-index:2;max-width:clamp(480px,34vw,560px);padding:clamp(3rem,6vw,5rem) 0}
 .hh-content h1{font-family:var(--serif);font-weight:800;font-size:clamp(2rem,3.6vw,3.1rem);line-height:1.14;color:#fff;letter-spacing:-.01em}
 .hh-content h1 span{display:block}
 .hh-content h1 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hh-content .hh-sub{color:#c3cee2;font-size:.98rem;max-width:42ch;margin:1.2rem 0 1.8rem;line-height:1.65}
 .hh-ctas{display:flex;gap:.9rem;flex-wrap:wrap}
-.hh-ctas .btn{padding:.85rem 1.5rem;font-size:.76rem;border-radius:10px}
+@media(min-width:768px){.hh-ctas{flex-wrap:nowrap}}
+.hh-ctas .btn{flex:0 1 auto;min-width:0;padding:.85rem clamp(.9rem,1.4vw,1.5rem);font-size:clamp(11px,.72vw,12.5px);border-radius:10px;white-space:nowrap}
 .btn-outline-w{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}
 .btn-outline-w:hover{border-color:var(--gold);color:var(--gold-light)}
 
@@ -719,12 +720,12 @@ section{position:relative}
 
 /* fireside burgundy band */
 .fire2{background:linear-gradient(150deg,#5c1522,#7a2334 55%,#5c1522);color:#fff;padding:3.6rem 0 2.6rem;position:relative;overflow:hidden;border-top:3px solid var(--gold);border-bottom:3px solid var(--gold)}
-.fire2::before,.fire2::after{content:"";position:absolute;top:50%;transform:translateY(-50%);height:min(76%,480px);aspect-ratio:329/641;background:url('assets/leaf-gold.png') no-repeat center/contain;pointer-events:none;opacity:.9}
+.fire2::before,.fire2::after{content:"";position:absolute;top:50%;transform:translateY(-50%);width:clamp(60px,7vw,140px);aspect-ratio:329/641;background:url('assets/leaf-gold.png') no-repeat center/contain;pointer-events:none;opacity:.9}
 .fire2::before{left:clamp(2px,1.2vw,26px);transform:translateY(-50%) scaleX(-1)}
 .fire2::after{right:clamp(2px,1.2vw,26px)}
 @media(max-width:1240px){.fire2::before,.fire2::after{display:none}}
 .fire2-grid{display:grid;grid-template-columns:.62fr 1.38fr;gap:2.2rem;align-items:start;position:relative;z-index:1}
-.fire2-left h2{font-family:var(--serif);font-weight:800;font-size:clamp(1.5rem,2.6vw,2.1rem);text-transform:uppercase;letter-spacing:.02em;background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.15;margin-bottom:.9rem}
+.fire2-left h2{font-family:var(--serif);font-weight:800;font-size:clamp(22px,1.8vw,34px);text-transform:uppercase;letter-spacing:.02em;background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.15;margin-bottom:.9rem}
 .fire2-left .f2-tag{color:#fff;font-weight:800;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
 .fire2-left p{color:#ecd3d8;font-size:.88rem;line-height:1.65}
 .fire2-left .f2-btns{display:flex;gap:.6rem;flex-wrap:nowrap;margin-top:1.2rem}
@@ -732,7 +733,7 @@ section{position:relative}
 .fire2-panel{background:linear-gradient(135deg,#0b2251,#0d2857);border:1px solid rgba(201,163,65,.4);border-radius:14px;padding:1.4rem 1.4rem 1.2rem;box-shadow:var(--shadow-lg)}
 .fire2-quote{display:flex;gap:.9rem;align-items:flex-start;margin-bottom:1.2rem}
 .fire2-quote .qm{font-family:var(--serif);font-size:3rem;line-height:.8;background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;flex:none}
-.fire2-quote p{color:#fff;font-weight:600;font-size:.95rem;line-height:1.5;margin:0}
+.fire2-quote p{color:#fff;font-weight:600;font-size:clamp(13px,.95vw,16px);line-height:1.5;margin:0}
 .fire2-quote p .hl{color:var(--gold-light);font-weight:800}
 .exec-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.7rem}
 .exec-card{background:#08183a;border:1px solid rgba(201,163,65,.35);border-radius:8px;overflow:hidden;text-align:center;display:flex;flex-direction:column}
@@ -860,12 +861,16 @@ section{position:relative}
   .strip-item .si-ic svg{width:15px;height:15px}
 }
 
+/* partners: wrap into a balanced grid instead of orphaning a single logo */
+@media(max-width:1280px){.partners-row{display:grid;grid-template-columns:repeat(4,auto);justify-content:center;align-items:center;gap:1.4rem clamp(1.4rem,4vw,3rem)}}
+@media(max-width:640px){.partners-row{grid-template-columns:repeat(2,auto)}}
+
 /* ---- Original-style all-caps nav ---- */
 .nav>.container{max-width:1560px}
-.navlinks{gap:.1rem}
+.navlinks{gap:clamp(0px,.35vw,.4rem)}
 .navlinks>li>a:hover{color:var(--gold-deep)}
 .navlinks>li>a::after{left:.5rem!important;right:.5rem!important}
-@media(max-width:1240px){.navlinks.desktop-only{display:none!important}.hamburger{display:flex!important}}
+@media(max-width:1360px){.navlinks.desktop-only{display:none!important}.hamburger{display:flex!important}}
 </style>
 </head>
 <body>

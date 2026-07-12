@@ -802,10 +802,10 @@ section{position:relative}
 .pg-ic{position:absolute;left:14px;bottom:-22px;width:50px;height:50px;border-radius:50%;background:var(--navy);border:2px solid var(--gold);display:grid;place-items:center;z-index:2}
 .pg-ic svg{width:22px;height:22px;stroke:var(--gold-2);fill:none;stroke-width:1.7}
 .pg-body{padding:2rem 1.2rem 1.3rem;display:flex;flex-direction:column;flex:1}
-.pg-body h3{font-family:var(--sans);font-weight:800;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);margin-bottom:.5rem;line-height:1.35}
-.pg-body p{font-size:.8rem;color:var(--muted);line-height:1.55;flex:1;margin-bottom:1rem}
-.pg-btn{align-self:flex-start;display:inline-block;border:1.5px solid var(--gold);color:var(--navy);font-weight:800;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1rem;border-radius:8px;transition:.3s;white-space:nowrap}
-.pg-btn:hover{background:var(--gold-grad);color:var(--navy)}
+.pg-body h3{font-family:var(--sans);font-weight:800;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase;color:var(--burgundy);margin-bottom:.5rem;line-height:1.35}
+.pg-body p{font-size:.8rem;color:var(--navy);font-weight:600;line-height:1.55;flex:1;margin-bottom:1rem}
+.pg-btn{align-self:flex-start;display:inline-block;background:var(--gold-grad);border:1.5px solid var(--gold);color:var(--navy);font-weight:800;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1rem;border-radius:8px;transition:.3s;white-space:nowrap}
+.pg-btn:hover{background:var(--gold-deep);color:#fff}
 .approach{background:linear-gradient(150deg,#06163a,#0c2755);color:#fff;padding:clamp(2.4rem,4.6vw,3.4rem) 0;border-top:3px solid var(--gold);border-bottom:3px solid var(--gold)}
 .approach h2{text-align:center;font-family:var(--serif);font-weight:800;font-size:clamp(20px,2.2vw,28px);letter-spacing:.08em;text-transform:uppercase;background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:2.2rem}
 .approach h2::before,.approach h2::after{content:"";width:46px;height:1.5px;background:var(--gold-grad)}
@@ -821,6 +821,7 @@ section{position:relative}
 .philo-ic svg{width:44px;height:44px;stroke:var(--gold-deep);fill:none;stroke-width:1.4}
 .philo-grid h2{font-family:var(--serif);font-size:clamp(20px,2.2vw,28px);color:var(--navy);margin:.2rem 0 .6rem}
 .philo-grid p{color:var(--muted);font-size:.88rem;line-height:1.65;margin:0}
+.philo-grid p.eyebrow{color:var(--gold-deep)}
 .icp-band{background:var(--gold-grad);text-align:center;padding:.85rem 1rem}
 .icp-band h2{font-family:var(--serif);font-weight:800;font-size:clamp(18px,2vw,26px);letter-spacing:.18em;text-transform:uppercase;color:var(--navy);display:inline-flex;align-items:center;gap:1rem;margin:0}
 .icp-band h2::before,.icp-band h2::after{content:"\2726";font-size:.8em}
@@ -849,7 +850,8 @@ section{position:relative}
 .pack.p4{background:#fdf7e9;border-color:#ecd9a8}.pack.p4 .pk-btn{background:var(--gold-grad);color:var(--navy)}
 .pk-pop{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--gold-grad);color:var(--navy);font-weight:800;font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .8rem;border-radius:20px;white-space:nowrap;box-shadow:0 4px 12px rgba(169,132,46,.4)}
 .pack.p2{border-color:var(--gold)}
-.faq-fut{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.8rem,3.6vw,3.2rem);align-items:start}
+.faq-fut{display:grid;grid-template-columns:.9fr auto 1.1fr;column-gap:0;align-items:stretch}
+.faq-divider{align-self:stretch;width:4px;background:var(--gold-grad);margin:calc(-1 * clamp(2.4rem,4.6vw,3.4rem)) clamp(1.4rem,3vw,2.6rem)}
 .faq2 .eyebrow,.fut .eyebrow{justify-content:flex-start}
 .faq2 h2,.fut h2{font-family:var(--serif);font-size:clamp(20px,2.2vw,28px);color:var(--navy);margin-bottom:1.1rem}
 .fq{border:1px solid var(--line);border-radius:8px;background:#fff;margin-bottom:.55rem;overflow:hidden}
@@ -867,7 +869,7 @@ section{position:relative}
 .fut-card .fi svg{width:21px;height:21px;stroke:var(--gold-light);fill:none;stroke-width:1.6}
 .fut-card h4{font-family:var(--serif);font-size:.92rem;line-height:1.3;color:#fff;margin-bottom:.5rem}
 .fut-card p{font-size:.64rem;color:rgba(255,255,255,.75);line-height:1.5;flex:1;margin-bottom:.9rem}
-.fut-card .wl{display:block;width:100%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.45);color:#fff;font-weight:800;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;padding:.55rem .3rem;border-radius:8px;transition:.3s}
+.fut-card .wl{display:block;width:100%;white-space:nowrap;background:var(--gold-grad);border:1px solid var(--gold);color:var(--navy);font-weight:800;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem .3rem;border-radius:8px;transition:.3s}
 .fut-card .wl:hover{background:#fff;color:var(--navy)}
 .fut-card.c1{background:linear-gradient(160deg,#16325f,#0b2251)}
 .fut-card.c2{background:linear-gradient(160deg,#1f5f5b,#123c39)}
@@ -896,6 +898,7 @@ section{position:relative}
   .appr-grid{grid-template-columns:repeat(3,1fr);gap:1.6rem .4rem}
   .appr-item:nth-child(3)::after{display:none}
   .icp-grid,.faq-fut{grid-template-columns:1fr}
+  .faq-divider{display:none}
   .pack-grid,.fut-grid{grid-template-columns:repeat(2,1fr);gap:1.1rem .9rem}
   .ready-inner{justify-content:center;text-align:center}
   .ready-txt{min-width:100%}
@@ -1032,6 +1035,9 @@ section{position:relative}
   </div>
 </section>
 
+<!-- ============ ICP BAND (bottom) ============ -->
+<div style="border-top:3px solid var(--gold)" role="presentation"></div>
+
 <!-- ============ FAQ + FUTURE ============ -->
 <section class="sec cream" aria-label="FAQ and future programs" data-screen-label="FAQ and future programs" style="padding:clamp(2.4rem,4.6vw,3.4rem) 0">
   <div class="container faq-fut">
@@ -1047,6 +1053,7 @@ section{position:relative}
       <a href="get-involved.html#inquire" class="btn btn-primary" style="margin-top:1rem;padding:.85rem 1.5rem;font-size:.7rem">Schedule a Consultation</a>
       <p style="font-size:.78rem;color:var(--muted);margin-top:.7rem">Not sure which package is right for you?</p>
     </div>
+    <div class="faq-divider" aria-hidden="true"></div>
     <div class="fut reveal d1" id="future">
       <p class="eyebrow">On the Horizon</p>
       <h2>Future Programs &amp; Learning Pathways</h2>

@@ -794,12 +794,12 @@ section{position:relative}
 .ah-ctas .btn{padding:.85rem 1.3rem;font-size:.7rem}
 .ah-img{border:3px solid var(--gold);border-radius:22px 22px 22px 130px;overflow:hidden;box-shadow:var(--shadow-md)}
 .ah-img .ph{aspect-ratio:16/10.5}
-.facts4{background:var(--gold-grad);border:none;border-radius:0;box-shadow:var(--shadow-sm);display:grid;grid-template-columns:repeat(4,1fr);padding:1.4rem .6rem;width:100vw;position:relative;left:50%;margin-left:-50vw!important;margin-right:-50vw!important}
+.facts4{background:linear-gradient(135deg,#081a3c,#0d2452);border:none;border-bottom:3px solid var(--gold);border-radius:0;box-shadow:var(--shadow-sm);display:grid;grid-template-columns:repeat(4,1fr);padding:1.4rem .6rem;width:100vw;position:relative;left:50%;margin-left:-50vw!important;margin-right:-50vw!important}
 .f4-item{display:flex;gap:.8rem;align-items:flex-start;padding:0 1rem;position:relative}
-.f4-item:not(:last-child)::after{content:"";position:absolute;right:0;top:10%;height:80%;width:1px;background:rgba(255,255,255,.4)}
-.f4-item .f4-ic{flex:none;width:46px;height:46px;border-radius:50%;background:var(--burgundy);display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(201,163,65,.5)}
+.f4-item:not(:last-child)::after{content:"";position:absolute;right:0;top:10%;height:80%;width:1px;background:var(--gold)}
+.f4-item .f4-ic{flex:none;width:46px;height:46px;border-radius:50%;background:transparent;border:1.5px solid var(--gold);display:grid;place-items:center}
 .f4-item .f4-ic svg{width:21px;height:21px;stroke:var(--gold-2);fill:none;stroke-width:1.7}
-.f4-item .f4-t{font-weight:800;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:.25rem}
+.f4-item .f4-t{font-weight:800;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.25rem}
 .f4-item p{font-size:.72rem;color:#fff;font-weight:600;line-height:1.5;margin:0}
 .process-card{background:linear-gradient(160deg,#5c1522,#7a2334);border:1px solid var(--gold);border-radius:14px;box-shadow:var(--shadow-sm);padding:1.6rem clamp(1rem,2.4vw,2rem)}
 .process-card h2{text-align:center;font-family:var(--serif);font-size:clamp(19px,2vw,26px);color:var(--gold-light);display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1.5rem}
@@ -822,8 +822,9 @@ section{position:relative}
 .step-item.active .sn{border-color:#fff;color:#fff}
 .step-item.active span.sl{color:#fff}
 .step-item.done .sn{background:var(--gold-grad);color:var(--navy);border-color:var(--gold)}
-.app-side .as-crest{display:flex;justify-content:center;margin-top:1.2rem;opacity:.85}
-.app-side .as-crest img{width:64px}
+.app-side .as-crest{display:flex;justify-content:center;margin-top:1.2rem}
+.app-side .as-crest .crest-badge{width:76px;height:76px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.5);border:2px solid var(--gold-light)}
+.app-side .as-crest img{width:82%;height:auto;display:block}
 .app-form{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-sm);padding:clamp(1.2rem,2.4vw,1.8rem)}
 .af-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:.4rem}
 .af-top h2{font-family:var(--serif);font-size:clamp(17px,1.7vw,22px);color:var(--burgundy);letter-spacing:.04em;text-transform:uppercase}
@@ -1001,7 +1002,7 @@ section{position:relative}
         <div class="step-item" data-step="5"><span class="sn">5</span><span class="sl">Short-Answer Questions</span></div>
         <div class="step-item" data-step="6"><span class="sn">6</span><span class="sl">Availability &amp; Commitment</span></div>
         <div class="step-item" data-step="7"><span class="sn">7</span><span class="sl">Review &amp; Submit</span></div>
-        <div class="as-crest"><img src="assets/vanguard-logo-transparent.png" alt=""></div>
+        <div class="as-crest"><div class="crest-badge"><img src="assets/vanguard-logo-transparent.png" alt=""></div></div>
       </aside>
 
       <div class="app-form reveal d1">

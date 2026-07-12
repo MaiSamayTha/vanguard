@@ -41,10 +41,10 @@ class VanguardNav extends HTMLElement {
           <a href="academy.html#overview" role="menuitem"><strong>Overview</strong><span>Who it serves &amp; the model</span></a>
           <a href="academy.html#experiences" role="menuitem"><strong>Signature Experiences</strong><span>Consulting capstones</span></a>
           <a href="academy.html#cohorts" role="menuitem"><strong>Future Cohorts</strong><span>Learning pathways</span></a>
-          <a href="academy.html#apply" role="menuitem"><strong>Apply</strong><span>Admissions steps</span></a>
+          <a href="apply.html" role="menuitem"><strong>Apply</strong><span>Admissions steps</span></a>
         </div>
       </li>
-      <li><a href="academy.html#apply">Apply to the Academy</a></li>
+      <li><a href="apply.html">Apply to the Academy</a></li>
       <li>
         <a href="impact.html">Our Success Stories <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
         <div class="dropdown" role="menu">
@@ -92,10 +92,10 @@ class VanguardNav extends HTMLElement {
         <a href="academy.html#overview">Overview</a>
         <a href="academy.html#experiences">Signature Experiences</a>
         <a href="academy.html#cohorts">Future Cohorts</a>
-        <a href="academy.html#apply">Apply</a>
+        <a href="apply.html">Apply</a>
       </div>
     </li>
-    <li><a href="academy.html#apply">Apply to the Academy</a></li>
+    <li><a href="apply.html">Apply to the Academy</a></li>
     <li>
       <button class="msub" aria-expanded="false">Our Success Stories <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></button>
       <div class="sub">
@@ -108,7 +108,7 @@ class VanguardNav extends HTMLElement {
   </ul>
   <div class="mp-util">
     <a href="portal.html" class="btn btn-secondary">Login / Portal</a>
-    <a href="academy.html#apply" class="btn btn-gold">Apply to the Academy</a>
+    <a href="apply.html" class="btn btn-gold">Apply to the Academy</a>
   </div>
   <div style="margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.8rem">
     <a href="get-involved.html#inquire" style="color:#9fb0c6">Contact</a>

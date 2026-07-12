@@ -804,7 +804,7 @@ section{position:relative}
 .pg-ic svg{width:22px;height:22px;stroke:var(--gold-2);fill:none;stroke-width:1.7}
 .pg-body{padding:2rem 1.2rem 1.3rem;display:flex;flex-direction:column;flex:1;text-align:center;align-items:center}
 .pg-body h3{font-family:var(--sans);font-weight:800;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase;color:var(--burgundy);margin-bottom:.5rem;line-height:1.35}
-.pg-body p{font-family:Georgia,serif;font-style:italic;font-size:.8rem;color:var(--navy);font-weight:600;line-height:1.55;flex:1;margin-bottom:1rem}
+.pg-body p{font-size:.8rem;color:var(--navy);font-weight:700;line-height:1.55;flex:1;margin-bottom:1rem}
 .pg-btn{align-self:center;display:inline-block;background:var(--gold-grad);border:1.5px solid var(--gold);color:var(--navy);font-weight:800;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1rem;border-radius:8px;transition:.3s;white-space:nowrap}
 .pg-btn:hover{background:var(--gold-deep);color:#fff}
 .approach{background:linear-gradient(150deg,#06163a,#0c2755);color:#fff;padding:clamp(2.4rem,4.6vw,3.4rem) 0;border-top:3px solid var(--gold);border-bottom:3px solid var(--gold)}
@@ -835,6 +835,14 @@ section{position:relative}
 .track .tk-n{font-weight:700;font-size:.82rem;color:var(--navy);flex:1}
 .track a{font-weight:800;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep);white-space:nowrap}
 .track a:hover{color:var(--burgundy)}
+.track.t1{background:linear-gradient(160deg,#16325f,#0b2251);border-color:transparent}
+.track.t2{background:linear-gradient(160deg,#1f5f5b,#123c39);border-color:transparent}
+.track.t3{background:linear-gradient(160deg,#8a2a3a,#5c1522);border-color:transparent}
+.track.t4{background:linear-gradient(160deg,#5a4585,#3c2d5e);border-color:transparent}
+.track.t1 svg,.track.t2 svg,.track.t3 svg,.track.t4 svg{stroke:var(--gold-light)}
+.track.t1 .tk-n,.track.t2 .tk-n,.track.t3 .tk-n,.track.t4 .tk-n{color:#fff}
+.track.t1 a,.track.t2 a,.track.t3 a,.track.t4 a{color:var(--gold-light)}
+.track.t1 a:hover,.track.t2 a:hover,.track.t3 a:hover,.track.t4 a:hover{color:#fff}
 .pack-label{text-align:center;font-weight:800;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1rem}
 .pack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem}
 .pack{border-radius:12px;padding:1.4rem 1rem 1.1rem;text-align:center;display:flex;flex-direction:column;position:relative;border:1px solid}
@@ -880,7 +888,7 @@ section{position:relative}
 .fut-card.c2{background:linear-gradient(160deg,#1f5f5b,#123c39)}
 .fut-card.c3{background:linear-gradient(160deg,#8a2a3a,#5c1522)}
 .fut-card.c4{background:linear-gradient(160deg,#5a4585,#3c2d5e)}
-.ready-band{background:var(--gold-grad);padding:clamp(1.6rem,3vw,2.2rem) 0}
+.ready-band{background:var(--gold-grad);padding:clamp(1rem,1.8vw,1.3rem) 0}
 .ready-inner{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
 .ready-inner .ri-ic svg{width:44px;height:44px;stroke:var(--navy);fill:none;stroke-width:1.5}
 .ready-txt{flex:1;min-width:260px}
@@ -1024,11 +1032,11 @@ section{position:relative}
     <div class="icp-left reveal">
       <h3>Personalized Coaching. Proven Results. Real Career Growth.</h3>
       <p>Whether you are preparing for college, strengthening academic performance, transitioning into a new career, interviewing with top companies, or building technical skills, Vanguard provides high-touch coaching designed around your goals.</p>
-      <div class="track"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg><span class="tk-n">Academic Coaching</span><a href="#packs">View Packages &rarr;</a></div>
-      <div class="track"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg><span class="tk-n">Career Development</span><a href="get-involved.html#inquire">Schedule Consultation &rarr;</a></div>
-      <div class="track"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg><span class="tk-n">Business Intelligence Coaching</span><a href="get-involved.html#inquire">Request Information &rarr;</a></div>
-      <div class="track"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="tk-n">Executive Coaching</span><a href="get-involved.html#inquire">Book Consultation &rarr;</a></div>
-      <div class="track"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10h14v11M12 3L3 8h18z"/></svg><span class="tk-n">College &amp; Graduate Admissions</span><a href="get-involved.html#inquire">Schedule Consultation &rarr;</a></div>
+      <div class="track t1"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg><span class="tk-n">Academic Coaching</span><a href="#packs">View Packages &rarr;</a></div>
+      <div class="track t2"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg><span class="tk-n">Career Development</span><a href="get-involved.html#inquire">Schedule Consultation &rarr;</a></div>
+      <div class="track t3"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg><span class="tk-n">Business Intelligence Coaching</span><a href="get-involved.html#inquire">Request Information &rarr;</a></div>
+      <div class="track t4"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="tk-n">Executive Coaching</span><a href="get-involved.html#inquire">Book Consultation &rarr;</a></div>
+      <div class="track t1"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10h14v11M12 3L3 8h18z"/></svg><span class="tk-n">College &amp; Graduate Admissions</span><a href="get-involved.html#inquire">Schedule Consultation &rarr;</a></div>
     </div>
     <div class="reveal d1" id="packs">
       <p class="pack-label">Academic Coaching Packages</p>
@@ -1086,7 +1094,7 @@ section{position:relative}
     <div class="ready-btns">
       <a href="apply.html" class="btn btn-navy-solid">Apply to Academy &nbsp;&rarr;</a>
       <a href="#icp" class="btn btn-white-solid">Book Coaching &nbsp;&rarr;</a>
-      <a href="get-involved.html" class="btn btn-burg-solid">Partner With Us &nbsp;&rarr;</a>
+      <a href="get-involved.html" class="btn btn-gold" style="border-color:var(--navy)">Partner With Us &nbsp;&rarr;</a>
     </div>
   </div>
 </section>

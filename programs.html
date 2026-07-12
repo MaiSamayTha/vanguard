@@ -375,7 +375,8 @@ section{position:relative}
 .footer-inner{max-width:940px;margin:0 auto;position:relative;z-index:1}
 .footer-badge{display:flex;justify-content:center;margin-bottom:.4rem}
 .footer-badge img{width:clamp(108px,14vw,146px);height:auto;filter:drop-shadow(0 12px 26px rgba(0,0,0,.45))}
-.footer-tagline{text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.2vw,1.35rem);background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;margin:0 0 1.8rem}
+.footer-tagline{text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.2vw,1.35rem);color:#fff;margin:0 0 1.8rem}
+.footer-tagline .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
 .footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;padding:2.4rem 0;border-top:1px solid rgba(201,163,65,.22);border-bottom:1px solid rgba(201,163,65,.22);text-align:center}
 .footer-cols>div{display:flex;flex-direction:column;align-items:center}
 .footer h5{color:#fff;font-family:var(--serif);font-weight:700;font-size:1.05rem;letter-spacing:.02em;margin:0 0 1.1rem;position:relative;padding-bottom:.7rem}
@@ -514,7 +515,7 @@ section{position:relative}
 
 /* --- Slow metallic shimmer on two-tone gold text --- */
 @keyframes goldShimmer{0%{background-position:0% 50%}100%{background-position:-200% 50%}}
-.title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline{
+.title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline .gold{
   background-size:200% auto;animation:goldShimmer 7s linear infinite;
 }
 .stat-num{animation-duration:8s}
@@ -547,7 +548,7 @@ section{position:relative}
 .nav-cta:hover{transform:translateY(-1px)}
 
 @media(prefers-reduced-motion:reduce){
-  .title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline,.hero-laurel svg,.hero::before{animation:none}
+  .title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline .gold,.hero-laurel svg,.hero::before{animation:none}
   .btn:hover::after{animation:none;display:none}
   .reveal{filter:none;transform:none}
   .crest,.crest::before,.crest svg{transition:none}
@@ -1108,7 +1109,7 @@ document.querySelectorAll('.fq button').forEach(btn=>{
     <div class="footer-badge">
       <a href="index.html" aria-label="Vanguard STEM Academy home"><img src="assets/footer-badge.png" alt="Vanguard STEM Academy crest"></a>
     </div>
-    <p class="footer-tagline">Real Projects. Real Experience. Real Impact.</p>
+    <p class="footer-tagline">Real Projects. Real Experience. <span class="gold">Real Impact.</span></p>
     <div class="footer-newsletter">
       <div class="fn-txt">
         <h4 style="color:#fff;font-family:var(--serif);font-size:1.5rem">Stay Connected</h4>

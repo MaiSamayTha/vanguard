@@ -373,7 +373,8 @@ section{position:relative}
 .footer-inner{max-width:940px;margin:0 auto;position:relative;z-index:1}
 .footer-badge{display:flex;justify-content:center;margin-bottom:.4rem}
 .footer-badge img{width:clamp(108px,14vw,146px);height:auto;filter:drop-shadow(0 12px 26px rgba(0,0,0,.45))}
-.footer-tagline{text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.2vw,1.35rem);background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;margin:0 0 1.8rem}
+.footer-tagline{text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.2vw,1.35rem);color:#fff;margin:0 0 1.8rem}
+.footer-tagline .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
 .footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;padding:2.4rem 0;border-top:1px solid rgba(201,163,65,.22);border-bottom:1px solid rgba(201,163,65,.22);text-align:center}
 .footer-cols>div{display:flex;flex-direction:column;align-items:center}
 .footer h5{color:#fff;font-family:var(--serif);font-weight:700;font-size:1.05rem;letter-spacing:.02em;margin:0 0 1.1rem;position:relative;padding-bottom:.7rem}
@@ -512,7 +513,7 @@ section{position:relative}
 
 /* --- Slow metallic shimmer on two-tone gold text --- */
 @keyframes goldShimmer{0%{background-position:0% 50%}100%{background-position:-200% 50%}}
-.title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline{
+.title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline .gold{
   background-size:200% auto;animation:goldShimmer 7s linear infinite;
 }
 .stat-num{animation-duration:8s}
@@ -545,7 +546,7 @@ section{position:relative}
 .nav-cta:hover{transform:translateY(-1px)}
 
 @media(prefers-reduced-motion:reduce){
-  .title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline,.hero-laurel svg,.hero::before{animation:none}
+  .title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline .gold,.hero-laurel svg,.hero::before{animation:none}
   .btn:hover::after{animation:none;display:none}
   .reveal{filter:none;transform:none}
   .crest,.crest::before,.crest svg{transition:none}
@@ -851,7 +852,8 @@ section{position:relative}
 .tp-item .p-logo small{font-size:.5rem}
 .tp-item .tp-role{display:block;font-size:.56rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-top:.4rem}
 .vs-band{background:linear-gradient(150deg,#06163a,#0c2755);color:#fff;padding:clamp(2.4rem,4.6vw,3.4rem) 0;border-top:3px solid var(--gold)}
-.vs-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(1.8rem,3.4vw,3rem);align-items:start}
+.vs-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(2.6rem,5vw,4.5rem);align-items:start}
+.vs-grid>.reveal.d1{padding-left:clamp(1.6rem,3vw,2.6rem);border-left:3px solid var(--gold)}
 .vs-h{color:var(--gold-light);font-weight:800;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;text-align:center;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:center;gap:.8rem}
 .vs-h::before,.vs-h::after{content:"";width:28px;height:1.5px;background:var(--gold-grad)}
 .vs-compare{display:grid;grid-template-columns:1fr auto 1fr;gap:.8rem;align-items:center}
@@ -869,13 +871,14 @@ section{position:relative}
 .vs-van li{color:#f0e6cd}
 .vs-van li svg{stroke:var(--gold-2)}
 .vs-badge{width:44px;height:44px;border-radius:50%;background:var(--gold-grad);color:var(--navy);font-weight:800;font-size:.72rem;display:grid;place-items:center;box-shadow:0 6px 18px rgba(169,132,46,.5)}
-.jr-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.4rem}
-.jr-step{text-align:center;padding:0 .3rem;position:relative}
-.jr-step:not(:last-child)::after{content:"\2794";position:absolute;right:-.55rem;top:22px;color:var(--gold-2);font-size:.85rem}
-.jr-step .jr-ic{width:52px;height:52px;border-radius:50%;border:1.5px solid var(--gold);display:grid;place-items:center;margin:0 auto .55rem;background:rgba(201,163,65,.08)}
-.jr-step .jr-ic svg{width:23px;height:23px;stroke:var(--gold-2);fill:none;stroke-width:1.6}
-.jr-step .jr-t{color:#fff;font-weight:800;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.3rem;line-height:1.4}
-.jr-step p{color:#9fb0c6;font-size:.58rem;line-height:1.45;margin:0}
+.jr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem 1rem}
+.jr-step{text-align:center;padding:0 .4rem;position:relative}
+.jr-step:not(:last-child)::after{content:"\2794";position:absolute;right:-.65rem;top:28px;color:var(--gold-2);font-size:1.1rem}
+.jr-step:nth-child(3)::after{display:none}
+.jr-step .jr-ic{width:66px;height:66px;border-radius:50%;border:1.5px solid var(--gold);display:grid;place-items:center;margin:0 auto .7rem;background:rgba(201,163,65,.08)}
+.jr-step .jr-ic svg{width:29px;height:29px;stroke:var(--gold-2);fill:none;stroke-width:1.6}
+.jr-step .jr-t{color:#fff;font-weight:800;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.4rem;line-height:1.4}
+.jr-step p{color:#c3cfe0;font-size:.7rem;line-height:1.5;margin:0}
 .greater{background:linear-gradient(150deg,#5c1522,#7a2334 55%,#5c1522);padding:clamp(1.6rem,3vw,2.2rem) 0;border-top:3px solid var(--gold)}
 .greater-inner{display:flex;align-items:center;gap:1.3rem;flex-wrap:wrap}
 .greater .gi-ic svg{width:40px;height:40px;stroke:var(--gold-2);fill:none;stroke-width:1.5}
@@ -886,6 +889,7 @@ section{position:relative}
 .greater-btns .btn{padding:.8rem 1.2rem;font-size:.66rem}
 @media(max-width:1024px){
   .aca-grid,.proj-card,.proj-card.burg,.stv-top,.vs-grid{grid-template-columns:1fr}
+  .vs-grid>.reveal.d1{border-left:none;padding-left:0;margin-top:2rem;padding-top:2rem;border-top:3px solid var(--gold)}
   .proj-card.burg .proj-img{order:-1}
   .aca-strip-card{grid-template-columns:repeat(3,1fr);gap:1.3rem .3rem;padding:1.3rem .6rem}
   .as-item:nth-child(3)::after{display:none}
@@ -1133,7 +1137,7 @@ section{position:relative}
     <div class="footer-badge">
       <a href="index.html" aria-label="Vanguard STEM Academy home"><img src="assets/footer-badge.png" alt="Vanguard STEM Academy crest"></a>
     </div>
-    <p class="footer-tagline">Real Projects. Real Experience. Real Impact.</p>
+    <p class="footer-tagline">Real Projects. Real Experience. <span class="gold">Real Impact.</span></p>
     <div class="footer-newsletter">
       <div class="fn-txt">
         <h4 style="color:#fff;font-family:var(--serif);font-size:1.5rem">Stay Connected</h4>

@@ -460,7 +460,8 @@ section{position:relative}
 .footer-inner{max-width:940px;margin:0 auto;position:relative;z-index:1}
 .footer-badge{display:flex;justify-content:center;margin-bottom:.4rem}
 .footer-badge img{width:clamp(108px,14vw,146px);height:auto;filter:drop-shadow(0 12px 26px rgba(0,0,0,.45))}
-.footer-tagline{text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.2vw,1.35rem);background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;margin:0 0 1.8rem}
+.footer-tagline{text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.2vw,1.35rem);color:#fff;margin:0 0 1.8rem}
+.footer-tagline .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
 .footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;padding:2.4rem 0;border-top:1px solid rgba(201,163,65,.22);border-bottom:1px solid rgba(201,163,65,.22);text-align:center}
 .footer-cols>div{display:flex;flex-direction:column;align-items:center}
 .footer h5{color:#fff;font-family:var(--serif);font-weight:700;font-size:1.05rem;letter-spacing:.02em;margin:0 0 1.1rem;position:relative;padding-bottom:.7rem}
@@ -599,7 +600,7 @@ section{position:relative}
 
 /* --- Slow metallic shimmer on two-tone gold text --- */
 @keyframes goldShimmer{0%{background-position:0% 50%}100%{background-position:-200% 50%}}
-.title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline{
+.title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline .gold{
   background-size:200% auto;animation:goldShimmer 7s linear infinite;
 }
 .stat-num{animation-duration:8s}
@@ -632,7 +633,7 @@ section{position:relative}
 .nav-cta:hover{transform:translateY(-1px)}
 
 @media(prefers-reduced-motion:reduce){
-  .title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline,.hero-laurel svg,.hero::before{animation:none}
+  .title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline .gold,.hero-laurel svg,.hero::before{animation:none}
   .btn:hover::after{animation:none;display:none}
   .reveal{filter:none;transform:none}
   .crest,.crest::before,.crest svg{transition:none}
@@ -968,7 +969,7 @@ section{position:relative}
 .story-card h4{font-size:.8rem;font-weight:800;color:var(--gold-deep);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.15rem}
 .story-card .st-role{font-size:.64rem;font-weight:700;color:var(--navy);margin-bottom:.35rem}
 .story-card p{font-size:.64rem;color:var(--muted);line-height:1.5;margin:0}
-.gi-final{background:linear-gradient(120deg,#04102b 0%,#0a1f47 60%,#123063 100%);border-top:3px solid var(--gold);padding:clamp(2rem,4vw,3rem) 0;position:relative;overflow:hidden}
+.gi-final{background:linear-gradient(120deg,#4a1119 0%,#5c1522 60%,#7a2334 100%);border-top:3px solid var(--gold);padding:clamp(2rem,4vw,3rem) 0;position:relative;overflow:hidden}
 .gi-final h2{font-family:var(--serif);text-align:center;font-size:clamp(19px,2.1vw,28px);text-transform:uppercase;letter-spacing:.04em;color:#fff;margin-bottom:.5rem}
 .gi-final h2 .g{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
 .gi-final .gf-sub{text-align:center;color:#c3cee2;font-size:.84rem;margin-bottom:1.6rem}
@@ -1169,7 +1170,7 @@ section{position:relative}
     <div class="footer-badge">
       <a href="index.html" aria-label="Vanguard STEM Academy home"><img src="assets/footer-badge.png" alt="Vanguard STEM Academy crest"></a>
     </div>
-    <p class="footer-tagline">Real Projects. Real Experience. Real Impact.</p>
+    <p class="footer-tagline">Real Projects. Real Experience. <span class="gold">Real Impact.</span></p>
     <div class="footer-newsletter">
       <div class="fn-txt">
         <h4 style="color:#fff;font-family:var(--serif);font-size:1.5rem">Stay Connected</h4>

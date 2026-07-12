@@ -855,6 +855,10 @@ section{position:relative}
 .faq2 .eyebrow,.fut .eyebrow{justify-content:flex-start}
 .faq2 h2,.fut h2{font-family:var(--serif);font-size:clamp(20px,2.2vw,28px);color:var(--navy);margin-bottom:1.1rem}
 .fq{border:1px solid var(--line);border-radius:8px;background:#fff;margin-bottom:.55rem;overflow:hidden}
+.fq.f1{background:#f4f8fd;border-color:#d5e2f3}
+.fq.f2{background:#f1f9ef;border-color:#cfe6cb}
+.fq.f3{background:#f6f2fb;border-color:#ddd0ef}
+.fq.f4{background:#fdf7e9;border-color:#ecd9a8}
 .fq button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:none;border:none;padding:.8rem 1rem;font-family:var(--sans);font-weight:700;font-size:.82rem;color:var(--navy);cursor:pointer;text-align:left}
 .fq button .pl{flex:none;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--gold);color:var(--gold-deep);display:grid;place-items:center;font-size:.9rem;line-height:1;transition:.3s}
 .fq.open button .pl{transform:rotate(45deg);background:var(--gold-grad);color:var(--navy)}
@@ -889,6 +893,8 @@ section{position:relative}
 .btn-white-solid:hover{color:var(--navy);box-shadow:0 10px 26px rgba(6,22,58,.25)}
 .btn-navy-ghost{background:transparent;color:var(--navy)}
 .btn-navy-ghost:hover{background:var(--navy);color:#fff}
+.btn-burg-solid{background:linear-gradient(135deg,#6E1E2C,#8a2a3a);color:#fff;border-color:var(--gold)}
+.btn-burg-solid:hover{filter:brightness(1.1)}
 @media(max-width:1024px){
   .prog-hero .ph-media{width:100%;opacity:.3}
   .prog-hero .ph-media::after{background:linear-gradient(90deg,#081a3c 8%,rgba(8,26,60,.62))}
@@ -1036,7 +1042,7 @@ section{position:relative}
 </section>
 
 <!-- ============ ICP BAND (bottom) ============ -->
-<div style="border-top:3px solid var(--gold)" role="presentation"></div>
+<div class="icp-band" role="presentation"><h2 style="visibility:hidden">Individual Coaching Program</h2></div>
 
 <!-- ============ FAQ + FUTURE ============ -->
 <section class="sec cream" aria-label="FAQ and future programs" data-screen-label="FAQ and future programs" style="padding:clamp(2.4rem,4.6vw,3.4rem) 0">
@@ -1044,12 +1050,12 @@ section{position:relative}
     <div class="faq2 reveal">
       <p class="eyebrow">Questions</p>
       <h2>Frequently Asked</h2>
-      <div class="fq"><button aria-expanded="false">How do coaching sessions take place?<span class="pl">+</span></button><div class="fa"><p>Sessions are one-on-one with your dedicated coach, held virtually or in person in Atlantic City, and scheduled around your availability.</p></div></div>
-      <div class="fq"><button aria-expanded="false">Which tracks show pricing, and which are consultation-based?<span class="pl">+</span></button><div class="fa"><p>Academic Coaching has published packages. Career, Business Intelligence, Executive, and Admissions coaching are scoped in a free consultation so plans match your goals.</p></div></div>
-      <div class="fq"><button aria-expanded="false">Can I switch or upgrade my package later?<span class="pl">+</span></button><div class="fa"><p>Yes — you can upgrade at any time and we credit the sessions you&rsquo;ve already completed toward the larger package.</p></div></div>
-      <div class="fq"><button aria-expanded="false">Do you offer coaching for both students and working professionals?<span class="pl">+</span></button><div class="fa"><p>Yes. We coach middle school through college students as well as early-career and executive professionals.</p></div></div>
-      <div class="fq"><button aria-expanded="false">Can coaching be virtual?<span class="pl">+</span></button><div class="fa"><p>Absolutely — most coaching is delivered virtually, so you can work with us from anywhere.</p></div></div>
-      <div class="fq"><button aria-expanded="false">Which program is right for me?<span class="pl">+</span></button><div class="fa"><p>Schedule a free consultation and we&rsquo;ll recommend the track and package that best fits your goals, timeline, and budget.</p></div></div>
+      <div class="fq f1"><button aria-expanded="false">How do coaching sessions take place?<span class="pl">+</span></button><div class="fa"><p>Sessions are one-on-one with your dedicated coach, held virtually or in person in Atlantic City, and scheduled around your availability.</p></div></div>
+      <div class="fq f2"><button aria-expanded="false">Which tracks show pricing, and which are consultation-based?<span class="pl">+</span></button><div class="fa"><p>Academic Coaching has published packages. Career, Business Intelligence, Executive, and Admissions coaching are scoped in a free consultation so plans match your goals.</p></div></div>
+      <div class="fq f3"><button aria-expanded="false">Can I switch or upgrade my package later?<span class="pl">+</span></button><div class="fa"><p>Yes — you can upgrade at any time and we credit the sessions you&rsquo;ve already completed toward the larger package.</p></div></div>
+      <div class="fq f4"><button aria-expanded="false">Do you offer coaching for both students and working professionals?<span class="pl">+</span></button><div class="fa"><p>Yes. We coach middle school through college students as well as early-career and executive professionals.</p></div></div>
+      <div class="fq f1"><button aria-expanded="false">Can coaching be virtual?<span class="pl">+</span></button><div class="fa"><p>Absolutely — most coaching is delivered virtually, so you can work with us from anywhere.</p></div></div>
+      <div class="fq f2"><button aria-expanded="false">Which program is right for me?<span class="pl">+</span></button><div class="fa"><p>Schedule a free consultation and we&rsquo;ll recommend the track and package that best fits your goals, timeline, and budget.</p></div></div>
       <a href="get-involved.html#inquire" class="btn btn-primary" style="margin-top:1rem;padding:.85rem 1.5rem;font-size:.7rem">Schedule a Consultation</a>
       <p style="font-size:.78rem;color:var(--muted);margin-top:.7rem">Not sure which package is right for you?</p>
     </div>
@@ -1079,7 +1085,7 @@ section{position:relative}
     <div class="ready-btns">
       <a href="apply.html" class="btn btn-navy-solid">Apply to Academy &nbsp;&rarr;</a>
       <a href="#icp" class="btn btn-white-solid">Book Coaching &nbsp;&rarr;</a>
-      <a href="get-involved.html" class="btn btn-navy-ghost">Partner With Us &nbsp;&rarr;</a>
+      <a href="get-involved.html" class="btn btn-burg-solid">Partner With Us &nbsp;&rarr;</a>
     </div>
   </div>
 </section>

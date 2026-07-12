@@ -46,7 +46,7 @@ class VanguardNav extends HTMLElement {
       </li>
       <li><a href="apply.html">Apply to the Academy</a></li>
       <li>
-        <a href="impact.html">Our Success Stories <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
+        <a href="impact.html">OUR IMPACT <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
         <div class="dropdown" role="menu">
           <a href="impact.html#metrics" role="menuitem"><strong>Metrics</strong><span>By the numbers</span></a>
           <a href="impact.html#stories" role="menuitem"><strong>Success Stories</strong><span>Student outcomes</span></a>
@@ -97,7 +97,7 @@ class VanguardNav extends HTMLElement {
     </li>
     <li><a href="apply.html">Apply to the Academy</a></li>
     <li>
-      <button class="msub" aria-expanded="false">Our Success Stories <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></button>
+      <button class="msub" aria-expanded="false">OUR IMPACT <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></button>
       <div class="sub">
         <a href="impact.html#metrics">Metrics</a>
         <a href="impact.html#stories">Success Stories</a>

@@ -7,7 +7,7 @@
 <meta name="description" content="Partner with Vanguard STEM Academy, sponsor a student, become a mentor, or reach out with a question. There's a role for you in preparing the next generation of innovators.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    VANGUARD STEM ACADEMY — SHARED DESIGN SYSTEM
@@ -41,7 +41,7 @@
   --maxw:1240px;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;font-size:16px}
+html{scroll-behavior:smooth}
 body{
   margin:0;font-family:var(--sans);color:var(--ink);
   background:var(--cream);line-height:1.6;font-size:17px;
@@ -103,9 +103,90 @@ section{position:relative}
 /* ============================================================
    UTILITY BAR
    ============================================================ */
+.utilbar{background:#06163a;color:#cdd6e4;position:relative;z-index:60;border-bottom:1px solid rgba(201,163,65,.25)}
+.utilbar .container{display:flex;justify-content:flex-end;align-items:center;gap:.2rem;height:40px}
+.utilbar a{color:#cdd6e4;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:.4rem .95rem;position:relative}
+.utilbar a:not(:last-child)::after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);height:12px;width:1px;background:rgba(201,163,65,.35)}
+.utilbar a:hover{color:var(--gold-light)}
+.utilbar a.donate{color:var(--gold-light)}
+
 /* ============================================================
-   UTILITY BAR + MAIN NAV: moved to assets/nav.css (loaded at end of <head>)
+   MAIN NAV
    ============================================================ */
+.nav{position:sticky;top:0;z-index:55;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:box-shadow .3s,background .3s}
+.nav.scrolled{box-shadow:0 6px 26px rgba(2,25,52,.12);background:rgba(255,255,255,.95)}
+.nav .container{display:flex;align-items:center;justify-content:space-between;height:104px;gap:1.5rem}
+.brand{display:flex;align-items:center;line-height:1;text-decoration:none}
+.brand img{height:94px;width:auto;display:block}
+.navlinks{display:flex;align-items:center;gap:.3rem;list-style:none;margin:0;padding:0}
+.navlinks>li{position:relative}
+.navlinks>li>a,.navlinks>li>button{
+  font-family:'Oswald',sans-serif;font-weight:600;font-size:.95rem;text-transform:uppercase;color:var(--navy);
+  padding:.55rem .5rem;display:inline-flex;align-items:center;gap:.35rem;background:none;
+  border:none;cursor:pointer;letter-spacing:.01em;position:relative;white-space:nowrap;
+}
+.navlinks>li>a[aria-current="page"]{color:var(--gold-deep)}
+.navlinks>li>a::after{content:"";position:absolute;left:.85rem;right:.85rem;bottom:.3rem;height:2px;background:var(--gold-grad);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.navlinks>li>a:hover{color:var(--navy)}
+.navlinks>li>a:hover::after{transform:scaleX(1)}
+.navlinks .caret{width:9px;height:9px;stroke:var(--gold-deep);stroke-width:2.4;fill:none;transition:transform .3s}
+.navlinks li:hover .caret{transform:rotate(180deg)}
+.nav-cta{border:1.5px solid var(--gold)!important;border-radius:2px;color:var(--navy)!important;padding:.55rem 1.15rem!important;font-weight:700!important;transition:all .3s}
+.nav-cta:hover{background:var(--gold-grad);box-shadow:0 6px 18px rgba(201,163,65,.35)}
+.search-btn{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;transition:all .3s}
+.search-btn:hover{border-color:var(--gold);box-shadow:0 6px 16px rgba(201,163,65,.25)}
+.search-btn svg{width:18px;height:18px;stroke:var(--navy);fill:none;stroke-width:2}
+
+/* Dropdown */
+.dropdown{
+  position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%) translateY(10px);
+  min-width:270px;background:var(--navy);border:1px solid rgba(201,163,65,.4);border-radius:14px;
+  padding:.6rem;opacity:0;visibility:hidden;transition:all .3s var(--ease);box-shadow:var(--shadow-lg);
+  z-index:60;
+}
+.dropdown::before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:var(--navy);border-left:1px solid rgba(201,163,65,.4);border-top:1px solid rgba(201,163,65,.4)}
+.navlinks>li:hover .dropdown,.navlinks>li:focus-within .dropdown{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.dropdown a{display:flex;flex-direction:column;gap:2px;padding:.7rem .95rem;border-radius:3px;color:#e8edf5;transition:all .25s;border-left:2px solid transparent}
+.dropdown a strong{font-weight:600;font-size:.92rem;color:#fff;font-family:var(--sans)}
+.dropdown a span{font-size:.76rem;color:#9fb0c6}
+.dropdown a:hover{background:rgba(201,163,65,.14);border-left-color:var(--gold);padding-left:1.15rem}
+.dropdown a:hover strong{color:var(--gold-light)}
+
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:46px;height:46px;border:1.5px solid var(--line);border-radius:4px;background:#fff;cursor:pointer;padding:0}
+.hamburger span{width:22px;height:2px;background:var(--navy);margin:0 auto;transition:all .3s;border-radius:2px}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile panel */
+.mobile-panel{position:fixed;inset:0 0 0 auto;width:min(90vw,400px);background:var(--navy);z-index:80;transform:translateX(100%);transition:transform .4s var(--ease);overflow-y:auto;padding:1.5rem 1.4rem 3rem;box-shadow:var(--shadow-lg)}
+.mobile-panel.open{transform:translateX(0)}
+.mobile-panel .mp-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:1.2rem;margin-bottom:1rem;border-bottom:1px solid rgba(201,163,65,.3)}
+.mp-close{width:42px;height:42px;border:1px solid rgba(201,163,65,.4);background:none;border-radius:50%;color:var(--gold-light);font-size:1.5rem;cursor:pointer;line-height:1}
+.mp-links{list-style:none;margin:0;padding:0}
+.mp-links>li{border-bottom:1px solid rgba(255,255,255,.08)}
+.mp-links>li>a,.mp-links>li>button{width:100%;display:flex;justify-content:space-between;align-items:center;padding:1rem .3rem;color:#eaf0f8;font-family:var(--sans);font-weight:600;font-size:1.05rem;background:none;border:none;text-align:left;cursor:pointer}
+.mp-links .sub{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
+.mp-links .sub.open{max-height:400px}
+.mp-links .sub a{display:block;padding:.6rem 1rem;color:#a9b8cd;font-size:.95rem}
+.mp-links .sub a:hover{color:var(--gold-light)}
+.mp-links button .caret{width:11px;height:11px;stroke:var(--gold);stroke-width:2.4;fill:none;transition:transform .3s}
+.mp-links button.open .caret{transform:rotate(180deg)}
+.mp-util{margin-top:1.5rem;display:flex;flex-direction:column;gap:.6rem}
+.overlay-dim{position:fixed;inset:0;background:rgba(6,17,42,.55);z-index:75;opacity:0;visibility:hidden;transition:.35s;backdrop-filter:blur(2px)}
+.overlay-dim.show{opacity:1;visibility:visible}
+
+/* Search overlay */
+.search-overlay{position:fixed;inset:0;background:rgba(9,28,68,.97);z-index:90;display:grid;place-items:center;opacity:0;visibility:hidden;transition:.4s;backdrop-filter:blur(6px)}
+.search-overlay.open{opacity:1;visibility:visible}
+.search-overlay .sc-inner{width:min(760px,90vw);text-align:center}
+.search-overlay .eyebrow{justify-content:center;color:var(--gold-light)}
+.search-overlay input{width:100%;background:none;border:none;border-bottom:2px solid var(--gold);color:#fff;font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.6rem);padding:.6rem .2rem;text-align:center;outline:none}
+.search-overlay input::placeholder{color:rgba(255,255,255,.35)}
+.sc-close{position:absolute;top:2rem;right:2rem;width:54px;height:54px;border-radius:50%;border:1px solid rgba(201,163,65,.5);background:none;color:var(--gold-light);font-size:1.8rem;cursor:pointer}
+.sc-suggest{margin-top:2rem;display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
+.sc-suggest a{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:#b9c6d8;border:1px solid rgba(201,163,65,.35);padding:.5rem 1rem;border-radius:40px}
+.sc-suggest a:hover{background:var(--gold-grad);color:var(--navy);border-color:transparent}
 
 /* Image placeholder */
 .ph{background:
@@ -213,7 +294,7 @@ section{position:relative}
 /* ============================================================
    FINAL CTA
    ============================================================ */
-.final-cta{background:var(--navy);color:#fff;text-align:center;padding:clamp(4rem,8vw,6.5rem) 0;position:relative;overflow:hidden}
+.final-cta{background:linear-gradient(160deg,#5c1522,#7a2334 60%,#5c1522);color:#fff;text-align:center;padding:clamp(4rem,8vw,6.5rem) 0;position:relative;overflow:hidden}
 .final-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,163,65,.12),transparent 60%)}
 .final-cta .laurel-head{display:flex;align-items:center;justify-content:center;gap:1.4rem;margin-bottom:1.4rem;position:relative;z-index:1}
 .final-cta .laurel-head svg{width:46px;height:66px;fill:var(--gold)}
@@ -284,12 +365,13 @@ section{position:relative}
 /* ============================================================
    RESPONSIVE (shared)
    ============================================================ */
-@media(max-width:1360px){
+@media(max-width:1024px){
   .navlinks{gap:0}
+  .navlinks>li>a,.navlinks>li>button{padding:.6rem .6rem;font-size:.84rem}
   .iam-grid{grid-template-columns:repeat(2,1fr)}
   .pricing-grid{grid-template-columns:repeat(2,1fr)}
 }
-@media(max-width:1360px){
+@media(max-width:1024px){
   .desktop-only{display:none!important}
   .hamburger{display:flex}
   .fire-grid,.who-grid,.contact-grid{grid-template-columns:1fr}
@@ -367,6 +449,12 @@ section{position:relative}
   .reveal{filter:none;transform:none}
   .crest,.crest::before,.crest svg{transition:none}
 }
+/* ---- Original-style all-caps nav ---- */
+.nav>.container{max-width:1560px}
+.navlinks{gap:.1rem}
+.navlinks>li>a:hover{color:var(--gold-deep)}
+.navlinks>li>a::after{left:.5rem!important;right:.5rem!important}
+@media(max-width:1240px){.navlinks.desktop-only{display:none!important}.hamburger{display:flex!important}}
 </style>
 <style>
 /* ============================================================
@@ -383,19 +471,148 @@ section{position:relative}
 .page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% -10%,rgba(201,163,65,.16),transparent 55%);pointer-events:none}
 .page-hero .container{position:relative;z-index:1;max-width:900px}
 .page-hero .eyebrow{justify-content:center;color:var(--gold-light)}
-.page-hero h1{font-size:clamp(2.4rem,5vw,3.8rem);letter-spacing:-.01em;margin-bottom:1.2rem}
+.page-hero h1{font-size:clamp(2.4rem,5vw,3.8rem);letter-spacing:-.01em;margin-bottom:1.2rem;color:#fff}
 .page-hero h1 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
 .page-hero .lead{color:#c3cee0;margin:0 auto;font-size:1.15rem}
 .page-hero .laurel-head{display:flex;align-items:center;justify-content:center;gap:1.2rem;margin-bottom:1.3rem}
 .page-hero .laurel-head svg{width:34px;height:48px;fill:var(--gold)}
 .page-hero .laurel-head svg.r{transform:scaleX(-1)}
 </style>
-<link rel="stylesheet" href="assets/nav.css">
 </head>
 <body>
 
-<!-- ============ VANGUARD NAV COMPONENT ============ -->
-<vanguard-nav></vanguard-nav>
+<!-- ============ SKIP LINK ============ -->
+<a href="#main" class="btn" style="position:absolute;left:-9999px;top:0;z-index:200;background:var(--navy);color:#fff" onfocus="this.style.left='10px';this.style.top='10px'" onblur="this.style.left='-9999px'">Skip to content</a>
+
+<!-- ============ UTILITY BAR ============ -->
+<div class="utilbar">
+  <div class="container">
+    <a href="index.html#apply">Apply</a>
+    <a href="portal.html">Portal Login</a>
+    <a href="get-involved.html#inquire">Contact</a>
+    <a href="get-involved.html#sponsor" class="donate">Sponsor a Student</a>
+  </div>
+</div>
+
+<!-- ============ MAIN NAV ============ -->
+<header>
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="container">
+    <a href="index.html" class="brand" aria-label="Vanguard STEM Academy home">
+      <img src="assets/vanguard-logo-transparent.png" alt="Vanguard STEM Academy crest logo">
+    </a>
+    <ul class="navlinks desktop-only">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="leadership.html">The Leadership Team</a></li>
+      <li>
+        <a href="programs.html">Individual Coaching Program (ICP) <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
+        <div class="dropdown" role="menu">
+          <a href="programs.html#coaching" role="menuitem"><strong>Individual Coaching</strong><span>Students &amp; professionals</span></a>
+          <a href="academy.html" role="menuitem"><strong>Youth STEM Academy</strong><span>Grades 8&ndash;12</span></a>
+          <a href="programs.html#bi" role="menuitem"><strong>Business Intelligence Academy</strong><span>Adults &amp; professionals</span></a>
+          <a href="programs.html#mentorship" role="menuitem"><strong>Executive Mentorship</strong><span>Fireside chats &amp; panels</span></a>
+          <a href="programs.html#workforce" role="menuitem"><strong>Corporate &amp; Workforce Training</strong><span>Organizations</span></a>
+          <a href="programs.html#ai" role="menuitem"><strong>AI Innovation Academy</strong><span>Coming soon</span></a>
+        </div>
+      </li>
+      <li>
+        <a href="academy.html">The Academy <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
+        <div class="dropdown" role="menu">
+          <a href="academy.html#overview" role="menuitem"><strong>Overview</strong><span>Who it serves &amp; the model</span></a>
+          <a href="academy.html#experiences" role="menuitem"><strong>Signature Experiences</strong><span>Consulting capstones</span></a>
+          <a href="academy.html#cohorts" role="menuitem"><strong>Future Cohorts</strong><span>Learning pathways</span></a>
+          <a href="apply.html" role="menuitem"><strong>Apply</strong><span>Admissions steps</span></a>
+        </div>
+      </li>
+      <li><a href="apply.html">Apply to the Academy</a></li>
+      <li>
+        <a href="impact.html">Our Success Stories <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
+        <div class="dropdown" role="menu">
+          <a href="impact.html#metrics" role="menuitem"><strong>Metrics</strong><span>By the numbers</span></a>
+          <a href="impact.html#stories" role="menuitem"><strong>Success Stories</strong><span>Student outcomes</span></a>
+          <a href="impact.html#recognition" role="menuitem"><strong>Recognition</strong><span>Honors &amp; invitations</span></a>
+        </div>
+      </li>
+      <li><a href="get-involved.html" aria-current="page">Get Involved</a></li>
+    </ul>
+    <div style="display:flex;align-items:center;gap:.7rem">
+      <button class="search-btn" id="searchOpen" aria-label="Open search">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+</header>
+
+<!-- ============ MOBILE PANEL ============ -->
+<div class="overlay-dim" id="dim"></div>
+<aside class="mobile-panel" id="mobilePanel" aria-label="Mobile menu">
+  <div class="mp-head">
+    <img src="assets/footer-badge.png" alt="Vanguard STEM Academy" style="height:52px;width:auto;border-radius:8px">
+    <button class="mp-close" id="mpClose" aria-label="Close menu">&times;</button>
+  </div>
+  <ul class="mp-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="leadership.html">The Leadership Team</a></li>
+    <li>
+      <button class="msub" aria-expanded="false">Individual Coaching Program (ICP) <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></button>
+      <div class="sub">
+        <a href="programs.html#coaching">Individual Coaching</a>
+        <a href="academy.html">Youth STEM Academy</a>
+        <a href="programs.html#bi">Business Intelligence Academy</a>
+        <a href="programs.html#mentorship">Executive Mentorship</a>
+        <a href="programs.html#workforce">Corporate &amp; Workforce Training</a>
+        <a href="programs.html#ai">AI Innovation Academy</a>
+      </div>
+    </li>
+    <li>
+      <button class="msub" aria-expanded="false">The Academy <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></button>
+      <div class="sub">
+        <a href="academy.html#overview">Overview</a>
+        <a href="academy.html#experiences">Signature Experiences</a>
+        <a href="academy.html#cohorts">Future Cohorts</a>
+        <a href="apply.html">Apply</a>
+      </div>
+    </li>
+    <li><a href="apply.html">Apply to the Academy</a></li>
+    <li>
+      <button class="msub" aria-expanded="false">Our Success Stories <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></button>
+      <div class="sub">
+        <a href="impact.html#metrics">Metrics</a>
+        <a href="impact.html#stories">Success Stories</a>
+        <a href="impact.html#recognition">Recognition</a>
+      </div>
+    </li>
+    <li><a href="get-involved.html">Get Involved</a></li>
+  </ul>
+  <div class="mp-util">
+    <a href="portal.html" class="btn btn-secondary">Login / Portal</a>
+    <a href="apply.html" class="btn btn-gold">Apply to the Academy</a>
+  </div>
+  <div style="margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.8rem">
+    <a href="get-involved.html#inquire" style="color:#9fb0c6">Contact</a>
+    <a href="get-involved.html#sponsor" style="color:var(--gold-light)">Sponsor a Student</a>
+  </div>
+</aside>
+
+<!-- ============ SEARCH OVERLAY ============ -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search">
+  <button class="sc-close" id="scClose" aria-label="Close search">&times;</button>
+  <div class="sc-inner">
+    <p class="eyebrow center">Search Vanguard</p>
+    <form onsubmit="return false">
+      <input type="search" id="searchInput" placeholder="Search programs, impact, people…" aria-label="Search the site">
+    </form>
+    <div class="sc-suggest">
+      <a href="academy.html">The Academy</a>
+      <a href="programs.html#coaching">Coaching</a>
+      <a href="impact.html">Our Impact</a>
+      <a href="get-involved.html">Partner With Us</a>
+      <a href="leadership.html">Leadership</a>
+    </div>
+  </div>
+</div>
 
 <main id="main">
 
@@ -419,7 +636,7 @@ section{position:relative}
   </div>
 </section>
 
-<div class="wave" aria-hidden="true" style="margin-top:-1px"><svg viewBox="0 0 1440 100" preserveAspectRatio="none"><path d="M0 0 C 360 90 1080 90 1440 0 L1440 100 L0 100 Z" fill="#0b2251"/></svg><svg viewBox="0 0 1440 90" preserveAspectRatio="none" style="margin-top:-1px"><path d="M0 90 C 360 10 1080 10 1440 90 Z" fill="#F8F6F1"/></svg></div>
+
 
 <!-- ============ WAYS TO GET INVOLVED ============ -->
 <section class="sec cream" aria-labelledby="ways-h" style="padding-top:1rem" data-screen-label="Get Involved — Overview">
@@ -576,7 +793,7 @@ section{position:relative}
         <div class="info-card">
           <h4>Contact Details</h4>
           <ul class="info-list">
-            <li><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg><a href="/cdn-cgi/l/email-protection#9df4f3fbf2ddebeee9f8f0fcfefcf9b3f2effa" style="color:#c3cee0"><span class="__cf_email__" data-cfemail="b0d9ded6dff0c6c3c4d5ddd1d3d1d49edfc2d7">[email&#160;protected]</span></a></li>
+            <li><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg><a href="/cdn-cgi/l/email-protection#e78e898188a7919493828a86848683c9889580" style="color:#c3cee0"><span class="__cf_email__" data-cfemail="aac3c4ccc5eadcd9decfc7cbc9cbce84c5d8cd">[email&#160;protected]</span></a></li>
             <li><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-3 2c1 3 3 5 6 6l2-3 5 2v4c0 1-1 2-2 2C10 24 0 14 0 5c0-1 1-2 2-2z" transform="translate(2 1)"/></svg><a href="tel:+12017100269" style="color:#c3cee0">(201) 710-0269</a></li>
             <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Atlantic City, NJ</span></li>
           </ul>
@@ -587,7 +804,7 @@ section{position:relative}
           <div style="display:flex;flex-direction:column;gap:.6rem">
             <a href="#sponsor" class="btn btn-ghost-gold" style="width:100%">Sponsor a Student</a>
             <a href="#mentor" class="btn btn-ghost-gold" style="width:100%">Become a Mentor</a>
-            <a href="academy.html#apply" class="btn btn-ghost-gold" style="width:100%">Apply to the Academy</a>
+            <a href="apply.html" class="btn btn-ghost-gold" style="width:100%">Apply to the Academy</a>
           </div>
         </div>
       </div>
@@ -607,7 +824,7 @@ section{position:relative}
     <div class="cta-btns reveal d1">
       <a href="#sponsor" class="btn btn-gold">Sponsor a Student</a>
       <a href="#mentor" class="btn btn-ghost-gold">Become a Mentor</a>
-      <a href="academy.html#apply" class="btn btn-ghost-gold">Apply to the Academy</a>
+      <a href="apply.html" class="btn btn-ghost-gold">Apply to the Academy</a>
     </div>
   </div>
 </section>
@@ -647,7 +864,7 @@ section{position:relative}
       <div>
         <h5>Take Action</h5>
         <ul>
-          <li><a href="academy.html#apply">Apply</a></li>
+          <li><a href="apply.html">Apply</a></li>
           <li><a href="get-involved.html">Partner</a></li>
           <li><a href="get-involved.html#sponsor">Sponsor</a></li>
           <li><a href="get-involved.html#mentor">Mentor</a></li>
@@ -658,7 +875,7 @@ section{position:relative}
         <h5>Contact</h5>
         <ul class="fcontact">
           <li><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><a href="https://www.vstemacad.org" target="_blank" rel="noopener">www.vstemacad.org</a></li>
-          <li><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg><a href="/cdn-cgi/l/email-protection#f49d9a929bb4828780919995979590da9b8693"><span class="__cf_email__" data-cfemail="01686f676e41777275646c606260652f6e7366">[email&#160;protected]</span></a></li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg><a href="/cdn-cgi/l/email-protection#87eee9e1e8c7f1f4f3e2eae6e4e6e3a9e8f5e0"><span class="__cf_email__" data-cfemail="8fe6e1e9e0cff9fcfbeae2eeeceeeba1e0fde8">[email&#160;protected]</span></a></li>
           <li><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-3 2c1 3 3 5 6 6l2-3 5 2v4c0 1-1 2-2 2C10 24 0 14 0 5c0-1 1-2 2-2z" transform="translate(2 1)"/></svg><a href="tel:+12017100269">(201) 710-0269</a></li>
           <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Atlantic City, NJ</span></li>
         </ul>
@@ -682,11 +899,54 @@ section{position:relative}
 </footer>
 
 <!-- ============ FLOATING PILL + BACK TO TOP ============ -->
-<a href="academy.html#apply" class="apply-pill" id="applyPill"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Apply to the Academy</a>
+<a href="apply.html" class="apply-pill" id="applyPill"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Apply to the Academy</a>
 <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
-<script src="assets/nav-component.js"></script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ============ NAV SCROLL SHADOW ============ */
+const nav=document.getElementById('nav');
+const applyPill=document.getElementById('applyPill');
+const toTop=document.getElementById('toTop');
+const pageHero=document.querySelector('.page-hero');
+function onScroll(){
+  const y=window.scrollY;
+  nav.classList.toggle('scrolled',y>20);
+  const heroBottom=pageHero?pageHero.offsetHeight:400;
+  const past=y>heroBottom-100;
+  applyPill.classList.toggle('show',past);
+  toTop.classList.toggle('show',y>700);
+}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ============ MOBILE MENU ============ */
+const hamburger=document.getElementById('hamburger');
+const mobilePanel=document.getElementById('mobilePanel');
+const dim=document.getElementById('dim');
+const mpClose=document.getElementById('mpClose');
+function openMenu(){mobilePanel.classList.add('open');dim.classList.add('show');hamburger.classList.add('open');hamburger.setAttribute('aria-expanded','true');document.body.style.overflow='hidden'}
+function closeMenu(){mobilePanel.classList.remove('open');dim.classList.remove('show');hamburger.classList.remove('open');hamburger.setAttribute('aria-expanded','false');document.body.style.overflow=''}
+hamburger.addEventListener('click',()=>mobilePanel.classList.contains('open')?closeMenu():openMenu());
+mpClose.addEventListener('click',closeMenu);
+dim.addEventListener('click',closeMenu);
+document.querySelectorAll('.msub').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const sub=btn.nextElementSibling;const open=sub.classList.contains('open');
+    document.querySelectorAll('.mp-links .sub').forEach(s=>s.classList.remove('open'));
+    document.querySelectorAll('.msub').forEach(b=>b.classList.remove('open'));
+    if(!open){sub.classList.add('open');btn.classList.add('open')}
+    btn.setAttribute('aria-expanded',String(!open));
+  });
+});
+document.querySelectorAll('.mobile-panel a').forEach(a=>a.addEventListener('click',closeMenu));
+
+/* ============ SEARCH OVERLAY ============ */
+const searchOverlay=document.getElementById('searchOverlay');
+const searchInput=document.getElementById('searchInput');
+document.getElementById('searchOpen').addEventListener('click',()=>{searchOverlay.classList.add('open');setTimeout(()=>searchInput.focus(),200);document.body.style.overflow='hidden'});
+document.getElementById('scClose').addEventListener('click',closeSearch);
+function closeSearch(){searchOverlay.classList.remove('open');document.body.style.overflow=''}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeSearch();closeMenu()}});
 
 /* ============ SCROLL REVEAL ============ */
 const revObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target)}})},{threshold:.12});

@@ -191,6 +191,13 @@ section{position:relative}
 .sec.cream{background:var(--cream)}
 .sec.white{background:#fff}
 .sec.navy{background:var(--navy);color:#fff}
+.sec.cream,.sec.white,.sec.navy,.hh-strip,.vdiff2,.fire2,.testi2,.partners,.newsletter,.final-cta{
+  border-top:3px solid var(--gold);
+  border-bottom:3px solid var(--gold);
+}
+.sec.white[aria-labelledby="who-h"]{border-bottom:none!important}
+section[aria-labelledby="core-h"]{border-top:none!important;border-bottom:none!important}
+.vdiff2,.fire2{border-top:none!important}
 .sec-head{text-align:center;max-width:760px;margin:0 auto clamp(2.5rem,5vw,4rem)}
 .sec-head .eyebrow{justify-content:center}
 .sec-head .lead{margin:1.2rem auto 0}
@@ -571,14 +578,13 @@ section{position:relative}
 .btn-outline-w:hover{border-color:var(--gold);color:var(--gold-light)}
 
 /* feature strip */
-.hh-strip{background:#0a2049;border-top:1px solid rgba(201,163,65,.3);border-radius:0 0 26px 26px;position:relative;z-index:2}
-.hh-strip .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:nowrap;padding-top:1.1rem;padding-bottom:1.1rem;gap:.4rem;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.hh-strip .container::-webkit-scrollbar{display:none}
-.strip-item{display:flex;align-items:center;gap:.7rem;padding:0 .8rem;position:relative}
-.strip-item:not(:last-child)::after{content:"";position:absolute;right:-.4rem;top:50%;transform:translateY(-50%);height:26px;width:1px;background:rgba(201,163,65,.35)}
-.strip-item .si-ic{width:38px;height:38px;border-radius:50%;border:1px solid rgba(201,163,65,.55);display:grid;place-items:center;flex:none}
-.strip-item .si-ic svg{width:18px;height:18px;stroke:var(--gold-2);fill:none;stroke-width:1.7}
-.strip-item span{color:#e8edf5;font-weight:700;font-size:clamp(.58rem,.75vw,.68rem);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.hh-strip{background:linear-gradient(135deg,#5c1522,#7a2334 58%,#5c1522);border-top:1px solid rgba(201,163,65,.3);border-radius:0 0 26px 26px;position:relative;z-index:2}
+.hh-strip .container{max-width:none;width:100%;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));align-items:center;padding:1rem clamp(16px,2vw,28px) 1.1rem;gap:0;overflow:hidden;box-sizing:border-box}
+.strip-item{display:flex;align-items:center;justify-content:center;gap:.7rem;padding:0 .7rem;position:relative;min-width:0}
+.strip-item:not(:last-child)::after{content:"";position:absolute;right:0;top:50%;transform:translateY(-50%);height:28px;width:1px;background:rgba(201,163,65,.45)}
+.strip-item .si-ic{width:38px;height:38px;border-radius:50%;border:1px solid rgba(201,163,65,.6);display:grid;place-items:center;flex:none}
+.strip-item .si-ic svg{width:18px;height:18px;stroke:var(--gold-light);fill:none;stroke-width:1.8}
+.strip-item span{color:#fff7e2;font-weight:800;font-size:clamp(.56rem,.62vw,.72rem);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
 /* gold ribbon banner */
 .gold-banner-row{display:flex;justify-content:center;position:relative;z-index:3}
@@ -701,19 +707,18 @@ section{position:relative}
 .t2-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--gold);background:none;cursor:pointer;padding:0}
 .t2-dots button.active{background:var(--gold-grad)}
 
-/* partners */
 .partners{background:#fff;padding:2.4rem 0 2.8rem;border-bottom:1px solid var(--line)}
+.partners .container{max-width:none;width:100%;padding:0 clamp(16px,2vw,28px);box-sizing:border-box}
 .partners .p-label{text-align:center;font-weight:800;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.6rem}
-.partners-row{display:flex;justify-content:center;align-items:center;gap:clamp(1.4rem,4vw,3.4rem);flex-wrap:wrap}
-.p-logo{font-weight:800;font-size:1.2rem;letter-spacing:.05em;color:#5b6675;transition:.3s;font-family:var(--sans);text-transform:uppercase;white-space:nowrap;text-align:center;opacity:.92}
+.partners-row{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));align-items:center;justify-items:center;gap:1rem .6rem;width:100%}
+.p-logo{font-weight:800;font-size:1.02rem;letter-spacing:.05em;color:#5b6675;transition:.3s;font-family:var(--sans);text-transform:uppercase;white-space:nowrap;text-align:center;opacity:.92}
 .p-logo small{display:block;font-size:.54rem;letter-spacing:.16em;font-weight:600;color:#8a93a3;text-align:center;margin-top:.15rem}
 .p-logo:hover{opacity:1;transform:translateY(-2px)}
 .p-logo.stevens{color:#9d1535;font-family:var(--serif)}
-.p-logo.glogo i{font-style:normal;font-family:var(--sans);text-transform:none;font-size:1.5rem;font-weight:700;letter-spacing:-.02em}
+.p-logo.glogo i{font-style:normal;font-family:var(--sans);text-transform:none;font-size:1.3rem;font-weight:700;letter-spacing:-.02em}
 .gb{color:#4285F4}.gr{color:#EA4335}.gy{color:#FBBC05}.gg{color:#34A853}
 .p-logo.naacp{color:#0b2251;font-family:var(--serif);letter-spacing:.1em}
 .p-logo.peblink{color:#2a6fdb}
-.p-logo.siemens{color:#009999;letter-spacing:.18em}
 .p-logo.act{color:#c8102e;font-family:var(--serif)}
 .p-logo.ushart{color:#1c2530}
 
@@ -734,7 +739,7 @@ section{position:relative}
   .testi2-grid{grid-template-columns:1fr;gap:1.2rem}
   .testi2-img{display:none}
   .gold-banner{font-size:.66rem;padding:.55rem 1.3rem;letter-spacing:.12em}
-  .partners-row{gap:1.6rem 2rem}
+  .partners-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem .8rem}
 }
 @media(max-width:640px){
   .home-hero{min-height:0}
@@ -768,18 +773,20 @@ section{position:relative}
   .testi2-quote .qm{font-size:2rem}
   .t2-slide p{font-size:1rem}
   .num2 .nv.txt{font-size:1rem}
-  .partners-row{gap:1.2rem 1.8rem}
+  .partners-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem .6rem}
   .p-logo{font-size:1rem}
-  .p-logo.glogo i{font-size:1.25rem}
+  .p-logo.glogo i{font-size:1.1rem}
   .who2-stat .ws-v{font-size:.85rem}
-  .hh-strip .container{justify-content:flex-start;padding-left:1rem;padding-right:1rem}
+  .hh-strip .container{grid-template-columns:repeat(5,minmax(0,1fr));padding-left:clamp(12px,1.5vw,20px);padding-right:clamp(12px,1.5vw,20px)}
+  .strip-item{padding:0 .45rem}
   .strip-item .si-ic{width:32px;height:32px}
   .strip-item .si-ic svg{width:15px;height:15px}
+  .strip-item span{font-size:.55rem}
 }
 
 /* partners: wrap into a balanced grid instead of orphaning a single logo */
-@media(max-width:1280px){.partners-row{display:grid;grid-template-columns:repeat(4,auto);justify-content:center;align-items:center;gap:1.4rem clamp(1.4rem,4vw,3rem)}}
-@media(max-width:640px){.partners-row{grid-template-columns:repeat(2,auto)}}
+@media(max-width:1280px){.partners-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:1.2rem .8rem}}
+@media(max-width:640px){.partners-row{grid-template-columns:repeat(2,minmax(0,1fr))}}
 
 /* nav overrides live in assets/nav.css */
 </style>
@@ -1001,7 +1008,6 @@ section{position:relative}
       <span class="p-logo glogo"><i class="gb">G</i><i class="gr">o</i><i class="gy">o</i><i class="gb">g</i><i class="gg">l</i><i class="gr">e</i></span>
       <span class="p-logo naacp">NAACP<small>Atlantic City Branch</small></span>
       <span class="p-logo peblink">PEBLINK</span>
-      <span class="p-logo siemens">SIEMENS</span>
       <span class="p-logo act">ACT<small>Engineers, Inc.</small></span>
       <span class="p-logo ushart">US HART<small>Cares</small></span>
     </div>

@@ -777,21 +777,21 @@ section{position:relative}
 
 /* ============ ACADEMY PAGE ============ */
 .aca-hero{background:linear-gradient(135deg,#081a3c,#0d2452);padding:clamp(2.4rem,4.6vw,3.8rem) 0 clamp(4.4rem,7vw,6rem)}
-.aca-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(1.8rem,3.6vw,3.2rem);align-items:center}
+.aca-grid{display:flex;flex-direction:column;align-items:center;text-align:center;gap:clamp(1.8rem,3.6vw,2.6rem)}
 .aca-hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(26px,3vw,44px);line-height:1.16;color:#fff}
 .aca-hero h1 span{display:block}
 .aca-hero h1 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
-.aca-hero .aca-sub{color:#c3cee2;font-size:.94rem;max-width:44ch;margin:1.1rem 0 1.6rem;line-height:1.65}
-.aca-ctas{display:flex;gap:.8rem;flex-wrap:nowrap}
+.aca-hero .aca-sub{color:#c3cee2;font-size:.94rem;max-width:44ch;margin:1.1rem auto 1.6rem;line-height:1.65}
+.aca-ctas{display:flex;gap:.8rem;flex-wrap:nowrap;justify-content:center}
 .aca-ctas .btn{padding:.85rem 1.3rem;font-size:.7rem;white-space:nowrap}
-.aca-video{border:2px solid var(--gold);border-radius:14px;padding:8px;background:rgba(255,255,255,.03)}
+.aca-video{border:2px solid var(--gold);border-radius:14px;padding:8px;background:rgba(255,255,255,.03);width:100%;max-width:890px;margin:0 auto}
 .aca-video .ph{aspect-ratio:16/9.4;border-radius:8px;position:relative}
 .aca-video .av-cap{text-align:center;color:var(--gold-light);font-weight:800;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;padding:.7rem 0 .3rem}
 .aca-video .av-cap small{display:block;color:#8ea3c0;font-weight:600;letter-spacing:.1em;margin-top:.2rem}
 .aca-strip{margin-top:calc(clamp(4.4rem,7vw,6rem) * -.62);position:relative;z-index:3}
-.aca-strip-card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:repeat(6,1fr);padding:1.5rem .6rem}
+.aca-strip-card{background:#fff;border:1.5px solid var(--gold);border-radius:16px;box-shadow:var(--shadow-lg);display:grid;grid-template-columns:repeat(6,1fr);padding:1.5rem .6rem}
 .as-item{text-align:center;padding:0 .7rem;position:relative}
-.as-item:not(:last-child)::after{content:"";position:absolute;right:0;top:12%;height:76%;width:1px;background:var(--line)}
+.as-item:not(:last-child)::after{content:"";position:absolute;right:0;top:12%;height:76%;width:1px;background:var(--gold)}
 .as-item svg{width:30px;height:30px;stroke:var(--gold-deep);fill:none;stroke-width:1.6;margin:0 auto .6rem;display:block}
 .as-item .as-t{font-weight:800;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);margin-bottom:.35rem;line-height:1.4}
 .as-item p{font-size:.68rem;color:var(--muted);line-height:1.45;margin:0}
@@ -944,7 +944,7 @@ section{position:relative}
       <p class="aca-sub">The Vanguard STEM Academy empowers students in grades 8&ndash;11 to solve real challenges, collaborate with industry leaders, and build the skills to lead the future.</p>
       <div class="aca-ctas">
         <a href="#apply" class="btn btn-gold">Apply to the Academy &nbsp;&rarr;</a>
-        <a href="get-involved.html#inquire" class="btn btn-outline-w">Schedule a Call &nbsp;&rarr;</a>
+        <a href="get-involved.html#inquire" class="btn btn-gold">Schedule a Call &nbsp;&rarr;</a>
       </div>
     </div>
     <div class="aca-video reveal in d1">

@@ -607,10 +607,12 @@ section[aria-labelledby="path-h"]{border-bottom:none!important}
 .who2-banner .wb-orgs{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:.9rem}
 .who2-banner .wb-copy{font-style:italic;color:#c6d2e2;font-size:.88rem;line-height:1.55;margin:0}
 .who2-banner .wb-copy strong{color:var(--gold-light)}
-.wb-orgs .logo-chip{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem;background:var(--gold-grad);border-color:var(--gold-deep);color:var(--navy)}
-.wb-orgs .logo-chip img{display:block;height:16px;width:auto;flex:none}
-.wb-orgs .logo-chip.naacp-chip img{height:13px}
-.wb-orgs .logo-chip.act-chip img{height:20px}
+.wb-orgs .logo-chip{display:inline-flex;align-items:center;gap:.6rem;font-size:1rem;padding:.8rem 1.3rem;border-width:1.5px;background:var(--gold-grad);border-color:var(--gold-deep);color:var(--navy)}
+.wb-orgs .logo-chip img{display:block;height:19px;width:auto;flex:none}
+.wb-orgs .logo-chip.naacp-chip img{height:15px}
+.wb-orgs .logo-chip.act-chip img{height:23px}
+.wb-orgs .aws-badge{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#fff;flex:none}
+.wb-orgs .aws-badge img{height:15px}
 @media(max-width:900px){.who2-awards{grid-template-columns:1fr 1fr}.who2-banner{grid-template-columns:1fr}.who2-banner .wb-left{border-right:none;padding-right:0}}
 
 
@@ -889,7 +891,7 @@ section[aria-labelledby="path-h"]{border-bottom:none!important}
         <div class="wb-orgs">
           <span class="logo-chip"><img src="assets/logos/microsoft.svg" alt="Microsoft" loading="lazy">Microsoft</span>
           <span class="logo-chip"><img src="assets/logos/google.svg" alt="Google" loading="lazy">Google</span>
-          <span class="logo-chip"><img src="assets/logos/aws.svg" alt="AWS" loading="lazy"></span>
+          <span class="logo-chip"><span class="aws-badge"><img src="assets/logos/aws.svg" alt="AWS" loading="lazy"></span></span>
           <span class="logo-chip"><img src="assets/logos/american-express.svg" alt="American Express" loading="lazy">American Express</span>
           <span class="logo-chip act-chip"><img src="assets/logos/act-engineers.webp" alt="ACT Engineers" loading="lazy"></span>
           <span class="logo-chip naacp-chip"><img src="assets/logos/naacp.svg" alt="NAACP" loading="lazy"></span>

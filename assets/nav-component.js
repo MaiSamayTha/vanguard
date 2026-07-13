@@ -225,9 +225,9 @@ class VanguardNav extends HTMLElement {
       }
     });
 
-    // Auto-update active page state in desktop nav
+    // Auto-update active page state in desktop + mobile nav
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    this.querySelectorAll('.navlinks > li > a').forEach(link => {
+    this.querySelectorAll('.navlinks > li > a, .mp-links > li > a').forEach(link => {
       if (link.getAttribute('href') === currentPath) {
         link.setAttribute('aria-current', 'page');
       } else {

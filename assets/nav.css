@@ -128,7 +128,10 @@
 /* Active page link */
 .navlinks > li > a[aria-current],
 .navlinks > li > a[aria-current="page"] {
-  color: #000;
+  color: var(--gold-deep);
+}
+.navlinks > li > a[aria-current="page"]::after {
+  transform: scaleX(1);
 }
 
 /* Hover underline animation */
@@ -334,6 +337,7 @@
 .mp-links .sub.open { max-height: 400px; }
 .mp-links .sub a { display: block; padding: .6rem 1rem; color: #a9b8cd; font-size: .95rem; }
 .mp-links .sub a:hover { color: var(--gold-light); }
+.mp-links > li > a[aria-current="page"] { color: var(--gold-light); border-bottom: 2px solid var(--gold); }
 .mp-links button .caret { width: 11px; height: 11px; stroke: var(--gold); stroke-width: 2.4; fill: none; transition: transform .3s; }
 .mp-links button.open .caret { transform: rotate(180deg); }
 .mp-util { margin-top: 1.5rem; display: flex; flex-direction: column; gap: .6rem; }

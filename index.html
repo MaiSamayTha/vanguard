@@ -607,6 +607,19 @@ section[aria-labelledby="path-h"]{border-bottom:none!important}
 .who2-banner .wb-orgs{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:.9rem}
 .who2-banner .wb-copy{font-style:italic;color:#c6d2e2;font-size:.88rem;line-height:1.55;margin:0}
 .who2-banner .wb-copy strong{color:var(--gold-light)}
+.wb-orgs .logo-chip{display:inline-flex;align-items:center;gap:.5rem;font-size:.9rem}
+.wb-orgs .ms-grid{display:inline-grid;grid-template-columns:repeat(2,7px);grid-template-rows:repeat(2,7px);gap:2px;flex:none}
+.wb-orgs .ms-grid i{display:block}
+.wb-orgs .ms-grid i:nth-child(1){background:#F25022}
+.wb-orgs .ms-grid i:nth-child(2){background:#7FBA00}
+.wb-orgs .ms-grid i:nth-child(3){background:#00A4EF}
+.wb-orgs .ms-grid i:nth-child(4){background:#FFB900}
+.wb-orgs .glogo i{font-style:normal;font-weight:800;font-size:1rem;letter-spacing:-.01em}
+.wb-orgs .aws{color:#FF9900;font-weight:800;letter-spacing:.01em;text-transform:lowercase}
+.wb-orgs .amex-ic{flex:none;width:22px;height:16px;border-radius:3px;background:#006FCF;color:#fff;font-size:.5rem;font-weight:800;letter-spacing:.02em;display:grid;place-items:center}
+.wb-orgs .act-mark{color:var(--gold-2);font-weight:800}
+.wb-orgs .act-sub{color:#b9c6d8;font-weight:600;margin-left:.3rem}
+.wb-orgs .naacp-mark{font-family:var(--serif);font-weight:800;letter-spacing:.08em}
 @media(max-width:900px){.who2-awards{grid-template-columns:1fr 1fr}.who2-banner{grid-template-columns:1fr}.who2-banner .wb-left{border-right:none;padding-right:0}}
 
 
@@ -883,12 +896,12 @@ section[aria-labelledby="path-h"]{border-bottom:none!important}
       </div>
       <div>
         <div class="wb-orgs">
-          <span class="logo-chip">Microsoft</span>
-          <span class="logo-chip">Google</span>
-          <span class="logo-chip">AWS</span>
-          <span class="logo-chip">American Express</span>
-          <span class="logo-chip">ACT Engineers</span>
-          <span class="logo-chip">NAACP</span>
+          <span class="logo-chip"><span class="ms-grid"><i></i><i></i><i></i><i></i></span>Microsoft</span>
+          <span class="logo-chip glogo"><i class="gb">G</i><i class="gr">o</i><i class="gy">o</i><i class="gb">g</i><i class="gg">l</i><i class="gr">e</i></span>
+          <span class="logo-chip aws">aws</span>
+          <span class="logo-chip"><span class="amex-ic">AE</span>American Express</span>
+          <span class="logo-chip"><span class="act-mark">ACT</span><span class="act-sub">Engineers</span></span>
+          <span class="logo-chip naacp-mark">NAACP</span>
         </div>
         <p class="wb-copy">Professionals representing globally respected companies and organizations recognized the strength of Vanguard students&rsquo; technical abilities, leadership, professionalism, and real-world readiness&mdash;and <strong>stated that they would hire them</strong>.</p>
       </div>

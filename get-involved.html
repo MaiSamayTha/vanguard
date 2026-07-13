@@ -1002,6 +1002,27 @@ section{position:relative}
   .gi-hero-ctas .btn{flex:1;min-width:100%}
 }
 
+
+/* ============ PROGRAMS-STYLE HERO (shared design) ============ */
+.prog-hero{position:relative;background:linear-gradient(135deg,#081a3c,#0d2452);overflow:hidden;display:flex;align-items:center;min-height:440px}
+.prog-hero>.container{width:100%}
+.prog-hero .ph-media{position:absolute;top:0;right:0;bottom:0;width:58%}
+.prog-hero .ph-media .ph{height:100%}
+.prog-hero .ph-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#081a3c 0%,rgba(8,26,60,.7) 16%,transparent 55%)}
+.prog-hero .ph-content{position:relative;z-index:2;max-width:460px;padding:clamp(2.6rem,5vw,4.2rem) 0}
+.prog-hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(26px,2.9vw,42px);line-height:1.18;color:#fff}
+.prog-hero h1 span{display:block}
+.prog-hero h1 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
+.prog-hero .ph-sub{color:#c3cee2;font-size:.92rem;max-width:40ch;margin-top:1.1rem;line-height:1.65}
+.prog-hero .ph-ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.6rem}
+.prog-hero .btn-navy{border-color:var(--gold)}
+.prog-arc{line-height:0;background:var(--cream)}
+.prog-arc svg{display:block;width:100%;height:clamp(30px,5vw,64px)}
+@media(max-width:1024px){
+  .prog-hero .ph-media{width:100%;opacity:.3}
+  .prog-hero .ph-media::after{background:linear-gradient(90deg,#081a3c 8%,rgba(8,26,60,.62))}
+  .prog-hero .ph-content{max-width:620px}
+}
 </style>
 <link rel="stylesheet" href="assets/nav.css">
 </head>
@@ -1013,21 +1034,22 @@ section{position:relative}
 <main id="main">
 
 <!-- ============ GET INVOLVED HERO ============ -->
-<section class="gi-hero" aria-labelledby="gi-h" data-screen-label="Get Involved hero">
-  <div class="container gi-hero-grid">
-    <div class="gi-hero-copy reveal in">
-      <p class="eyebrow2">Get Involved</p>
-      <h1 id="gi-h">Together, we build <span class="g">tomorrow&rsquo;s leaders</span> <span class="r">today.</span></h1>
-      <p>Every partnership, volunteer, mentor, donor, and advocate helps create life-changing opportunities for talented students to solve real-world problems and lead on a global stage.</p>
-      <div class="gi-hero-ctas">
+<section class="prog-hero" aria-labelledby="gi-h" data-screen-label="Get Involved hero">
+  <div class="ph-media"><div class="ph" role="img" aria-label="Student presenting at podium with cohort"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Student presenting at podium with cohort</span></div></div>
+  <div class="container">
+    <div class="ph-content reveal in">
+      <p class="eyebrow on-navy" style="margin-bottom:.6rem">Get Involved</p>
+      <h1 id="gi-h"><span>Together, we build</span><span class="gold">tomorrow&rsquo;s leaders</span><span>today.</span></h1>
+      <p class="ph-sub">Every partnership, volunteer, mentor, donor, and advocate helps create life-changing opportunities for talented students to solve real-world problems and lead on a global stage.</p>
+      <div class="ph-ctas">
         <a href="#partner" class="btn btn-navy"><svg style="width:16px;height:16px;stroke:var(--gold-2);fill:none;stroke-width:1.7" viewBox="0 0 24 24"><path d="M4 11l5-5 4 3 3-3 4 4-7 7-3-2-2 2-4-4z"/><path d="M2 9l2 2M20 12l2-2"/></svg> Become a Partner</a>
         <a href="#donate" class="btn btn-gold"><svg style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8" viewBox="0 0 24 24"><path d="M12 8c1.5-2.5 5.5-2.2 6 .8.4 2.4-2.5 4.6-6 7.2-3.5-2.6-6.4-4.8-6-7.2.5-3 4.5-3.3 6-.8z"/></svg> Donate</a>
         <a href="#inquire" class="btn btn-secondary"><svg style="width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg> Schedule a Conversation</a>
       </div>
     </div>
-    <div class="gi-hero-img reveal in d1"><div class="ph" role="img" aria-label="Student presenting at podium with cohort"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Student presenting at podium with cohort</span></div></div>
   </div>
 </section>
+<div class="prog-arc" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0 0 C 480 68 960 68 1440 0 L1440 0 L0 0 Z" fill="#081a3c"/><path d="M0 3 C 480 71 960 71 1440 3" fill="none" stroke="#C9A341" stroke-width="3"/></svg></div>
 
 <!-- ============ SEE VANGUARD IN ACTION ============ -->
 <section class="gi-action" aria-labelledby="gia-h" data-screen-label="See Vanguard in action">

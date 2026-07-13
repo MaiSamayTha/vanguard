@@ -930,6 +930,26 @@ section{position:relative}
 .navlinks>li>a:hover{color:var(--gold-deep)}
 .navlinks>li>a::after{left:.5rem!important;right:.5rem!important}
 @media(max-width:1240px){.navlinks.desktop-only{display:none!important}.hamburger{display:flex!important}}
+
+/* ============ PROGRAMS-STYLE HERO (shared design) ============ */
+.prog-hero{position:relative;background:linear-gradient(135deg,#081a3c,#0d2452);overflow:hidden;display:flex;align-items:center;min-height:440px}
+.prog-hero>.container{width:100%}
+.prog-hero .ph-media{position:absolute;top:0;right:0;bottom:0;width:58%}
+.prog-hero .ph-media .ph{height:100%}
+.prog-hero .ph-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#081a3c 0%,rgba(8,26,60,.7) 16%,transparent 55%)}
+.prog-hero .ph-content{position:relative;z-index:2;max-width:460px;padding:clamp(2.6rem,5vw,4.2rem) 0}
+.prog-hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(26px,2.9vw,42px);line-height:1.18;color:#fff}
+.prog-hero h1 span{display:block}
+.prog-hero h1 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
+.prog-hero .ph-sub{color:#c3cee2;font-size:.92rem;max-width:40ch;margin-top:1.1rem;line-height:1.65}
+.prog-hero .ph-ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.6rem}
+.prog-arc{line-height:0;background:var(--cream)}
+.prog-arc svg{display:block;width:100%;height:clamp(30px,5vw,64px)}
+@media(max-width:1024px){
+  .prog-hero .ph-media{width:100%;opacity:.3}
+  .prog-hero .ph-media::after{background:linear-gradient(90deg,#081a3c 8%,rgba(8,26,60,.62))}
+  .prog-hero .ph-content{max-width:620px}
+}
 </style>
 <link rel="stylesheet" href="assets/nav.css">
 </head>
@@ -940,22 +960,21 @@ section{position:relative}
 <main id="main">
 
 <!-- ============ ACADEMY HERO ============ -->
-<section class="aca-hero" id="overview" aria-labelledby="aca-h" data-screen-label="Academy hero">
-  <div class="container aca-grid">
-    <div class="reveal in">
+<section class="prog-hero" id="overview" aria-labelledby="aca-h" data-screen-label="Academy hero">
+  <div class="ph-media"><div class="ph" role="img" aria-label="Academy intro video placeholder"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5.5 3.5-5.5 3.5z"/></svg><span class="phl">Academy intro video</span></div></div>
+  <div class="container">
+    <div class="ph-content reveal in">
+      <p class="eyebrow on-navy" style="margin-bottom:.6rem">The Academy</p>
       <h1 id="aca-h"><span>Real-World Learning.</span><span class="gold">Real-World Impact.</span></h1>
-      <p class="aca-sub">The Vanguard STEM Academy empowers students in grades 8&ndash;12 to solve real challenges, collaborate with industry leaders, and build the skills to lead the future.</p>
-      <div class="aca-ctas">
+      <p class="ph-sub">The Vanguard STEM Academy empowers students in grades 8&ndash;12 to solve real challenges, collaborate with industry leaders, and build the skills to lead the future.</p>
+      <div class="ph-ctas">
         <a href="#apply" class="btn btn-gold">Apply to the Academy &nbsp;&rarr;</a>
         <a href="get-involved.html#inquire" class="btn btn-gold">Schedule a Call &nbsp;&rarr;</a>
       </div>
     </div>
-    <div class="aca-video reveal in d1">
-      <div class="ph" role="img" aria-label="Academy intro video placeholder"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5.5 3.5-5.5 3.5z"/></svg><span class="phl">Academy intro video</span></div>
-      <div class="av-cap">Academy Intro Video<small>[ video placeholder ]</small></div>
-    </div>
   </div>
 </section>
+<div class="prog-arc" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0 0 C 480 68 960 68 1440 0 L1440 0 L0 0 Z" fill="#081a3c"/><path d="M0 3 C 480 71 960 71 1440 3" fill="none" stroke="#C9A341" stroke-width="3"/></svg></div>
 
 <!-- ============ PILLARS STRIP ============ -->
 <section class="aca-strip" aria-label="Academy pillars" data-screen-label="Pillars strip">

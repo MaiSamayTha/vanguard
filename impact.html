@@ -871,15 +871,16 @@ section{position:relative}
 .co-arrow:hover{background:var(--gold-grad);color:var(--navy)}
 .co-arrow.prev{left:-14px}.co-arrow.next{right:-14px}
 .co-arrow svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2.4}
-.story-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
-.story-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1rem;box-shadow:var(--shadow-sm);display:flex;gap:.8rem;align-items:flex-start;transition:.3s}
+.story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.story-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1rem;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:.9rem;align-items:stretch;transition:.3s}
 .story-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:var(--shadow-md)}
-.story-card .st-ph{flex:none;width:64px;border-radius:8px;overflow:hidden}
-.story-card .st-ph .ph{aspect-ratio:1/1.2}
-.story-card h4{font-size:.8rem;font-weight:800;color:var(--gold-deep);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.15rem}
-.story-card .st-role{font-size:.64rem;font-weight:700;color:var(--navy);margin-bottom:.35rem}
-.story-card p{font-size:.64rem;color:var(--muted);line-height:1.5;margin:0}
+.story-card .st-ph{flex:none;width:100%;border-radius:8px;overflow:hidden}
+.story-card .st-ph .ph{aspect-ratio:16/10}
+.story-card h4{font-size:.95rem;font-weight:800;color:var(--gold-deep);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.15rem}
+.story-card .st-role{font-size:.74rem;font-weight:700;color:var(--navy);margin-bottom:.35rem}
+.story-card p{font-size:.78rem;color:var(--muted);line-height:1.5;margin:0}
 @media(max-width:1024px){.story-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.story-grid{grid-template-columns:1fr}}
 @media(max-width:640px){.story-grid{grid-template-columns:1fr}.co-arrow.prev{left:2px}.co-arrow.next{right:2px}}
 
 .imp-hero{background:var(--cream);position:relative;overflow:hidden}
@@ -921,15 +922,15 @@ section{position:relative}
 .burg-banner{background:linear-gradient(120deg,#5c1522,#7a2334 50%,#5c1522);border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);padding:.85rem 0;text-align:center;border-radius:8px}
 .burg-banner h2{font-family:var(--serif);font-size:clamp(16px,1.7vw,23px);letter-spacing:.06em;text-transform:uppercase;color:#fff;display:inline-flex;align-items:center;gap:.8rem}
 .burg-banner h2::before,.burg-banner h2::after{content:"\2726";color:var(--gold-2);font-size:.8rem}
-.rec-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:1rem}
-.rec-card{background:#fff;border:1.5px solid var(--gold);border-radius:10px;padding:.7rem .7rem 1rem;text-align:center;box-shadow:var(--shadow-sm);transition:.3s;display:flex;flex-direction:column}
+.rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
+.rec-card{background:#fff;border:1.5px solid var(--gold);border-radius:10px;padding:.9rem .9rem 1.3rem;text-align:center;box-shadow:var(--shadow-sm);transition:.3s;display:flex;flex-direction:column}
 .rec-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
 .rec-ph{border-radius:6px;overflow:hidden;border:1px solid var(--line);position:relative;margin-bottom:1.4rem}
 .rec-ph .ph{aspect-ratio:16/11}
 .rec-ic{position:absolute;left:50%;bottom:-17px;transform:translateX(-50%);width:38px;height:38px;border-radius:50%;background:var(--burgundy);border:2px solid var(--gold);display:grid;place-items:center;z-index:3}
 .rec-ic svg{width:17px;height:17px;stroke:var(--gold-2);fill:none;stroke-width:1.7}
-.rec-card h3{font-weight:800;font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);line-height:1.4;margin-bottom:.4rem}
-.rec-card p{font-size:.63rem;color:var(--muted);line-height:1.5;margin:0;flex:1}
+.rec-card h3{font-weight:800;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);line-height:1.4;margin-bottom:.4rem}
+.rec-card p{font-size:.78rem;color:var(--muted);line-height:1.5;margin:0;flex:1}
 .ghost-more{display:flex;justify-content:center;margin-top:1.3rem}
 .ghost-more .btn{padding:.65rem 1.5rem;font-size:.64rem}
 .mile-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
@@ -965,7 +966,7 @@ section{position:relative}
 .t2-item .tv-play svg{width:11px;height:11px;fill:var(--gold-2);stroke:none;margin-left:1.5px}
 .t2-item .tv-cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(30,5,10,.95));color:#f4dfe3;font-size:.54rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-align:center;padding:.9rem .2rem .35rem;z-index:2;line-height:1.35}
 .testi2-more{text-align:center;margin-top:1.2rem}
-@media(max-width:1200px){.rec-grid{grid-template-columns:repeat(3,1fr)}.mile-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:1200px){.mile-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:1024px){
   .imp-hero-grid{grid-template-columns:1fr}
   .imp-hero-copy{padding:2rem 0}
@@ -985,6 +986,27 @@ section{position:relative}
   .grad-row>div{flex-basis:74%}
 }
 
+
+/* ============ PROGRAMS-STYLE HERO (shared design) ============ */
+.prog-hero{position:relative;background:linear-gradient(135deg,#081a3c,#0d2452);overflow:hidden;display:flex;align-items:center;min-height:440px}
+.prog-hero>.container{width:100%}
+.prog-hero .ph-media{position:absolute;top:0;right:0;bottom:0;width:58%}
+.prog-hero .ph-media .ph{height:100%}
+.prog-hero .ph-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#081a3c 0%,rgba(8,26,60,.7) 16%,transparent 55%)}
+.prog-hero .ph-content{position:relative;z-index:2;max-width:460px;padding:clamp(2.6rem,5vw,4.2rem) 0}
+.prog-hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(26px,2.9vw,42px);line-height:1.18;color:#fff}
+.prog-hero h1 span{display:block}
+.prog-hero h1 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
+.prog-hero .ph-sub{color:#c3cee2;font-size:.92rem;max-width:40ch;margin-top:1.1rem;line-height:1.65}
+.prog-hero .ph-ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.6rem}
+.prog-hero .btn-navy{border-color:var(--gold)}
+.prog-arc{line-height:0;background:var(--cream)}
+.prog-arc svg{display:block;width:100%;height:clamp(30px,5vw,64px)}
+@media(max-width:1024px){
+  .prog-hero .ph-media{width:100%;opacity:.3}
+  .prog-hero .ph-media::after{background:linear-gradient(90deg,#081a3c 8%,rgba(8,26,60,.62))}
+  .prog-hero .ph-content{max-width:620px}
+}
 </style>
 <link rel="stylesheet" href="assets/nav.css">
 </head>
@@ -996,20 +1018,21 @@ section{position:relative}
 <main id="main">
 
 <!-- ============ IMPACT HERO ============ -->
-<section class="imp-hero" aria-labelledby="imp-h" data-screen-label="Global leadership hero">
-  <div class="container imp-hero-grid">
-    <div class="imp-hero-copy reveal in">
-      <h1 id="imp-h"><span class="n">Global Leadership &amp;</span><span class="b">Strategic Partnerships</span></h1>
-      <div class="imp-orn" aria-hidden="true"><svg viewBox="0 0 16 16" width="12" height="12" style="fill:var(--gold-2);transform:rotate(45deg)"><rect x="3" y="3" width="10" height="10"/></svg></div>
-      <p>Building meaningful relationships with government, royalty, universities, and industry leaders to create extraordinary opportunities for Vanguard students.</p>
-      <div class="imp-ctas">
+<section class="prog-hero" aria-labelledby="imp-h" data-screen-label="Global leadership hero">
+  <div class="ph-media"><div class="ph" role="img" aria-label="Student speaking at podium before assembly"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Student speaking at podium before assembly</span></div></div>
+  <div class="container">
+    <div class="ph-content reveal in">
+      <p class="eyebrow on-navy" style="margin-bottom:.6rem">Our Impact</p>
+      <h1 id="imp-h"><span>Global Leadership &amp;</span><span class="gold">Strategic Partnerships</span></h1>
+      <p class="ph-sub">Building meaningful relationships with government, royalty, universities, and industry leaders to create extraordinary opportunities for Vanguard students.</p>
+      <div class="ph-ctas">
         <a href="#motion" class="btn btn-navy"><svg style="width:15px;height:15px;fill:var(--gold-2);stroke:none" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg> Our Impact in Action</a>
         <a href="get-involved.html#partner" class="btn btn-gold">Partner With Us</a>
       </div>
     </div>
-    <div class="imp-hero-img reveal in d1"><div class="ph" role="img" aria-label="Student speaking at podium before assembly"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Student speaking at podium before assembly</span></div></div>
   </div>
 </section>
+<div class="prog-arc" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0 0 C 480 68 960 68 1440 0 L1440 0 L0 0 Z" fill="#081a3c"/><path d="M0 3 C 480 71 960 71 1440 3" fill="none" stroke="#C9A341" stroke-width="3"/></svg></div>
 
 <!-- ============ IMPACT IN MOTION ============ -->
 <section class="motion-band" id="motion" aria-labelledby="mo-h" data-screen-label="Impact in motion">

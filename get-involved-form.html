@@ -324,6 +324,18 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold-dee
 </div>
 
 <script>
+var VANGUARD_FORM_ENDPOINT='PASTE_APPS_SCRIPT_WEB_APP_URL_HERE';
+function vanguardSubmitForm(formType,formEl,extraFields){
+  var fd=new FormData(formEl),fields={};
+  fd.forEach(function(value,key){
+    if(value instanceof File)value=value.name;
+    if(fields[key]!==undefined){fields[key]=(Array.isArray(fields[key])?fields[key]:[fields[key]]).concat(value)}
+    else{fields[key]=value}
+  });
+  Object.keys(fields).forEach(function(k){if(Array.isArray(fields[k]))fields[k]=fields[k].join(', ')});
+  if(extraFields)Object.assign(fields,extraFields);
+  return fetch(VANGUARD_FORM_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:formType,fields:fields})}).catch(function(err){console.error('Vanguard form submit failed',err)});
+}
 (function(){
   var q=new URLSearchParams(location.search);
   var interest=q.get('interest');
@@ -343,6 +355,7 @@ document.getElementById('resume').addEventListener('change',function(){
 document.getElementById('involveForm').addEventListener('submit',function(e){
   e.preventDefault();
   if(!this.checkValidity()){this.reportValidity();return}
+  vanguardSubmitForm('get-involved',this);
   this.style.display='none';
   document.querySelector('.vstrip').style.display='none';
   document.getElementById('successBox').style.display='block';

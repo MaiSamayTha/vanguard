@@ -805,6 +805,8 @@ section{position:relative}
 .cohort-row::-webkit-scrollbar{display:none}
 .cohort-row>div{flex:0 0 clamp(220px,23%,300px);scroll-snap-align:start;border-radius:10px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow-sm)}
 .cohort-row .ph{aspect-ratio:16/10.5}
+.cohort-row .ph.has-photo{padding:0}
+.cohort-row .ph.has-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .co-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:var(--navy);border:1.5px solid var(--gold);color:var(--gold-light);cursor:pointer;display:grid;place-items:center;z-index:3;transition:.3s}
 .co-arrow:hover{background:var(--gold-grad);color:var(--navy)}
 .co-arrow.prev{left:-14px}.co-arrow.next{right:-14px}
@@ -1014,11 +1016,11 @@ section{position:relative}
     <div class="cohort-wrap reveal" id="cohorts">
       <button class="co-arrow prev" aria-label="Scroll cohorts left"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
       <div class="cohort-row" id="cohortRow">
-        <div><div class="ph" role="img" aria-label="Cohort working session photo"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 20c0-2.8 2.2-5 5-5M22 20c0-2.8-2.2-5-5-5M9.5 17h5"/></svg><span class="phl">Cohort photo 1</span></div></div>
-        <div><div class="ph" role="img" aria-label="Cohort group photo"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 20c0-2.8 2.2-5 5-5M22 20c0-2.8-2.2-5-5-5M9.5 17h5"/></svg><span class="phl">Cohort photo 2</span></div></div>
-        <div><div class="ph" role="img" aria-label="Robotics build session photo"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 20c0-2.8 2.2-5 5-5M22 20c0-2.8-2.2-5-5-5M9.5 17h5"/></svg><span class="phl">Cohort photo 3</span></div></div>
-        <div><div class="ph" role="img" aria-label="Graduation caps photo"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg><span class="phl">Cohort photo 4</span></div></div>
-        <div><div class="ph" role="img" aria-label="Presentation session photo"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><path d="M8 20l4-4 4 4M12 16v-2"/></svg><span class="phl">Cohort photo 5</span></div></div>
+        <div><div class="ph has-photo"><img src="assets/cohort-1.jpg" alt="Cohort working session photo" loading="lazy"></div></div>
+        <div><div class="ph has-photo"><img src="assets/cohort-2.jpg" alt="Cohort group photo" loading="lazy"></div></div>
+        <div><div class="ph has-photo"><img src="assets/cohort-3.jpg" alt="Robotics build session photo" loading="lazy"></div></div>
+        <div><div class="ph has-photo"><img src="assets/cohort-4.jpg" alt="Graduation caps photo" loading="lazy"></div></div>
+        <div><div class="ph has-photo"><img src="assets/cohort-5.jpg" alt="Presentation session photo" loading="lazy"></div></div>
       </div>
       <button class="co-arrow next" aria-label="Scroll cohorts right"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>

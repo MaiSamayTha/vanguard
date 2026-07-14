@@ -554,6 +554,8 @@ section[aria-labelledby="path-h"]{border-bottom:none!important}
 .home-hero>.container{width:100%}
 .hh-media{position:absolute;top:0;right:0;bottom:0;width:66%}
 .hh-media .ph{height:100%;width:100%}
+.hh-media .ph.has-photo{padding:0}
+.hh-media .ph.has-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .hh-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#081a3c 0%,rgba(8,26,60,.72) 14%,rgba(8,26,60,.15) 42%,transparent 60%);pointer-events:none}
 .hh-content{position:relative;z-index:2;max-width:clamp(480px,34vw,560px);padding:clamp(3rem,6vw,5rem) 0}
 .hh-content h1{font-family:var(--serif);font-weight:800;font-size:clamp(2rem,3.6vw,3.1rem);line-height:1.14;color:#fff;letter-spacing:-.01em}
@@ -832,9 +834,8 @@ section[aria-labelledby="path-h"]{border-bottom:none!important}
 <!-- ============ 1. HOME HERO ============ -->
 <section class="home-hero" aria-labelledby="hero-h" data-screen-label="Hero">
   <div class="hh-media">
-    <div class="ph" role="img" aria-label="Atlantic City skyline at golden hour">
-      <svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l4-2v14M9 21V11h4v10M13 21V7l4-2v16M17 21V9h3v12"/></svg>
-      <span class="phl">Hero video / city skyline image</span>
+    <div class="ph has-photo">
+      <img src="assets/home-page-img-1.png" alt="Atlantic City skyline at golden hour" loading="lazy">
     </div>
   </div>
   <div class="container">

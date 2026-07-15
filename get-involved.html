@@ -920,6 +920,20 @@ section{position:relative}
 .help-top svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.7;margin:0 auto .5rem;display:block;opacity:.95}
 .help-top .ht-t{font-weight:800;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;line-height:1.35}
 .help-tile p{font-size:.64rem;color:var(--muted);line-height:1.5;margin:0;padding:0 .1rem}
+.role-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.role-card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);transition:.3s;display:flex;flex-direction:column}
+.role-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
+.role-top{background:linear-gradient(160deg,#0b1e42,#123063);padding:1.3rem 1rem 1.7rem;text-align:center;clip-path:polygon(0 0,100% 0,100% calc(100% - 18px),50% 100%,0 calc(100% - 18px))}
+.role-top svg{width:34px;height:34px;stroke:var(--gold-2);fill:none;stroke-width:1.6;margin:0 auto;display:block}
+.role-body{padding:1.2rem 1.2rem 1.4rem;text-align:center;flex:1;display:flex;flex-direction:column}
+.role-body h3{font-family:var(--serif);font-size:.98rem;letter-spacing:.04em;text-transform:uppercase;color:var(--navy);line-height:1.3;margin-bottom:.5rem}
+.role-rule{width:38px;height:2px;background:var(--gold-grad);margin:0 auto .9rem}
+.role-body>p{font-size:.78rem;color:var(--muted);line-height:1.6;margin:0 0 1.1rem}
+.role-list{list-style:none;margin:0 0 1.3rem;padding:0;text-align:left;flex:1}
+.role-list li{display:flex;align-items:flex-start;gap:.5rem;font-size:.76rem;color:var(--ink);margin-bottom:.55rem;line-height:1.4}
+.role-list svg{width:15px;height:15px;flex:none;stroke:var(--gold-deep);fill:none;stroke-width:2.4;margin-top:2px}
+.role-apply{display:flex;align-items:center;justify-content:center;gap:.5rem;background:var(--gold-grad);color:var(--navy);font-family:var(--sans);font-weight:800;font-size:.76rem;letter-spacing:.07em;text-transform:uppercase;padding:.85rem 1rem;border-radius:6px;transition:.3s}
+.role-apply:hover{filter:brightness(1.06);box-shadow:0 8px 18px rgba(169,132,46,.3)}
 .hc1{background:linear-gradient(160deg,#0b2251,#123063)}
 .hc2{background:linear-gradient(160deg,#0e5c50,#0a463d)}
 .hc3{background:linear-gradient(160deg,#4a2a68,#372050)}
@@ -971,7 +985,7 @@ section{position:relative}
 .gf-item span{display:block;color:#e8edf5;font-weight:700;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;line-height:1.4}
 .gf-ctas{display:flex;justify-content:center;gap:.9rem;flex-wrap:wrap}
 .gf-ctas .btn{padding:.85rem 1.5rem;font-size:.7rem}
-@media(max-width:1200px){.help-grid{grid-template-columns:repeat(4,1fr)}.why-ovals{grid-template-columns:repeat(3,1fr)}.po-grid{grid-template-columns:repeat(3,1fr)}.po-card:nth-child(4),.po-card:nth-child(5){grid-column:span 1}}
+@media(max-width:1200px){.help-grid{grid-template-columns:repeat(4,1fr)}.why-ovals{grid-template-columns:repeat(3,1fr)}.po-grid{grid-template-columns:repeat(3,1fr)}.po-card:nth-child(4),.po-card:nth-child(5){grid-column:span 1}.role-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:1024px){
   .gi-hero-grid{grid-template-columns:1fr}
   .gi-hero-copy{padding:2rem 0}
@@ -985,7 +999,7 @@ section{position:relative}
   .story-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:640px){
-  .wp-grid,.po-grid,.help-grid,.story-grid{grid-template-columns:1fr}
+  .wp-grid,.po-grid,.help-grid,.story-grid,.role-grid{grid-template-columns:1fr}
   .help-grid{grid-template-columns:repeat(2,1fr)}
   .why-ovals{grid-template-columns:repeat(2,1fr);gap:.7rem}
   .oval{padding:1rem .7rem}
@@ -1103,6 +1117,70 @@ section{position:relative}
       <div class="help-tile"><div class="help-top hc6"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg><div class="ht-t">Donate<br>Equipment</div></div><p>Provide technology and resources to enhance hands-on learning experiences.</p></div>
       <div class="help-tile"><div class="help-top hc7"><svg viewBox="0 0 24 24"><path d="M12 21c-4-3.5-7-6-7-9.5A4.5 4.5 0 0112 8a4.5 4.5 0 017 3.5c0 3.5-3 6-7 9.5z" transform="translate(0 -2)"/><path d="M9 4c.8 1.4 2.2 1.4 3 0 .8 1.4 2.2 1.4 3 0"/></svg><div class="ht-t">Corporate<br>Giving</div></div><p>Invest in programs that build stronger communities and create lasting impact.</p></div>
       <div class="help-tile"><div class="help-top hc8"><svg viewBox="0 0 24 24"><path d="M7 11V5.5a1.5 1.5 0 013 0V10M10 10V4.5a1.5 1.5 0 013 0V10M13 10V5.5a1.5 1.5 0 013 0V11M16 11l2.2-2a1.4 1.4 0 012 2L16 16c-1 1.4-2.4 2-4.5 2-3 0-4.5-1.6-4.5-4.5V11"/></svg><div class="ht-t">Volunteer</div></div><p>Give your time and talents and make a meaningful difference in a student&rsquo;s life.</p></div>
+    </div>
+
+    <div class="gold-banner-full reveal" style="margin:clamp(2rem,4vw,2.6rem) 0 1.5rem"><h2>Careers &amp; Volunteer Roles</h2></div>
+    <div class="role-grid reveal">
+      <div class="role-card">
+        <div class="role-top"><svg viewBox="0 0 24 24"><path d="M12 4L2 9l10 5 10-5-10-5z"/><path d="M6 11.5V16c0 1.66 2.69 3 6 3s6-1.34 6-3v-4.5"/><path d="M22 9v5.5"/></svg></div>
+        <div class="role-body">
+          <h3>Instructor</h3>
+          <div class="role-rule"></div>
+          <p>Teach courses, facilitate workshops, and mentor students through real-world learning experiences.</p>
+          <ul class="role-list">
+            <li><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="4"/><path d="M6 10l3 3 6-6"/></svg>STEM &amp; Business Professionals</li>
+            <li><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="4"/><path d="M6 10l3 3 6-6"/></svg>Subject Matter Experts</li>
+            <li><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="4"/><path d="M6 10l3 3 6-6"/></svg>Flexible Teaching Opportunities</li>
+            <li><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="4"/><path d="M6 10l3 3 6-6"/></svg>Impact the Next Generation</li>
+          </ul>
+          <a href="get-involved.html#inquire" class="role-apply">Apply Now &nbsp;&rarr;</a>
+        </div>
+      </div>
+      <div class="role-card">
+        <div class="role-top"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 20c0-2.8 2.2-5 5-5M22 20c0-2.8-2.2-5-5-5M9.5 17h5"/></svg></div>
+        <div class="role-body">
+          <h3>Mentor</h3>
+          <div class="role-rule"></div>
+          <p>Support students by providing career guidance, industry insights, and professional mentorship.</p>
+          <ul class="role-list">
+            <li><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="4"/><path d="M6 10l3 3 6-6"/></svg>Share Your Expertise</li>
+            <li><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="4"/><path d="M6 10l3 3 6-6"/></svg>Guide Future Leaders</li>
+            <li><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="4"/><path d="M6 10l3 3 6-6"/></svg>Virtual &amp; In-Person Options</li>
+            <li><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="4"/><path d="M6 10l3 3 6-6"/></svg>Make a Lasting Impact</li>
+          </ul>
+          <a href="get-involved.html#inquire" class="role-apply">Apply Now &nbsp;&rarr;</a>
+        </div>
+      </div>
+      <div class="role-card">
+        <div class="role-top"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></div>
+        <div class="role-body">
+          <h3>Advisory Board Member</h3>
+          <div class="role-rule"></div>
+          <p>Provide strategic guidance, industry expertise, and help shape the future direction of Vanguard STEM Academy.</p>
+          <ul class="role-list">
+            <li><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="4"/><path d="M6 10l3 3 6-6"/></svg>Strategic Leadership</li>
+            <li><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="4"/><path d="M6 10l3 3 6-6"/></svg>Industry &amp; Community Impact</li>
+            <li><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="4"/><path d="M6 10l3 3 6-6"/></svg>Quarterly Commitments</li>
+            <li><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="4"/><path d="M6 10l3 3 6-6"/></svg>Drive Long-Term Growth</li>
+          </ul>
+          <a href="get-involved.html#inquire" class="role-apply">Apply Now &nbsp;&rarr;</a>
+        </div>
+      </div>
+      <div class="role-card">
+        <div class="role-top"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M3 13h18"/></svg></div>
+        <div class="role-body">
+          <h3>Staff Opportunities</h3>
+          <div class="role-rule"></div>
+          <p>Join our growing organization in operations, program management, marketing, partnerships, and more.</p>
+          <ul class="role-list">
+            <li><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="4"/><path d="M6 10l3 3 6-6"/></svg>Multiple Departments</li>
+            <li><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="4"/><path d="M6 10l3 3 6-6"/></svg>Professional Growth</li>
+            <li><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="4"/><path d="M6 10l3 3 6-6"/></svg>Purpose-Driven Work</li>
+            <li><svg viewBox="0 0 20 20"><rect x="2" y="2" width="16" height="16" rx="4"/><path d="M6 10l3 3 6-6"/></svg>Make an Impact Every Day</li>
+          </ul>
+          <a href="get-involved.html#inquire" class="role-apply">Apply Now &nbsp;&rarr;</a>
+        </div>
+      </div>
     </div>
 
     <div class="gold-banner-full reveal" style="margin:clamp(2rem,4vw,2.6rem) 0 1.5rem"><h2>Why Organizations Partner With Vanguard</h2></div>

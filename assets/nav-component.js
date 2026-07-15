@@ -7,7 +7,7 @@ class VanguardNav extends HTMLElement {
 <!-- ============ UTILITY BAR ============ -->
 <div class="utilbar">
   <div class="container">
-    <a href="index.html#apply">Apply</a>
+    <a href="home.html#apply">Apply</a>
     <a href="portal.html">Portal Login</a>
     <a href="get-involved.html#inquire">Contact</a>
     <a href="get-involved.html#sponsor" class="donate">Sponsor a Student</a>
@@ -18,11 +18,11 @@ class VanguardNav extends HTMLElement {
 <header>
 <nav class="nav" id="nav" aria-label="Primary">
   <div class="container">
-    <a href="index.html" class="brand" aria-label="Vanguard STEM Academy home">
+    <a href="home.html" class="brand" aria-label="Vanguard STEM Academy home">
       <img src="assets/vanguard-logo-transparent.png" alt="Vanguard STEM Academy crest logo">
     </a>
     <ul class="navlinks desktop-only">
-      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="home.html" aria-current="page">Home</a></li>
       <li><a href="leadership.html">The Leadership Team</a></li>
       <li>
         <a href="programs.html">Programs <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
@@ -73,7 +73,7 @@ class VanguardNav extends HTMLElement {
     <button class="mp-close" id="mpClose" aria-label="Close menu">&times;</button>
   </div>
   <ul class="mp-links">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="home.html">Home</a></li>
     <li><a href="leadership.html">The Leadership Team</a></li>
     <li>
       <button class="msub" aria-expanded="false">Programs <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></button>

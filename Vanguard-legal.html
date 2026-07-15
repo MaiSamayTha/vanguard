@@ -1070,7 +1070,7 @@ section{position:relative}
 .lgl-divider{width:140px;height:1px;background:var(--gold-grad);margin:1rem auto 1.9rem;position:relative}
 .lgl-divider::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) rotate(45deg);width:8px;height:8px;background:var(--gold)}
 .lgl-narrow p{color:var(--ink);margin:0 0 1.15rem;line-height:1.65}
-.lgl-effective{display:flex;align-items:center;justify-content:center;gap:1.1rem;margin:2.2rem auto 0;max-width:600px;border:1px solid var(--gold);border-radius:12px;padding:1.05rem 1.5rem;background:#fff;box-shadow:var(--shadow-sm);flex-wrap:wrap}
+.lgl-effective{display:flex;align-items:center;justify-content:center;gap:1.1rem;margin:2.2rem auto 0;max-width:100%;width:fit-content;border:1px solid var(--gold);border-radius:12px;padding:1.05rem 1.8rem;background:#fff;box-shadow:var(--shadow-sm);flex-wrap:nowrap;white-space:nowrap}
 .lgl-effective svg{width:22px;height:22px;stroke:var(--gold-deep);fill:none;stroke-width:1.7;flex:none}
 .lgl-effective b{color:var(--navy);font-family:var(--sans);font-weight:700;letter-spacing:.05em;font-size:.92rem}
 .lgl-effective .sep{width:1px;height:20px;background:var(--gold)}
@@ -1114,6 +1114,7 @@ section{position:relative}
 }
 @media(max-width:560px){
   .lgl-twolist{grid-template-columns:1fr}
+  .lgl-effective{flex-wrap:wrap;white-space:normal}
   .lgl-effective .sep{display:none}
 }
 </style>

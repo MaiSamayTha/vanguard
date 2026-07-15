@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Programs | Vanguard STEM Academy</title>
-<meta name="description" content="Explore Vanguard STEM Academy programs — individual coaching, Youth STEM Academy, business intelligence, executive mentorship, and future learning pathways.">
+<title>Executive Leadership Academy — Interest List | Vanguard STEM Academy</title>
+<meta name="description" content="Join the interest list for the Executive Leadership Academy at Vanguard STEM Academy for updates, early access, and program details.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
@@ -113,9 +113,6 @@ section{position:relative}
 .crest.lg{width:82px;height:82px}
 .crest.lg svg{width:38px;height:38px}
 
-/* ============================================================
-   UTILITY BAR
-   ============================================================ */
 /* ============================================================
    UTILITY BAR + MAIN NAV: moved to assets/nav.css (loaded at end of <head>)
    ============================================================ */
@@ -375,21 +372,34 @@ section{position:relative}
 .footer-inner{max-width:940px;margin:0 auto;position:relative;z-index:1}
 .footer-badge{display:flex;justify-content:center;margin-bottom:.4rem}
 .footer-badge img{width:clamp(108px,14vw,146px);height:auto;filter:drop-shadow(0 12px 26px rgba(0,0,0,.45))}
-.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;padding:2rem 0;border-top:1px solid rgba(201,163,65,.22);text-align:center;margin-top:1.4rem}
+.footer-tagline{text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,2.2vw,1.35rem);background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;margin:0 0 1.8rem}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;padding:2.4rem 0;border-top:1px solid rgba(201,163,65,.22);border-bottom:1px solid rgba(201,163,65,.22);text-align:center}
 .footer-cols>div{display:flex;flex-direction:column;align-items:center}
-.footer h5{color:#fff;font-family:var(--serif);font-weight:700;font-size:1.05rem;letter-spacing:.02em;margin:0 0 1.1rem}
+.footer h5{color:#fff;font-family:var(--serif);font-weight:700;font-size:1.05rem;letter-spacing:.02em;margin:0 0 1.1rem;position:relative;padding-bottom:.7rem}
+.footer h5::after{content:"";position:absolute;left:50%;transform:translateX(-50%);bottom:0;width:34px;height:2px;background:var(--gold-grad)}
 .footer ul{list-style:none;margin:0;padding:0}
 .footer ul li{margin-bottom:.7rem}
-.footer ul a{color:var(--gold-light);font-size:.92rem;text-decoration:underline}
-.footer ul a:hover{color:#fff}
+.footer ul a{color:#b3c1d4;font-size:.92rem}
+.footer ul a:hover{color:var(--gold-light);padding-left:5px}
 .footer ul a{transition:.25s;display:inline-flex;align-items:center;gap:.5rem}
-.faddr{color:#dbe2ee;font-size:.92rem;line-height:1.7;margin:0;font-weight:700}
-.fsocial{display:flex;gap:.7rem;justify-content:center}
+.fcontact li{display:flex;gap:.6rem;align-items:center;justify-content:center;color:#b3c1d4;font-size:.92rem;margin-bottom:.9rem}
+.fcontact li svg{width:17px;height:17px;stroke:var(--gold);fill:none;stroke-width:1.8;flex:none;margin-top:3px}
+.fsocial{display:flex;gap:.7rem;margin-top:1.4rem;justify-content:center}
+.footer-social-row{display:flex;justify-content:center;margin:2rem 0 .5rem}
 .fsocial a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(201,163,65,.45);display:grid;place-items:center;transition:.3s}
 .fsocial a:hover{background:var(--gold-grad);border-color:transparent}
 .fsocial a svg{width:18px;height:18px;fill:var(--gold-light);transition:.3s}
 .fsocial a:hover svg{fill:var(--navy)}
-.footer-bottom-row{display:flex;justify-content:space-between;align-items:center;padding:1.6rem 0 2rem;font-size:.85rem;color:#c6d2e2;flex-wrap:wrap;gap:1rem}
+.footer-newsletter{padding:0 0 2.2rem;display:flex;justify-content:center;align-items:center;gap:1.5rem;flex-wrap:wrap;text-align:center;flex-direction:column}
+.footer-newsletter .fn-txt h4{color:#fff;font-size:1.4rem}
+.footer-newsletter .fn-txt p{color:#9fb0c6;margin:.3rem 0 0;font-size:.92rem}
+.footer-newsletter form{display:flex;gap:.6rem;flex:1;max-width:440px;min-width:280px}
+.footer-newsletter input{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(201,163,65,.4);border-radius:3px;padding:.9rem 1.1rem;color:#fff;outline:none;font-family:var(--sans)}
+.footer-newsletter input:focus{border-color:var(--gold)}
+.footer-bottom{padding:1.6rem 0 2rem;text-align:center;font-size:.82rem;color:#a9b8cd;display:flex;justify-content:center;gap:.4rem;flex-wrap:wrap;align-items:center}
+.footer-bottom a{color:#8195ac}
+.footer-bottom a:hover{color:var(--gold-light)}
+.footer-bottom .sep{color:rgba(201,163,65,.5)}
 
 /* ============================================================
    FLOATING PILL + BACK TO TOP
@@ -501,7 +511,7 @@ section{position:relative}
 
 /* --- Slow metallic shimmer on two-tone gold text --- */
 @keyframes goldShimmer{0%{background-position:0% 50%}100%{background-position:-200% 50%}}
-.title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline .gold{
+.title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline{
   background-size:200% auto;animation:goldShimmer 7s linear infinite;
 }
 .stat-num{animation-duration:8s}
@@ -534,7 +544,7 @@ section{position:relative}
 .nav-cta:hover{transform:translateY(-1px)}
 
 @media(prefers-reduced-motion:reduce){
-  .title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline .gold,.hero-laurel svg,.hero::before{animation:none}
+  .title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline,.hero-laurel svg,.hero::before{animation:none}
   .btn:hover::after{animation:none;display:none}
   .reveal{filter:none;transform:none}
   .crest,.crest::before,.crest svg{transition:none}
@@ -762,358 +772,209 @@ section{position:relative}
   .strip-item .si-ic svg{width:15px;height:15px}
 }
 
-
-/* ============ PROGRAMS PAGE ============ */
-.prog-hero{position:relative;background:linear-gradient(135deg,#081a3c,#0d2452);overflow:hidden;display:flex;align-items:center;min-height:440px}
-.prog-hero>.container{width:100%}
-.prog-hero .ph-media{position:absolute;top:0;right:0;bottom:0;width:58%}
-.prog-hero .ph-media .ph{height:100%}
-.prog-hero .ph-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#081a3c 0%,rgba(8,26,60,.7) 16%,transparent 55%)}
-.prog-hero .ph-content{position:relative;z-index:2;max-width:540px;padding:clamp(2.6rem,5vw,4.2rem) 0}
-.prog-hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(26px,2.9vw,42px);line-height:1.18;color:#fff}
-.prog-hero h1 span{display:block}
-.prog-hero h1 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
-.prog-hero .ph-sub{color:#c3cee2;font-size:.92rem;max-width:40ch;margin-top:1.1rem;line-height:1.65}
-.prog-arc{line-height:0;background:#fff}
-.prog-arc svg{display:block;width:100%;height:clamp(30px,5vw,64px)}
-.pg-head{text-align:center;max-width:740px;margin:0 auto clamp(1.8rem,3.4vw,2.6rem)}
-.pg-head h2{font-family:var(--serif);font-weight:800;font-size:clamp(24px,2.8vw,36px);color:var(--navy);display:inline-flex;align-items:center;gap:1rem;letter-spacing:.04em}
-.pg-head h2::before,.pg-head h2::after{content:"";width:40px;height:2px;background:var(--gold-grad)}
-.pg-head p{color:var(--muted);font-size:.92rem;margin-top:.6rem}
-.prog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem}
-.prog-grid.three{grid-template-columns:repeat(3,1fr);max-width:76%;margin:1.2rem auto 0}
-.pg-card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:.3s}
-.pg-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--gold)}
-.pg-img{position:relative}
-.pg-img .ph{aspect-ratio:16/9.6}
-.pg-ic{position:absolute;left:14px;bottom:-22px;width:50px;height:50px;border-radius:50%;background:var(--navy);border:2px solid var(--gold);display:grid;place-items:center;z-index:2}
-.pg-ic svg{width:22px;height:22px;stroke:var(--gold-2);fill:none;stroke-width:1.7}
-.pg-body{padding:2rem 1.2rem 1.3rem;display:flex;flex-direction:column;flex:1;text-align:center;align-items:center}
-.pg-body h3{font-family:var(--sans);font-weight:800;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase;color:var(--burgundy);margin-bottom:.5rem;line-height:1.35}
-.pg-body p{font-size:.8rem;color:var(--navy);font-weight:700;line-height:1.55;flex:1;margin-bottom:1rem}
-.pg-btn{align-self:center;display:inline-block;background:var(--gold-grad);border:1.5px solid var(--gold);color:var(--navy);font-weight:800;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1rem;border-radius:8px;transition:.3s;white-space:nowrap}
-.pg-btn:hover{background:var(--gold-deep);color:#fff}
-.approach{background:linear-gradient(150deg,#06163a,#0c2755);color:#fff;padding:clamp(2.4rem,4.6vw,3.4rem) 0;border-top:3px solid var(--gold);border-bottom:3px solid var(--gold)}
-.approach h2{text-align:center;font-family:var(--serif);font-weight:800;font-size:clamp(20px,2.2vw,28px);letter-spacing:.08em;text-transform:uppercase;background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:2.2rem}
-.approach h2::before,.approach h2::after{content:"";width:46px;height:1.5px;background:var(--gold-grad)}
-.appr-grid{display:grid;grid-template-columns:repeat(5,1fr);max-width:980px;margin:0 auto}
-.appr-item{text-align:center;padding:0 .9rem;position:relative}
-.appr-item:not(:last-child)::after{content:"";position:absolute;right:0;top:10%;height:80%;width:1px;background:rgba(201,163,65,.3)}
-.appr-item svg{width:32px;height:32px;stroke:var(--gold-2);fill:none;stroke-width:1.5;margin:0 auto .7rem;display:block}
-.appr-item .ap-t{color:#fff;font-weight:800;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.45rem}
-.appr-item p{color:#b9c6d8;font-size:.74rem;line-height:1.5;margin:0}
-.philo{background:var(--cream);padding:clamp(2.2rem,4vw,3rem) 0}
-.philo-grid{display:flex;gap:1.8rem;align-items:center;max-width:760px;margin:0 auto}
-.philo-ic{flex:none;width:96px;height:96px;border-radius:50%;border:1.5px solid var(--gold);display:grid;place-items:center;background:#fff}
-.philo-ic svg{width:44px;height:44px;stroke:var(--gold-deep);fill:none;stroke-width:1.4}
-.philo-grid h2{font-family:var(--serif);font-size:clamp(20px,2.2vw,28px);color:var(--navy);margin:.2rem 0 .6rem}
-.philo-grid p{color:var(--muted);font-size:.88rem;line-height:1.65;margin:0}
-.philo-grid p.eyebrow{color:var(--gold-deep)}
-.icp-band{background:var(--gold-grad);text-align:center;padding:.85rem 1rem}
-.icp-band h2{font-family:var(--serif);font-weight:800;font-size:clamp(18px,2vw,26px);letter-spacing:.18em;text-transform:uppercase;color:var(--navy);display:inline-flex;align-items:center;gap:1rem;margin:0}
-.icp-band h2::before,.icp-band h2::after{content:"\2726";font-size:.8em}
-.icp-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(1.6rem,3.4vw,3rem);align-items:start}
-.icp-left h3{font-family:var(--sans);font-weight:800;font-size:1rem;color:var(--navy);margin-bottom:.7rem}
-.icp-left>p{font-size:.85rem;color:var(--muted);line-height:1.65;margin-bottom:1.3rem}
-.track{display:flex;align-items:center;gap:.7rem;background:#fff;border:1px solid var(--line);border-radius:8px;padding:.65rem .85rem;margin-bottom:.55rem;transition:.3s}
-.track:hover{border-color:var(--gold);box-shadow:var(--shadow-sm)}
-.track svg{width:19px;height:19px;stroke:var(--gold-deep);fill:none;stroke-width:1.7;flex:none}
-.track .tk-n{font-weight:700;font-size:.82rem;color:var(--navy);flex:1}
-.track a{font-weight:800;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep);white-space:nowrap}
-.track a:hover{color:var(--burgundy)}
-.track.t1{background:linear-gradient(160deg,#16325f,#0b2251);border-color:transparent}
-.track.t2{background:linear-gradient(160deg,#1f5f5b,#123c39);border-color:transparent}
-.track.t3{background:linear-gradient(160deg,#8a2a3a,#5c1522);border-color:transparent}
-.track.t4{background:linear-gradient(160deg,#5a4585,#3c2d5e);border-color:transparent}
-.track.t1 svg,.track.t2 svg,.track.t3 svg,.track.t4 svg{stroke:var(--gold-light)}
-.track.t1 .tk-n,.track.t2 .tk-n,.track.t3 .tk-n,.track.t4 .tk-n{color:#fff}
-.track.t1 a,.track.t2 a,.track.t3 a,.track.t4 a{color:var(--gold-light)}
-.track.t1 a:hover,.track.t2 a:hover,.track.t3 a:hover,.track.t4 a:hover{color:#fff}
-.pack-label{text-align:center;font-weight:800;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1rem}
-.pack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem}
-.pack{border-radius:12px;padding:1.4rem 1rem 1.1rem;text-align:center;display:flex;flex-direction:column;position:relative;border:1px solid}
-.pack .pk-tier{font-weight:800;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
-.pack .pk-wk{font-size:.66rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin:.2rem 0 .6rem}
-.pack .pk-price{font-family:var(--serif);font-weight:800;font-size:1.9rem;color:var(--navy);line-height:1}
-.pack .pk-ses{font-size:.68rem;color:var(--ink);font-weight:600;margin:.55rem 0 .5rem;line-height:1.4}
-.pack p{font-size:.68rem;color:var(--muted);line-height:1.5;flex:1;margin-bottom:.9rem}
-.pk-btn{display:block;color:#fff;font-weight:800;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;padding:.6rem .4rem;border-radius:8px;transition:.3s}
-.pk-btn:hover{filter:brightness(1.12);color:#fff}
-.pack.p1{background:#f4f8fd;border-color:#d5e2f3}.pack.p1 .pk-btn{background:#0b2251}
-.pack.p2{background:#f1f9ef;border-color:#cfe6cb}.pack.p2 .pk-btn{background:#3e7d3a}
-.pack.p3{background:#f6f2fb;border-color:#ddd0ef}.pack.p3 .pk-btn{background:#6a4b9e}
-.pack.p4{background:#fdf7e9;border-color:#ecd9a8}.pack.p4 .pk-btn{background:var(--gold-grad);color:var(--navy)}
-.pk-pop{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--gold-grad);color:var(--navy);font-weight:800;font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .8rem;border-radius:20px;white-space:nowrap;box-shadow:0 4px 12px rgba(169,132,46,.4)}
-.pack.p2{border-color:var(--gold)}
-.faq-fut{display:grid;grid-template-columns:.9fr auto 1.1fr;column-gap:0;align-items:stretch}
-.faq-divider{align-self:stretch;width:4px;background:var(--gold-grad);margin:calc(-1 * clamp(2.4rem,4.6vw,3.4rem)) clamp(1.4rem,3vw,2.6rem)}
-.faq2 .eyebrow,.fut .eyebrow{justify-content:flex-start}
-.faq2 h2,.fut h2{font-family:var(--serif);font-size:clamp(20px,2.2vw,28px);color:var(--navy);margin-bottom:1.1rem}
-.fq{border:1px solid var(--line);border-radius:8px;background:#fff;margin-bottom:.55rem;overflow:hidden}
-.fq.f1{background:#f4f8fd;border-color:#d5e2f3}
-.fq.f2{background:#f1f9ef;border-color:#cfe6cb}
-.fq.f3{background:#f6f2fb;border-color:#ddd0ef}
-.fq.f4{background:#fdf7e9;border-color:#ecd9a8}
-.fq button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;background:none;border:none;padding:.8rem 1rem;font-family:var(--sans);font-weight:700;font-size:.82rem;color:var(--navy);cursor:pointer;text-align:left}
-.fq button .pl{flex:none;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--gold);color:var(--gold-deep);display:grid;place-items:center;font-size:.9rem;line-height:1;transition:.3s}
-.fq.open button .pl{transform:rotate(45deg);background:var(--gold-grad);color:var(--navy)}
-.fq .fa{max-height:0;overflow:hidden;transition:max-height .35s var(--ease)}
-.fq.open .fa{max-height:220px}
-.fq .fa p{padding:0 1rem 1rem;font-size:.8rem;color:var(--muted);line-height:1.6;margin:0}
-.fut-sub{font-size:.84rem;color:var(--muted);margin-bottom:1.2rem}
-.fut-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
-.fut-card{border-radius:12px;padding:1.6rem .8rem 1rem;text-align:center;color:#fff;display:flex;flex-direction:column;align-items:center;position:relative}
-.fut-card .cs{position:absolute;top:-9px;left:50%;transform:translateX(-50%);background:#fff;color:var(--navy);font-weight:800;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;padding:.28rem .7rem;border-radius:16px;border:1px solid var(--gold);white-space:nowrap}
-.fut-card .fi{width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(255,255,255,.5);display:grid;place-items:center;margin-bottom:.7rem}
-.fut-card .fi svg{width:21px;height:21px;stroke:var(--gold-light);fill:none;stroke-width:1.6}
-.fut-card h4{font-family:var(--serif);font-size:.92rem;line-height:1.3;color:#fff;margin-bottom:.5rem}
-.fut-card p{font-size:.64rem;color:rgba(255,255,255,.75);line-height:1.5;flex:1;margin-bottom:.9rem}
-.fut-card .wl{display:block;width:100%;white-space:nowrap;background:var(--gold-grad);border:1px solid var(--gold);color:var(--navy);font-weight:800;font-size:.56rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem .3rem;border-radius:8px;transition:.3s}
-.fut-card .wl:hover{background:#fff;color:var(--navy)}
-.fut-card.c1{background:linear-gradient(160deg,#16325f,#0b2251)}
-.fut-card.c2{background:linear-gradient(160deg,#1f5f5b,#123c39)}
-.fut-card.c3{background:linear-gradient(160deg,#8a2a3a,#5c1522)}
-.fut-card.c4{background:linear-gradient(160deg,#5a4585,#3c2d5e)}
-.ready-band{background:linear-gradient(160deg,#5c1522,#7a2334);padding:clamp(1rem,1.8vw,1.3rem) 0}
-.ready-inner{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap}
-.ready-inner .ri-ic svg{width:44px;height:44px;stroke:var(--gold-light);fill:none;stroke-width:1.5}
-.ready-txt{flex:1;min-width:260px}
-.ready-txt h2{font-family:var(--serif);font-size:clamp(20px,2.3vw,30px);color:var(--gold-light);margin-bottom:.2rem}
-.ready-txt p{color:#fff;font-size:.86rem;margin:0}
-.ready-btns{display:flex;gap:.7rem;flex-wrap:wrap}
-.ready-btns .btn{padding:.8rem 1.2rem;font-size:.66rem;border-color:var(--navy)}
-.btn-navy-solid{background:var(--navy);color:#fff}
-.btn-navy-solid:hover{color:#fff;box-shadow:0 10px 26px rgba(6,22,58,.4)}
-.btn-white-solid{background:#fff;color:var(--navy)}
-.btn-white-solid:hover{color:var(--navy);box-shadow:0 10px 26px rgba(6,22,58,.25)}
-.btn-navy-ghost{background:transparent;color:var(--navy)}
-.btn-navy-ghost:hover{background:var(--navy);color:#fff}
-.btn-burg-solid{background:linear-gradient(135deg,#6E1E2C,#8a2a3a);color:#fff;border-color:var(--gold)}
-.btn-burg-solid:hover{filter:brightness(1.1)}
-@media(max-width:1024px){
-  .prog-hero .ph-media{width:100%;opacity:.3}
-  .prog-hero .ph-media::after{background:linear-gradient(90deg,#081a3c 8%,rgba(8,26,60,.62))}
-  .prog-hero .ph-content{max-width:620px}
-  .prog-grid{grid-template-columns:repeat(2,1fr)}
-  .prog-grid.three{grid-template-columns:repeat(2,1fr);max-width:none}
-  .appr-grid{grid-template-columns:repeat(3,1fr);gap:1.6rem .4rem}
-  .appr-item:nth-child(3)::after{display:none}
-  .icp-grid,.faq-fut{grid-template-columns:1fr}
-  .faq-divider{display:none}
-  .pack-grid,.fut-grid{grid-template-columns:repeat(2,1fr);gap:1.1rem .9rem}
-  .ready-inner{justify-content:center;text-align:center}
-  .ready-txt{min-width:100%}
-}
-@media(max-width:640px){
-  .prog-grid,.prog-grid.three{grid-template-columns:1fr}
-  .appr-grid{grid-template-columns:repeat(2,1fr)}
-  .appr-item::after{display:none}
-  .pack-grid,.fut-grid{grid-template-columns:1fr;gap:1.2rem}
-  .philo-grid{flex-direction:column;text-align:center}
-  .ready-btns{width:100%}
-  .ready-btns .btn{flex:1;min-width:100%}
-  .icp-band h2{letter-spacing:.1em;font-size:15px}
-}
-
 /* nav overrides live in assets/nav.css */
 </style>
 <link rel="stylesheet" href="assets/nav.css">
 </head>
 <body>
 
-<!-- ============ VANGUARD NAV COMPONENT ============ -->
 <vanguard-nav></vanguard-nav>
 
 <main id="main">
 
-<!-- ============ PROGRAMS HERO ============ -->
-<section class="prog-hero" aria-labelledby="prog-h" data-screen-label="Programs hero">
-  <div class="ph-media"><div class="ph" role="img" aria-label="Students collaborating over laptops and robotics"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Programs hero photo</span></div></div>
-  <div class="container">
-    <div class="ph-content reveal in">
-      <p class="eyebrow on-navy" style="margin-bottom:.6rem">Our Programs</p>
-      <h1 id="prog-h"><span>Empowering Minds.</span><span class="gold">Preparing Leaders.</span><span>Building Futures.</span></h1>
-      <p class="ph-sub">Our programs bridge education, innovation, and real-world experience to prepare students and professionals for careers in STEM, data, and emerging technologies.</p>
+
+<style>
+/* ============ INQUIRY FORM PAGES ============ */
+.frm-wrap{background:var(--cream);padding:clamp(2.2rem,5vw,4rem) 0 clamp(3rem,6vw,5rem)}
+.frm-card{max-width:940px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow-md)}
+.frm-topbar{background:linear-gradient(110deg,#06163a,#0b2251 70%);padding:1.05rem clamp(1.4rem,3vw,2.4rem);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.frm-topbar .tb-brand{display:flex;align-items:center;gap:.7rem}
+.frm-topbar .tb-brand img{height:38px;width:auto}
+.frm-topbar .tb-brand .tb-t{font-family:var(--serif);font-weight:800;color:#fff;font-size:1.05rem;letter-spacing:.04em;line-height:1}
+.frm-topbar .tb-brand .tb-s{font-family:var(--sans);font-weight:700;color:var(--gold-light);font-size:.56rem;letter-spacing:.34em;text-transform:uppercase;margin-top:3px}
+.frm-topbar .tb-tag{font-family:var(--sans);font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#c6d2e2}
+.frm-topbar .tb-tag b{color:var(--gold-light)}
+
+.frm-head{text-align:center;padding:clamp(1.8rem,4vw,2.8rem) clamp(1.4rem,4vw,3rem) 0}
+.frm-head .frm-ic{width:60px;height:60px;margin:0 auto 1rem;display:grid;place-items:center}
+.frm-head .frm-ic svg{width:52px;height:52px;stroke:var(--gold);fill:none;stroke-width:1.3;stroke-linecap:round;stroke-linejoin:round}
+.frm-head h1{color:var(--burgundy);font-size:clamp(1.6rem,3.2vw,2.2rem);line-height:1.12;margin:0}
+.frm-head .frm-kicker{font-family:var(--sans);font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);font-size:.85rem;margin-top:.6rem}
+.frm-head .frm-intro{color:var(--muted);max-width:60ch;margin:1.1rem auto 0;font-size:1rem;line-height:1.6}
+
+.frm-body{padding:clamp(1.4rem,3.5vw,2.6rem) clamp(1.4rem,4vw,3rem) clamp(1.8rem,4vw,2.8rem)}
+.frm-step{margin-top:2.2rem}
+.frm-step:first-child{margin-top:1.6rem}
+.frm-step-head{display:flex;align-items:center;gap:.85rem;margin-bottom:1.2rem}
+.frm-num{width:30px;height:30px;border-radius:50%;background:var(--gold-grad);color:var(--navy);font-family:var(--sans);font-weight:800;font-size:.9rem;display:grid;place-items:center;flex:none;box-shadow:0 3px 8px rgba(169,132,46,.3)}
+.frm-step-head h2{font-family:var(--sans);font-weight:800;color:var(--navy);font-size:.98rem;letter-spacing:.09em;text-transform:uppercase;margin:0}
+.frm-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 1.4rem}
+.frm-field{display:flex;flex-direction:column}
+.frm-field.full{grid-column:1/-1}
+.frm-field label{font-family:var(--sans);font-weight:700;color:var(--navy);font-size:.82rem;letter-spacing:.01em;margin-bottom:.4rem}
+.frm-field label .req{color:var(--burgundy)}
+.frm-field label .opt{color:var(--muted);font-weight:600}
+.frm-field input,.frm-field select,.frm-field textarea{font-family:var(--sans);font-size:.95rem;color:var(--ink);background:#fbfaf7;border:1px solid var(--line);border-radius:9px;padding:.8rem .95rem;outline:none;transition:border-color .2s,box-shadow .2s;width:100%}
+.frm-field textarea{resize:vertical;min-height:110px}
+.frm-field input::placeholder,.frm-field textarea::placeholder{color:#9aa3b0}
+.frm-field input:focus,.frm-field select:focus,.frm-field textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,163,65,.16);background:#fff}
+.frm-field select{appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 4l4 4 4-4' stroke='%23A9842E' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;background-size:12px;padding-right:2.4rem}
+.frm-ta-wrap{position:relative}
+.frm-count{position:absolute;right:.7rem;bottom:.55rem;font-size:.72rem;color:#9aa3b0;font-family:var(--sans);pointer-events:none}
+.frm-agree{display:flex;align-items:flex-start;gap:.7rem;margin-top:.4rem}
+.frm-agree input{width:18px;height:18px;margin-top:2px;accent-color:var(--gold-deep);flex:none}
+.frm-agree label{color:var(--ink);font-size:.94rem;line-height:1.5}
+.frm-submit{margin-top:2rem}
+.frm-submit button{width:100%;border:none;cursor:pointer;background:var(--gold-grad);color:var(--navy);font-family:var(--sans);font-weight:800;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;padding:1.15rem;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;gap:.7rem;transition:filter .2s,box-shadow .2s;box-shadow:0 10px 24px rgba(169,132,46,.3)}
+.frm-submit button:hover{filter:brightness(1.05);box-shadow:0 14px 30px rgba(169,132,46,.42)}
+.frm-submit button svg{width:20px;height:20px;stroke:var(--navy);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.frm-secure{background:linear-gradient(110deg,#06163a,#0b2251 70%);color:#c6d2e2;text-align:center;padding:.95rem 1rem;font-size:.86rem;display:flex;align-items:center;justify-content:center;gap:.6rem}
+.frm-secure svg{width:16px;height:16px;stroke:var(--gold);fill:none;stroke-width:1.7;flex:none}
+.frm-msg{display:none;margin:1.2rem auto 0;max-width:940px;background:#f2f8f0;border:1px solid #bcd9b3;color:#2f6b28;border-radius:12px;padding:1rem 1.3rem;text-align:center;font-weight:600}
+
+/* Signature-experience option cards (Form D) */
+.frm-opts{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;margin-top:.3rem}
+.frm-opt{position:relative;border:1px solid var(--line);border-radius:12px;padding:1.1rem 1.2rem 1.1rem 2.7rem;cursor:pointer;transition:border-color .2s,box-shadow .2s,background .2s;background:#fbfaf7}
+.frm-opt:hover{border-color:var(--gold)}
+.frm-opt input{position:absolute;left:1rem;top:1.2rem;width:17px;height:17px;accent-color:var(--gold-deep)}
+.frm-opt .oi{display:flex;align-items:center;gap:.6rem;margin-bottom:.4rem}
+.frm-opt .oi svg{width:24px;height:24px;stroke:var(--gold-deep);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.frm-opt .oi b{font-family:var(--sans);font-weight:700;color:var(--navy);font-size:.95rem;line-height:1.2}
+.frm-opt p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.5}
+.frm-opt:has(input:checked){border-color:var(--gold);background:#fdf8ec;box-shadow:0 0 0 2px rgba(201,163,65,.28)}
+
+@media(max-width:680px){
+  .frm-grid{grid-template-columns:1fr}
+  .frm-opts{grid-template-columns:1fr}
+  .frm-topbar{justify-content:center;text-align:center}
+}
+</style>
+
+<section class="frm-wrap">
+  <div class="frm-card">
+      <div class="frm-topbar">
+        <div class="tb-brand">
+          <img src="assets/vanguard-logo-transparent.png" alt="Vanguard STEM Academy crest">
+          <div><div class="tb-t">VANGUARD STEM</div><div class="tb-s">Academy</div></div>
+        </div>
+        <div class="tb-tag">Empowering Minds. <b>Building Futures.</b></div>
+      </div>
+    <div class="frm-head">
+      <div class="frm-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="6.5" r="2.6"/><path d="M12 9.6c-2.4 0-4 1.6-4 3.6v1h8v-1c0-2-1.6-3.6-4-3.6z"/><circle cx="5" cy="9" r="2"/><path d="M5 11.5c-1.8 0-3 1.2-3 2.8V15h3.4"/><circle cx="19" cy="9" r="2"/><path d="M19 11.5c1.8 0 3 1.2 3 2.8V15h-3.4"/></svg></div>
+      <h1>Executive Leadership<br>Academy</h1>
+      <div class="frm-kicker">Join Interest List</div>
+      <p class="frm-intro">Be among the first to know when our Executive Leadership Academy launches. Join the interest list to receive updates, early access, and program details.</p>
     </div>
+
+    <form class="frm-body" onsubmit="return handleInquiry(this)" novalidate>
+      <div class="frm-step">
+        <div class="frm-step-head"><span class="frm-num">1</span><h2>Contact Information</h2></div>
+        <div class="frm-grid">
+          <div class="frm-field"><label>First Name <span class="req">*</span></label><input type="text" name="first" required placeholder="Enter your first name"></div>
+          <div class="frm-field"><label>Last Name <span class="req">*</span></label><input type="text" name="last" required placeholder="Enter your last name"></div>
+          <div class="frm-field"><label>Email Address <span class="req">*</span></label><input type="email" name="email" required placeholder="Enter your email address"></div>
+          <div class="frm-field"><label>Phone Number <span class="opt">(Optional)</span></label><input type="tel" name="phone" placeholder="Enter your phone number"></div>
+          <div class="frm-field"><label>City <span class="req">*</span></label><input type="text" name="city" required placeholder="Enter your city"></div>
+          <div class="frm-field"><label>State <span class="req">*</span></label><select name="state" required><option value="" selected disabled>Select your state</option>
+              <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option></select></div>
+        </div>
+      </div>
+
+      <div class="frm-step">
+        <div class="frm-step-head"><span class="frm-num">2</span><h2>About You</h2></div>
+        <div class="frm-field full"><label>Organization / Company <span class="opt">(Optional)</span></label><input type="text" name="org" placeholder="Enter your organization or company"></div>
+        <div class="frm-field full" style="margin-top:1.1rem"><label>Current Job Title / Role <span class="opt">(Optional)</span></label><input type="text" name="role" placeholder="Enter your job title or role"></div>
+        <div class="frm-field full" style="margin-top:1.1rem"><label>Which best describes you? <span class="req">*</span></label>
+          <select name="describes" required>
+            <option value="" selected disabled>Select an option</option>
+            <option>Executive / Senior Leader</option><option>Mid-Level Manager</option><option>Emerging Leader</option><option>Entrepreneur / Business Owner</option><option>Educator</option><option>Working Professional</option><option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="frm-step">
+        <div class="frm-step-head"><span class="frm-num">3</span><h2>Your Interest</h2></div>
+        <div class="frm-field full"><label>What interests you most about the Executive Leadership Academy? <span class="req">*</span></label>
+          <div class="frm-ta-wrap"><textarea name="interest" required maxlength="500" data-count placeholder="Share what you hope to learn, achieve, or improve."></textarea><span class="frm-count">0/500</span></div>
+        </div>
+      </div>
+
+      <div class="frm-step">
+        <div class="frm-step-head"><span class="frm-num">4</span><h2>Preferred Timeline</h2></div>
+        <div class="frm-field full"><label>When are you hoping to participate?</label>
+          <select name="timeline">
+            <option value="" selected disabled>Select an option</option>
+            <option>As soon as it launches</option><option>Within 3 months</option><option>Within 6 months</option><option>Within a year</option><option>Just exploring for now</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="frm-step">
+        <div class="frm-step-head"><span class="frm-num">5</span><h2>Agreement</h2></div>
+        <div class="frm-agree"><input type="checkbox" id="agree" name="agree" required><label for="agree">I understand this form is for informational purposes and does not guarantee enrollment.</label></div>
+      </div>
+
+      <div class="frm-submit"><button type="submit">Join Interest List <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+    </form>
+      <div class="frm-secure">
+        <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.3-7 9.6C8 19.3 5 15.5 5 11V6z"/><path d="M9.5 12l1.8 1.8 3.4-3.4"/></svg>
+        Your information is secure and will only be used to respond to your inquiry.
+      </div>
   </div>
-</section>
-<div class="prog-arc" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0 0 C 480 68 960 68 1440 0 L1440 0 L0 0 Z" fill="#081a3c"/><path d="M0 3 C 480 71 960 71 1440 3" fill="none" stroke="#C9A341" stroke-width="3"/></svg></div>
-
-<!-- ============ EXPLORE OUR PROGRAMS ============ -->
-<section class="sec white" aria-labelledby="explore-h" data-screen-label="Explore programs" style="padding:clamp(2rem,4vw,3rem) 0 clamp(2.6rem,5vw,3.6rem)">
-  <div class="container">
-    <div class="pg-head reveal">
-      <h2 id="explore-h">Explore Our Programs</h2>
-      <p>From youth development to executive training, our programs are designed to inspire, equip, and elevate the next generation of innovators and leaders.</p>
-    </div>
-    <div class="prog-grid">
-      <div class="pg-card reveal" id="coaching">
-        <div class="pg-img"><div class="ph" role="img" aria-label="Coaching session photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Coaching session photo</span></div><span class="pg-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span></div>
-        <div class="pg-body"><h3>Individual Coaching</h3><p>Personalized academic and career guidance designed to help you achieve your goals and unlock your full potential.</p><a href="#icp" class="pg-btn">View Program &amp; Pricing &nbsp;&rarr;</a></div>
-      </div>
-      <div class="pg-card reveal">
-        <div class="pg-img"><div class="ph" role="img" aria-label="Youth STEM class photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Youth STEM class photo</span></div><span class="pg-ic"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 20c0-2.8 2.2-5 5-5M22 20c0-2.8-2.2-5-5-5M9.5 17h5"/></svg></span></div>
-        <div class="pg-body"><h3>Youth STEM Academy</h3><p>Hands-on STEM enrichment for K&ndash;12 students focused on robotics, coding, engineering, and real-world innovation.</p><a href="academy.html" class="pg-btn">Learn More &nbsp;&rarr;</a></div>
-      </div>
-      <div class="pg-card reveal" id="workforce">
-        <div class="pg-img"><div class="ph" role="img" aria-label="Workforce training photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Workforce training photo</span></div><span class="pg-ic"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></span></div>
-        <div class="pg-body"><h3>Corporate &amp; Workforce Training</h3><p>Customized training solutions that upskill teams and strengthen organizations in today&rsquo;s evolving workforce.</p><a href="get-involved.html" class="pg-btn">Learn More &nbsp;&rarr;</a></div>
-      </div>
-      <div class="pg-card reveal" id="bi">
-        <div class="pg-img"><div class="ph" role="img" aria-label="Data analytics class photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Data analytics class photo</span></div><span class="pg-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 12V3a9 9 0 019 9z"/></svg></span></div>
-        <div class="pg-body"><h3>Business Intelligence Academy</h3><p>Data analytics, visualization, and business intelligence training for students and emerging professionals.</p><a href="#icp" class="pg-btn">Learn More &nbsp;&rarr;</a></div>
-      </div>
-    </div>
-    <div class="prog-grid three">
-      <div class="pg-card reveal" id="mentorship">
-        <div class="pg-img"><div class="ph" role="img" aria-label="Mentorship panel photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Mentorship panel photo</span></div><span class="pg-ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg></span></div>
-        <div class="pg-body"><h3>Executive Mentorship</h3><p>Executive-level mentorship and leadership development to help high-achieving individuals grow and lead with impact.</p><a href="impact.html" class="pg-btn">Learn More &nbsp;&rarr;</a></div>
-      </div>
-      <div class="pg-card reveal" id="ai">
-        <div class="pg-img"><div class="ph" role="img" aria-label="AI visualization photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">AI visualization photo</span></div><span class="pg-ic"><svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span></div>
-        <div class="pg-body"><h3>AI Innovation Academy</h3><p>Exploring artificial intelligence, machine learning, and emerging technologies to prepare innovators for the future.</p><a href="#future" class="pg-btn">Learn More &nbsp;&rarr;</a></div>
-      </div>
-      <div class="pg-card reveal">
-        <div class="pg-img"><div class="ph" role="img" aria-label="International consulting team photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">International consulting team photo</span></div><span class="pg-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span></div>
-        <div class="pg-body"><h3>International Consulting Academy</h3><p>Work alongside multidisciplinary teams on authentic consulting projects addressing community, education, workforce, and innovation challenges.</p><a href="academy.html#experiences" class="pg-btn">Learn More &nbsp;&rarr;</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ PROGRAM APPROACH ============ -->
-<section class="approach" aria-labelledby="appr-h" data-screen-label="Program approach">
-  <div class="container">
-    <h2 id="appr-h" class="reveal">Our Program Approach</h2>
-    <div class="appr-grid reveal d1">
-      <div class="appr-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg><div class="ap-t">Real-World Learning</div><p>Students work on authentic projects that solve real problems.</p></div>
-      <div class="appr-item"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-4 10.5c.7.6 1 1.5 1 2.5h6c0-1 .3-1.9 1-2.5A6 6 0 0012 3z"/></svg><div class="ap-t">Expert Mentorship</div><p>Guided by industry leaders and subject matter experts.</p></div>
-      <div class="appr-item"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 20c0-2.8 2.2-5 5-5M22 20c0-2.8-2.2-5-5-5M9.5 17h5"/></svg><div class="ap-t">Collaborative Community</div><p>We foster a supportive network that encourages growth and innovation.</p></div>
-      <div class="appr-item"><svg viewBox="0 0 24 24"><path d="M4 20V12M10 20V6M16 20v-9M21 20H3M15 4l4-1 1 4"/></svg><div class="ap-t">Career Readiness</div><p>Building the skills, confidence, and experience needed for future success.</p></div>
-      <div class="appr-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg><div class="ap-t">Access &amp; Impact</div><p>Expanding opportunities and creating pathways for underserved communities.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ LEARNING PHILOSOPHY ============ -->
-<section class="philo" aria-labelledby="philo-h" data-screen-label="Learning philosophy">
-  <div class="container">
-    <div class="philo-grid reveal">
-      <span class="philo-ic"><svg viewBox="0 0 24 24"><path d="M12 5c-2-1.5-5-2-8-2v16c3 0 6 .5 8 2 2-1.5 5-2 8-2V3c-3 0-6 .5-8 2zM12 5v16"/></svg></span>
-      <div>
-        <p class="eyebrow" style="margin-bottom:.2rem">Our Learning Philosophy</p>
-        <h2 id="philo-h">Real Projects. Real Mentors. Real Results.</h2>
-        <p>At Vanguard STEM Academy, every program is designed around authentic learning experiences. Participants don&rsquo;t just study concepts&mdash;they solve real problems, collaborate with professionals, build technical and leadership skills, and leave with tangible outcomes that prepare them for college, careers, and lifelong success.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ICP BAND ============ -->
-<div class="icp-band" id="icp"><h2>Individual Coaching Program</h2></div>
-
-<!-- ============ ICP DETAIL ============ -->
-<section class="sec white" aria-label="Individual coaching program details" data-screen-label="Coaching packages" style="padding:clamp(2.4rem,4.6vw,3.4rem) 0">
-  <div class="container icp-grid">
-    <div class="icp-left reveal">
-      <h3>Personalized Coaching. Proven Results. Real Career Growth.</h3>
-      <p>Whether you are preparing for college, strengthening academic performance, transitioning into a new career, interviewing with top companies, or building technical skills, Vanguard provides high-touch coaching designed around your goals.</p>
-      <div class="track t1"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg><span class="tk-n">Academic Coaching</span><a href="#packs">View Packages &rarr;</a></div>
-      <div class="track t2"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg><span class="tk-n">Career Development</span><a href="get-involved.html#inquire">Schedule Consultation &rarr;</a></div>
-      <div class="track t3"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg><span class="tk-n">Business Intelligence Coaching</span><a href="get-involved.html#inquire">Request Information &rarr;</a></div>
-      <div class="track t4"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="tk-n">Executive Coaching</span><a href="get-involved.html#inquire">Book Consultation &rarr;</a></div>
-      <div class="track t1"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10h14v11M12 3L3 8h18z"/></svg><span class="tk-n">College &amp; Graduate Admissions</span><a href="get-involved.html#inquire">Schedule Consultation &rarr;</a></div>
-    </div>
-    <div class="reveal d1" id="packs">
-      <p class="pack-label">Academic Coaching Packages</p>
-      <div class="pack-grid">
-        <div class="pack p1"><div class="pk-tier">Foundation</div><div class="pk-wk">4 Weeks</div><div class="pk-price">$795</div><div class="pk-ses">4 private<br>60-minute sessions</div><p>Focused support, weekly accountability, and a personalized learning plan.</p><a href="icp-registration.html?pkg=Foundation%20Package&amp;weeks=4%20Weeks&amp;sessions=4%20Private%2060-Minute%20Sessions&amp;price=%24795" class="pk-btn">Get Started</a></div>
-        <div class="pack p2"><span class="pk-pop">Most Popular</span><div class="pk-tier">Achievement</div><div class="pk-wk">8 Weeks</div><div class="pk-price">$1,590</div><div class="pk-ses">8 private<br>60-minute sessions</div><p>Sustained support, progress tracking, and parent/student updates.</p><a href="icp-registration.html?pkg=Achievement%20Package&amp;weeks=8%20Weeks&amp;sessions=8%20Private%2060-Minute%20Sessions&amp;price=%241%2C590" class="pk-btn">Get Started</a></div>
-        <div class="pack p3"><div class="pk-tier">Excellence</div><div class="pk-wk">12 Weeks</div><div class="pk-price">$2,385</div><div class="pk-ses">12 private<br>60-minute sessions</div><p>Exam preparation, academic recovery, and full-semester support.</p><a href="icp-registration.html?pkg=Excellence%20Package&amp;weeks=12%20Weeks&amp;sessions=12%20Private%2060-Minute%20Sessions&amp;price=%242%2C385" class="pk-btn">Get Started</a></div>
-        <div class="pack p4"><div class="pk-tier">Mastery</div><div class="pk-wk">16 Weeks</div><div class="pk-price">$3,180</div><div class="pk-ses">16 private<br>60-minute sessions</div><p>Comprehensive semester coaching, priority scheduling, and high-touch support.</p><a href="icp-registration.html?pkg=Mastery%20Package&amp;weeks=16%20Weeks&amp;sessions=16%20Private%2060-Minute%20Sessions&amp;price=%243%2C180" class="pk-btn">Get Started</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ ICP BAND (bottom) ============ -->
-<div class="icp-band" role="presentation"><h2 style="visibility:hidden">Individual Coaching Program</h2></div>
-
-<!-- ============ FAQ + FUTURE ============ -->
-<section class="sec cream" aria-label="FAQ and future programs" data-screen-label="FAQ and future programs" style="padding:clamp(2.4rem,4.6vw,3.4rem) 0">
-  <div class="container faq-fut">
-    <div class="faq2 reveal">
-      <p class="eyebrow">Questions</p>
-      <h2>Frequently Asked</h2>
-      <div class="fq f1"><button aria-expanded="false">How do coaching sessions take place?<span class="pl">+</span></button><div class="fa"><p>Sessions are one-on-one with your dedicated coach, held virtually or in person in Atlantic City, and scheduled around your availability.</p></div></div>
-      <div class="fq f2"><button aria-expanded="false">Which tracks show pricing, and which are consultation-based?<span class="pl">+</span></button><div class="fa"><p>Academic Coaching has published packages. Career, Business Intelligence, Executive, and Admissions coaching are scoped in a free consultation so plans match your goals.</p></div></div>
-      <div class="fq f3"><button aria-expanded="false">Can I switch or upgrade my package later?<span class="pl">+</span></button><div class="fa"><p>Yes — you can upgrade at any time and we credit the sessions you&rsquo;ve already completed toward the larger package.</p></div></div>
-      <div class="fq f4"><button aria-expanded="false">Do you offer coaching for both students and working professionals?<span class="pl">+</span></button><div class="fa"><p>Yes. We coach middle school through college students as well as early-career and executive professionals.</p></div></div>
-      <div class="fq f1"><button aria-expanded="false">Can coaching be virtual?<span class="pl">+</span></button><div class="fa"><p>Absolutely — most coaching is delivered virtually, so you can work with us from anywhere.</p></div></div>
-      <div class="fq f2"><button aria-expanded="false">Which program is right for me?<span class="pl">+</span></button><div class="fa"><p>Schedule a free consultation and we&rsquo;ll recommend the track and package that best fits your goals, timeline, and budget.</p></div></div>
-      <a href="get-involved.html#inquire" class="btn btn-primary" style="margin-top:1rem;padding:.85rem 1.5rem;font-size:.7rem">Schedule a Consultation</a>
-      <p style="font-size:.78rem;color:var(--muted);margin-top:.7rem">Not sure which package is right for you?</p>
-    </div>
-    <div class="faq-divider" aria-hidden="true"></div>
-    <div class="fut reveal d1" id="future">
-      <p class="eyebrow">On the Horizon</p>
-      <h2>Coming Soon: Advanced Learning Experiences</h2>
-      <p class="fut-sub">We&rsquo;re expanding our award-winning programs into flexible, on-demand learning experiences for students, professionals, organizations, and future innovators.</p>
-      <div class="fut-grid">
-        <div class="fut-card c1"><span class="cs">Coming Soon</span><span class="fi"><svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg></span><h4>AI Innovation Academy</h4><p>Prompt engineering, responsible AI, and automation for emerging builders.</p><a href="get-involved.html#inquire" class="wl">Join Waitlist</a></div>
-        <div class="fut-card c2"><span class="cs">Coming Soon</span><span class="fi"><svg viewBox="0 0 24 24"><path d="M10 3h4v5l4.5 8a2 2 0 01-1.8 3H7.3a2 2 0 01-1.8-3L10 8zM8 3h8"/></svg></span><h4>Engineering Design &amp; Product Innovation</h4><p>Hands-on design, prototyping, and systems thinking for future engineers and innovators.</p><a href="form-engineering-design.html" class="wl">Join Waitlist</a></div>
-        <div class="fut-card c3"><span class="cs">Coming Soon</span><span class="fi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span><h4>International Consulting Projects</h4><p>Collaborate with organizations on real challenges in education, workforce, policy, and global innovation.</p><a href="form-international-consulting.html" class="wl">Join Waitlist</a></div>
-        <div class="fut-card c4"><span class="cs">Coming Soon</span><span class="fi"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span><h4>Executive Leadership Academy</h4><p>Leadership, communication, executive presence, negotiation, and workforce readiness.</p><a href="form-executive-leadership.html" class="wl">Join Waitlist</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ READY BAND ============ -->
-<section class="ready-band" aria-label="Ready to build your future" data-screen-label="CTA band">
-  <div class="container ready-inner reveal">
-    <span class="ri-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 58C20 40 8 34 6 20c8 3 14 10 14 20M20 44C20 30 12 26 10 16c6 2 10 7 10 14" transform="scale(.38) translate(6 -14)"/><circle cx="12" cy="7" r="3"/><path d="M6 21c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg></span>
-    <div class="ready-txt">
-      <h2>Ready to Build Your Future?</h2>
-      <p>Whether you&rsquo;re a student, a working professional, or an organization looking to develop future talent&mdash;<strong>Vanguard</strong> has a pathway for you.</p>
-    </div>
-    <div class="ready-btns">
-      <a href="apply.html" class="btn btn-navy-solid">Apply to Academy &nbsp;&rarr;</a>
-      <a href="#icp" class="btn btn-white-solid">Book Coaching &nbsp;&rarr;</a>
-      <a href="get-involved.html" class="btn btn-gold">Partner With Us &nbsp;&rarr;</a>
-    </div>
-  </div>
+  <div class="frm-msg" id="frmMsg">You're on the list! We'll be in touch with updates and early access as the Executive Leadership Academy launches.</div>
 </section>
 
 <script>
-document.querySelectorAll('.fq button').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const fq=btn.parentElement;const open=fq.classList.contains('open');
-    document.querySelectorAll('.fq').forEach(f=>{f.classList.remove('open');f.querySelector('button').setAttribute('aria-expanded','false')});
-    if(!open){fq.classList.add('open');btn.setAttribute('aria-expanded','true')}
-  });
+/* char counters + fake submit for inquiry forms */
+document.querySelectorAll('textarea[data-count]').forEach(function(t){
+  var c=t.parentElement.querySelector('.frm-count');
+  var max=t.getAttribute('maxlength')||500;
+  t.addEventListener('input',function(){c.textContent=t.value.length+'/'+max});
 });
+function handleInquiry(form){
+  var msg=document.getElementById('frmMsg');
+  if(msg){msg.style.display='block';}
+  form.reset();
+  document.querySelectorAll('.frm-count').forEach(function(c){var m=c.textContent.split('/')[1]||'500';c.textContent='0/'+m});
+  if(msg){window.scrollTo({top:0,behavior:'smooth'});setTimeout(function(){msg.style.display='none'},6000);}
+  return false;
+}
 </script>
-
 </main>
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
   <div class="footer-inner container">
     <div class="footer-badge">
-      <a href="home.html" aria-label="Vanguard STEM Academy home"><img src="assets/footer-badge.png" alt="Vanguard STEM Academy crest"></a>
+      <a href="index.html" aria-label="Vanguard STEM Academy home"><img src="assets/footer-badge.png" alt="Vanguard STEM Academy crest"></a>
+    </div>
+    <p class="footer-tagline">Real Projects. Real Experience. Real Impact.</p>
+    <div class="footer-newsletter">
+      <div class="fn-txt">
+        <h4 style="color:#fff;font-family:var(--serif);font-size:1.5rem">Stay Connected</h4>
+        <p style="color:#c3cee0;margin:.3rem 0 0;font-size:.92rem">News, events, and student achievements — straight to your inbox.</p>
+      </div>
+      <form onsubmit="return handleSubscribe(this)" style="display:flex;gap:.6rem;width:100%;max-width:460px;flex-wrap:wrap;justify-content:center">
+        <input type="email" required placeholder="Your email address" aria-label="Email address" style="flex:1;min-width:220px;background:rgba(255,255,255,.07);border:1px solid rgba(201,163,65,.4);border-radius:3px;padding:.9rem 1.1rem;color:#fff;outline:none;font-family:var(--sans)">
+        <button type="submit" class="btn btn-gold">Subscribe</button>
+      </form>
     </div>
     <div class="footer-cols">
       <div>
         <h5>Compliance Policies</h5>
         <ul>
-          <li><a href="Vanguard-legal.html">Privacy</a></li>
-          <li><a href="Vanguard-legal.html">Copyright Infringement</a></li>
+          <li><a href="#">Privacy</a></li>
+          <li><a href="#">Copyright Infringement</a></li>
+          <li><a href="#">Accessibility</a></li>
         </ul>
       </div>
       <div>
         <h5>Address</h5>
-        <p class="faddr">Vanguard STEM Academy<br>99 Wall Street Suite 3329<br>New York, NY 10005</p>
+        <ul class="fcontact">
+          <li><svg viewBox="0 0 24 24"><path d="M12 21s-7-6-7-11a7 7 0 0114 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Atlantic City, NJ</span></li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg><a href="/cdn-cgi/l/email-protection#147d7a727b546267607179757775703a7b6673"><span class="__cf_email__" data-cfemail="c4adaaa2ab84b2b7b0a1a9a5a7a5a0eaabb6a3">[email&#160;protected]</span></a></li>
+          <li><svg viewBox="0 0 24 24"><path d="M4 4h4l2 5-3 2c1 3 3 5 6 6l2-3 5 2v4c0 1-1 2-2 2C10 24 0 14 0 5c0-1 1-2 2-2z" transform="translate(2 1)"/></svg><a href="tel:+12017100269">(201) 710-0269</a></li>
+        </ul>
       </div>
       <div>
         <h5>Contact Us</h5>
@@ -1124,14 +985,19 @@ document.querySelectorAll('.fq button').forEach(btn=>{
         </ul>
       </div>
     </div>
-    <div class="footer-bottom-row">
-      <span>&copy; Vanguard STEM Academy 2026</span>
+    <div class="footer-social-row">
       <div class="fsocial">
         <a href="https://www.instagram.com/vstemacad/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="7" r="1.4"/></svg></a>
         <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V8c0-.6.4-1 1-1z"/></svg></a>
         <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M3 3l7.5 9.5L3.5 21H6l6-6.7L17 21h4l-8-10 7-8h-2.5L13 8.5 8 3z"/></svg></a>
         <a href="https://www.youtube.com/channel/UCQhTJAYMKgtvEDZnjvGesVw/featured" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 9l5 3-5 3z"/></svg></a>
       </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Vanguard STEM Academy</span><span class="sep">·</span>
+      <span>501(c)(3) Nonprofit</span><span class="sep">·</span>
+      <a href="#">Privacy</a><span class="sep">·</span>
+      <a href="#">Accessibility</a>
     </div>
   </div>
 </footer>
@@ -1142,6 +1008,9 @@ document.querySelectorAll('.fq button').forEach(btn=>{
 
 <script src="assets/nav-component.js"></script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* Back-to-top button (nav shadow, mobile menu & search handled by <vanguard-nav>) */
+const toTop=document.getElementById('toTop');
+if(toTop)toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
 /* ============ GENERIC CAROUSEL ============ */
 function makeCarousel(root,{slideSel,dotsSel,interval=5500,arrows=false}){

@@ -921,24 +921,31 @@ section{position:relative}
 .navlinks>li>a::after{left:.5rem!important;right:.5rem!important}
 @media(max-width:1240px){.navlinks.desktop-only{display:none!important}.hamburger{display:flex!important}}
 
+/* ============ ACADEMY INTRO VIDEO ============ */
+.aca-vhero{position:relative;overflow:hidden;background:#06163a;min-height:min(64vh,560px);display:flex;align-items:center}
+.aca-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.aca-vsound{position:absolute;top:1.1rem;right:1.1rem;z-index:2;width:46px;height:46px;border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.5);background:rgba(6,22,58,.42);-webkit-backdrop-filter:blur(6px);
+  backdrop-filter:blur(6px);color:#fff;cursor:pointer;display:grid;place-items:center;transition:.25s var(--ease)}
+.aca-vsound:hover{background:rgba(6,22,58,.72);border-color:var(--gold);color:var(--gold-light)}
+.aca-vsound svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.aca-vsound .on{display:none}
+.aca-vsound.is-on .on{display:block}
+.aca-vsound.is-on .off{display:none}
+
 /* ============ PROGRAMS-STYLE HERO (shared design) ============ */
-.prog-hero{position:relative;background:linear-gradient(135deg,#081a3c,#0d2452);overflow:hidden;display:flex;align-items:center;min-height:440px}
+.prog-hero{position:relative;background:linear-gradient(135deg,#081a3c,#0d2452);overflow:hidden;display:flex;align-items:center;min-height:0}
 .prog-hero>.container{width:100%}
-.prog-hero .ph-media{position:absolute;top:0;right:0;bottom:0;width:58%}
-.prog-hero .ph-media .ph{height:100%}
-.prog-hero .ph-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#081a3c 0%,rgba(8,26,60,.7) 16%,transparent 55%)}
-.prog-hero .ph-content{position:relative;z-index:2;max-width:540px;padding:clamp(2.6rem,5vw,4.2rem) 0}
+.prog-hero .ph-content{position:relative;z-index:2;max-width:640px;margin:0 auto;padding:clamp(2.2rem,5vw,3.2rem) 0;text-align:center}
 .prog-hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(26px,2.9vw,42px);line-height:1.18;color:#fff}
 .prog-hero h1 span{display:block}
 .prog-hero h1 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
-.prog-hero .ph-sub{color:#c3cee2;font-size:.92rem;max-width:40ch;margin-top:1.1rem;line-height:1.65}
-.prog-hero .ph-ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.6rem}
+.prog-hero .ph-sub{color:#c3cee2;font-size:.92rem;max-width:44ch;margin:1.1rem auto 0;line-height:1.65}
+.prog-hero .ph-ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.6rem;justify-content:center}
 .prog-hero .ph-ctas .btn{padding:.7rem 1.3rem;font-size:.6rem;border-radius:8px}
 .prog-arc{line-height:0;background:var(--cream)}
 .prog-arc svg{display:block;width:100%;height:clamp(30px,5vw,64px)}
 @media(max-width:1024px){
-  .prog-hero .ph-media{width:100%;opacity:.3}
-  .prog-hero .ph-media::after{background:linear-gradient(90deg,#081a3c 8%,rgba(8,26,60,.62))}
   .prog-hero .ph-content{max-width:620px}
 }
 </style>
@@ -950,12 +957,22 @@ section{position:relative}
 
 <main id="main">
 
+<!-- ============ ACADEMY INTRO VIDEO ============ -->
+<section class="aca-vhero" aria-label="Academy intro video">
+  <video class="aca-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <source src="assets/academy-intro.mp4" type="video/mp4">
+  </video>
+  <button class="aca-vsound" type="button" aria-label="Unmute video" aria-pressed="false">
+    <svg class="off" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9zM16 9l4.5 6M20.5 9l-4.5 6"/></svg>
+    <svg class="on" viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9zM16 8.5a4.5 4.5 0 010 7M18.7 6a8 8 0 010 12"/></svg>
+  </button>
+</section>
+
 <!-- ============ ACADEMY HERO ============ -->
 <section class="prog-hero" id="overview" aria-labelledby="aca-h" data-screen-label="Academy hero">
-  <div class="ph-media"><div class="ph" role="img" aria-label="Academy intro video placeholder"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5.5 3.5-5.5 3.5z"/></svg><span class="phl">Academy intro video</span></div></div>
   <div class="container">
     <div class="ph-content reveal in">
-      <p class="eyebrow on-navy" style="margin-bottom:.6rem">The Academy</p>
+      <p class="eyebrow on-navy center" style="margin-bottom:.6rem">The Academy</p>
       <h1 id="aca-h"><span>Real-World Learning.</span><span class="gold">Real-World Impact.</span></h1>
       <p class="ph-sub">The Vanguard STEM Academy empowers students in grades 8&ndash;12 to solve real challenges, collaborate with industry leaders, and build the skills to lead the future.</p>
       <div class="ph-ctas">
@@ -1189,6 +1206,22 @@ section{position:relative}
 
 <script src="assets/nav-component.js"></script>
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+/* ============ ACADEMY INTRO VIDEO SOUND TOGGLE ============ */
+(function(){
+  var v=document.querySelector('.aca-video');
+  var btn=document.querySelector('.aca-vsound');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(v&&reduce){try{v.pause();v.removeAttribute('autoplay');}catch(e){}}
+  if(v&&btn){
+    btn.addEventListener('click',function(){
+      v.muted=!v.muted;
+      if(!v.muted){var p=v.play();if(p&&p.catch)p.catch(function(){});}
+      btn.classList.toggle('is-on',!v.muted);
+      btn.setAttribute('aria-pressed',String(!v.muted));
+      btn.setAttribute('aria-label',v.muted?'Unmute video':'Mute video');
+    });
+  }
+})();
 /* Back-to-top button (nav shadow, mobile menu & search handled by <vanguard-nav>) */
 const toTop=document.getElementById('toTop');
 if(toTop)toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));

@@ -943,6 +943,10 @@ section{position:relative}
 .ack-list{display:flex;flex-direction:column;gap:.5rem}
 .ack-list .chk{align-items:flex-start;line-height:1.5;background:#fff}
 .ack-list .chk input{margin-top:.15rem}
+.ack-list .chk.ack-missing{border-color:#c0392b;background:#fff5f4;box-shadow:inset 0 0 0 1px #c0392b}
+.ack-error{display:flex;gap:.4rem;align-items:flex-start;margin:.7rem 0 0;color:#c0392b;font-size:.76rem;font-weight:700;line-height:1.4}
+.ack-error svg{flex:none;width:16px;height:16px;margin-top:.05rem;fill:none;stroke:#c0392b;stroke-width:1.8}
+.ack-error[hidden]{display:none}
 .doc-row{display:flex;gap:.8rem;align-items:center;border:1px solid var(--line);border-radius:10px;padding:.75rem .9rem;margin-bottom:.6rem;background:#fff}
 .doc-row .dic{flex:none;width:38px;height:38px;border-radius:50%;background:var(--navy);display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(201,163,65,.5)}
 .doc-row .dic svg{width:17px;height:17px;stroke:var(--gold-2);fill:none;stroke-width:1.7}
@@ -1109,11 +1113,11 @@ section{position:relative}
             <div class="fld"><label>Last Name <em>*</em></label><input type="text" name="lastName" placeholder="Enter last name"></div>
             <div class="fld"><label>Preferred Name (Optional)</label><input type="text" name="preferredName" placeholder="Enter preferred name"></div>
             <div class="fld"><label>Date of Birth <em>*</em></label><input type="text" name="dob" placeholder="MM / DD / YYYY"></div>
-            <div class="fld"><label>Gender <em>*</em></label><select name="gender"><option value="">Select gender</option><option>Female</option><option>Male</option><option>Non-binary</option><option>Prefer not to say</option></select></div>
+            <div class="fld"><label>Gender <em>*</em></label><select name="gender"><option value="">Select gender</option><option>Female</option><option>Male</option><option>Prefer not to say</option></select></div>
             <div class="fld"><label>Phone Number <em>*</em></label><input type="tel" name="phone" placeholder="(609) 123-4567"></div>
             <div class="fld full"><label>Email Address <em>*</em></label><input type="email" name="email" placeholder="Enter email address"></div>
             <div class="fld"><label>City <em>*</em></label><input type="text" name="city" placeholder="Enter city"></div>
-            <div class="fld"><label>State <em>*</em></label><select name="state"><option value="">Select state</option><option>New Jersey</option><option>New York</option><option>Pennsylvania</option><option>Delaware</option><option>Other</option></select></div>
+            <div class="fld"><label>State <em>*</em></label><input type="text" name="state" placeholder="Enter state"></div>
             <div class="fld"><label>ZIP Code <em>*</em></label><input type="text" name="zip" placeholder="Enter ZIP code"></div>
           </div>
           <div class="af-sub"><span class="sic"><svg viewBox="0 0 24 24"><path d="M22 9L12 4 2 9l10 5 10-5z"/><path d="M6 11v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg></span>Academic / Professional Information</div>
@@ -1122,7 +1126,7 @@ section{position:relative}
             <div class="fld full"><label>Current School / College / Employer <em>*</em></label><input type="text" name="school" placeholder="Enter school, college, or employer name"></div>
             <div class="fld"><label>Current Grade Level (High School Students Only) <em>*</em></label><select name="gradeLevel"><option value="">Select grade level</option><option>8th</option><option>9th</option><option>10th</option><option>11th</option><option>12th</option><option>Not applicable</option></select></div>
             <div class="fld"><label>Current GPA (Optional)</label><input type="text" name="gpa" placeholder="e.g. 3.8"></div>
-            <div class="fld"><label>Expected Graduation Year (Optional)</label><select name="gradYear"><option value="">Select year</option><option>2026</option><option>2027</option><option>2028</option><option>2029</option><option>2030</option><option>2031</option><option>2032</option></select></div>
+            <div class="fld"><label>Expected Graduation Year (Optional)</label><input type="text" name="gradYear" inputmode="numeric" maxlength="4" placeholder="YYYY"></div>
             <div class="fld"><label>How did you hear about Vanguard STEM Academy? <em>*</em></label><select name="hearAbout"><option value="">Select an option</option><option>School counselor / teacher</option><option>Family or friend</option><option>Community organization</option><option>Employer</option><option>Social media</option><option>News / press</option><option>Other</option></select></div>
           </div>
           <div class="pg-box">
@@ -1184,6 +1188,7 @@ section{position:relative}
               <label class="chk"><input type="checkbox" name="programAck" value="Dismissal Policy Acknowledged">I understand that failure to meet program expectations may result in probation, dismissal, or removal from the program.</label>
               <label class="chk"><input type="checkbox" name="programAck" value="Information Accuracy Certified">I certify that all information provided in this application is accurate and complete.</label>
             </div>
+            <p class="ack-error" id="programAckErr" role="alert" hidden><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.2"/></svg><span>You must check <strong>all</strong> boxes above to continue. Each acknowledgement is required.</span></p>
           </div>
         </div>
         <div class="fstep" data-panel="5">
@@ -1223,6 +1228,7 @@ section{position:relative}
               <label class="chk"><input type="checkbox" name="finalAck" value="No Guarantee Acknowledged">I understand that submitting this application does not guarantee acceptance.</label>
               <label class="chk"><input type="checkbox" name="finalAck" value="Data Use Consent">I consent to Vanguard STEM Academy using my information for admissions purposes.</label>
             </div>
+            <p class="ack-error" id="finalAckErr" role="alert" hidden><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.2"/></svg><span>You must check <strong>all</strong> boxes above before submitting. Each certification is required.</span></p>
           </div>
           <p class="qh" style="text-align:center;margin-top:1rem">You will not be able to make changes after submission.</p>
         </div>
@@ -1336,12 +1342,34 @@ function vanguardSubmitForm(formType,formEl,extraFields){
 (function(){
   const TOTAL=7, titles=['','Applicant Information','Technical Readiness & Relevant Experience','Personal Statement','Program Expectations & Commitment','Supporting Documents','Review & Submit','Confirmation'];
   let cur=1, submitted=false;
+  /* ---- Required acknowledgements (legal gate: all boxes must be checked) ---- */
+  const ackGroups=[{name:'programAck',step:4},{name:'finalAck',step:6}];
+  const ackBoxes=name=>[...document.querySelectorAll('#afForm input[name="'+name+'"]')];
+  const ackComplete=name=>ackBoxes(name).every(b=>b.checked);
+  function ackReveal(name,show){
+    const err=document.getElementById(name+'Err');
+    if(err)err.hidden=!show||ackComplete(name);
+    ackBoxes(name).forEach(b=>{const w=b.closest('.chk');if(w)w.classList.toggle('ack-missing',show&&!b.checked);});
+  }
+  function ackFocusMissing(name){
+    const b=ackBoxes(name).find(x=>!x.checked);
+    if(b){const w=b.closest('.chk')||b;w.scrollIntoView({behavior:'smooth',block:'center'});}
+  }
   const dots=document.getElementById('afDots');
   for(let i=1;i<=TOTAL;i++){const d=document.createElement('i');if(i===1)d.classList.add('on');dots.appendChild(d);if(i<TOTAL){const b=document.createElement('b');dots.appendChild(b);}}
   const dotEls=[...dots.querySelectorAll('i')];
   const backBtn=document.getElementById('afBack'), nextBtn=document.getElementById('afNext'), actions=document.getElementById('afActions');
   function go(n){
     if(n<1||n>TOTAL)return;
+    /* Block moving forward past an acknowledgement step until its boxes are all checked. */
+    const leaving=ackGroups.find(g=>cur===g.step&&n>cur&&!ackComplete(g.name));
+    if(leaving){ackReveal(leaving.name,true);ackFocusMissing(leaving.name);return;}
+    /* Hard legal gate: never reach the submit/confirmation step with any box unchecked,
+       no matter how the user navigated (side steps, review "Edit" jumps, etc.). */
+    if(n===TOTAL&&!submitted){
+      const miss=ackGroups.find(g=>!ackComplete(g.name));
+      if(miss){go(miss.step);ackReveal(miss.name,true);ackFocusMissing(miss.name);return;}
+    }
     cur=n;
     document.querySelectorAll('.fstep').forEach(p=>p.classList.toggle('on',+p.dataset.panel===n));
     document.querySelectorAll('.step-item').forEach(s=>{const k=+s.dataset.step;s.classList.toggle('active',k===n);s.classList.toggle('done',k<n);});
@@ -1374,6 +1402,12 @@ function vanguardSubmitForm(formType,formEl,extraFields){
     const c=t.parentElement.querySelector('.cnt');
     if(c)t.addEventListener('input',()=>c.textContent=t.value.length+' / '+t.getAttribute('maxlength'));
   });
+  /* Once we've flagged a group, keep the highlight/message in sync as boxes are checked. */
+  ackGroups.forEach(g=>ackBoxes(g.name).forEach(b=>b.addEventListener('change',()=>{
+    const err=document.getElementById(g.name+'Err');
+    if(ackComplete(g.name))ackReveal(g.name,false);
+    else if(err&&!err.hidden)ackReveal(g.name,true);
+  })));
 })();
 </script>
 

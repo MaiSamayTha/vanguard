@@ -968,6 +968,12 @@ section{position:relative}
 .updrop .ub{display:inline-block;background:var(--burgundy);color:#fff;font-weight:800;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1.2rem;border-radius:8px;cursor:pointer;transition:.3s}
 .updrop .ub:hover{background:var(--burgundy-2)}
 .updrop .un{font-size:.64rem;color:var(--muted);margin-top:.6rem}
+.updrop.dragover{background:#fbf1d6;border-style:solid;border-color:var(--burgundy)}
+.updrop-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;text-align:left}
+.updrop-list:empty{display:none}
+.updrop-file{display:flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--line);border-radius:8px;padding:.4rem .5rem .4rem .8rem;font-size:.7rem;color:var(--navy);font-weight:600}
+.updrop-file button{border:none;background:none;color:var(--muted);cursor:pointer;font-size:1rem;line-height:1;padding:.1rem .3rem}
+.updrop-file button:hover{color:var(--burgundy)}
 .info-note{display:flex;gap:.6rem;align-items:flex-start;border:1px solid var(--gold);border-radius:10px;background:#fdf6e3;padding:.75rem .9rem;font-size:.72rem;color:var(--ink);line-height:1.55;margin:.9rem 0 1.1rem}
 .info-note svg{flex:none;width:16px;height:16px;stroke:var(--gold-deep);fill:none;stroke-width:2;margin-top:.1rem}
 .rvw-list{margin:0 0 .4rem;padding-left:1.1rem}
@@ -1201,7 +1207,7 @@ section{position:relative}
           <div class="af-sub"><span class="sic"><svg viewBox="0 0 24 24"><path d="M3 6h6l2 2h10v12H3z"/></svg></span>Optional Documents</div>
           <p class="af-intro" style="margin-bottom:.7rem">Upload any additional documents that help showcase your achievements, experience, and potential. Examples include:</p>
           <div class="opt-chips"><span>Portfolio</span><span>Certifications</span><span>GitHub Repository</span><span>Letters of Recommendation</span><span>Awards &amp; Honors</span><span>LinkedIn Profile</span><span>Project Samples</span><span>Research Papers</span><span>Other Supporting Materials</span></div>
-          <div class="updrop"><svg viewBox="0 0 24 24"><path d="M7 17a5 5 0 01-.9-9.9A6 6 0 0118 8.5 4.5 4.5 0 0117.5 17"/><path d="M12 12v8M9 15l3-3 3 3"/></svg><div class="ut">Drag &amp; drop your files here</div><div class="uo">or</div><span class="ub">Browse Files</span><div class="un">You can upload multiple files at once &middot; up to 10 files &middot; max 20MB per file.</div></div>
+          <div class="updrop" id="docDrop"><svg viewBox="0 0 24 24"><path d="M7 17a5 5 0 01-.9-9.9A6 6 0 0118 8.5 4.5 4.5 0 0117.5 17"/><path d="M12 12v8M9 15l3-3 3 3"/></svg><div class="ut">Drag &amp; drop your files here</div><div class="uo">or</div><label class="ub" for="docFiles">Browse Files</label><input type="file" id="docFiles" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" style="display:none"><div class="un">You can upload multiple files at once &middot; up to 10 files &middot; max 20MB per file.</div><div class="updrop-list" id="docFileList"></div></div>
           <div class="info-note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.5"/></svg><span>Make sure all uploaded documents are clear and readable. Incomplete or unclear submissions may delay the review of your application.</span></div>
           <div class="fld"><label>Additional Links (Optional)</label><p class="qh">If you have a portfolio, GitHub repository, LinkedIn profile, personal website, or other online work you&rsquo;d like us to review, please provide the link below.</p><input type="url" name="additionalLinks" placeholder="https:// (e.g., linkedin.com/in/yourprofile, github.com/username, yourportfolio.com)"></div>
         </div>
@@ -1426,6 +1432,71 @@ function vanguardSubmitForm(formType,formEl,extraFields){
       zone.classList.add('has-file');
       text.textContent=input.files[0].name;
     }
+  });
+})();
+</script>
+<script>
+/* application document upload: browse + drag & drop, multi-file, capped */
+(function(){
+  var drop=document.getElementById('docDrop');
+  if(!drop)return;
+  var input=document.getElementById('docFiles');
+  var list=document.getElementById('docFileList');
+  var MAX_FILES=10, MAX_SIZE=20*1024*1024;
+  var files=[];
+
+  function render(){
+    list.innerHTML='';
+    files.forEach(function(f,i){
+      var chip=document.createElement('span');
+      chip.className='updrop-file';
+      var name=document.createElement('span');
+      name.textContent=f.name;
+      var rm=document.createElement('button');
+      rm.type='button';
+      rm.setAttribute('aria-label','Remove '+f.name);
+      rm.textContent='×';
+      rm.addEventListener('click',function(e){
+        e.preventDefault();
+        files.splice(i,1);
+        render();
+      });
+      chip.appendChild(name);
+      chip.appendChild(rm);
+      list.appendChild(chip);
+    });
+  }
+
+  function addFiles(fileList){
+    var rejected=[];
+    Array.prototype.forEach.call(fileList,function(f){
+      if(files.length>=MAX_FILES){rejected.push(f.name+' (limit of '+MAX_FILES+' files reached)');return}
+      if(f.size>MAX_SIZE){rejected.push(f.name+' (exceeds 20MB)');return}
+      files.push(f);
+    });
+    if(rejected.length)alert('Some files were not added:\n'+rejected.join('\n'));
+    render();
+  }
+
+  input.addEventListener('change',function(){
+    addFiles(input.files);
+    input.value='';
+  });
+
+  ['dragenter','dragover'].forEach(function(evt){
+    drop.addEventListener(evt,function(e){
+      e.preventDefault();e.stopPropagation();
+      drop.classList.add('dragover');
+    });
+  });
+  ['dragleave','dragend','drop'].forEach(function(evt){
+    drop.addEventListener(evt,function(e){
+      e.preventDefault();e.stopPropagation();
+      drop.classList.remove('dragover');
+    });
+  });
+  drop.addEventListener('drop',function(e){
+    if(e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files.length)addFiles(e.dataTransfer.files);
   });
 })();
 </script>

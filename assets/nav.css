@@ -215,7 +215,10 @@
   top: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%) translateY(10px);
-  min-width: 270px;
+  min-width: 320px;
+  max-width: 360px;
+  max-height: 74vh;
+  overflow-y: auto;
   background: var(--navy);
   border: 1px solid rgba(201,163,65,.4);
   border-radius: 14px;
@@ -246,17 +249,19 @@
 }
 .dropdown a {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding: .7rem .95rem;
-  border-radius: 3px;
+  align-items: flex-start;
+  gap: .7rem;
+  padding: .65rem .85rem;
+  border-radius: 8px;
   color: #e8edf5;
   transition: all .25s;
   border-left: 2px solid transparent;
 }
-.dropdown a strong { font-weight: 600; font-size: .92rem; color: #fff; font-family: var(--sans); }
-.dropdown a span   { font-size: .76rem; color: #9fb0c6; }
-.dropdown a:hover  { background: rgba(201,163,65,.14); border-left-color: var(--gold); padding-left: 1.15rem; }
+.dropdown a .di { width: 20px; height: 20px; flex: none; margin-top: 2px; stroke: var(--gold-light); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.dropdown a .dtx { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.dropdown a strong { font-weight: 600; font-size: .88rem; color: #fff; font-family: var(--sans); }
+.dropdown a span   { font-size: .74rem; color: #9fb0c6; line-height: 1.4; }
+.dropdown a:hover  { background: rgba(201,163,65,.14); border-left-color: var(--gold); padding-left: 1.0rem; }
 .dropdown a:hover strong { color: var(--gold-light); }
 
 /* ----------------------------------------------------------

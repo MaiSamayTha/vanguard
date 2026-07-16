@@ -1291,6 +1291,8 @@ section{position:relative}
             <input type="file" id="rpUpload" accept=".pdf,.doc,.docx" style="display:none">
           </label>
           <div class="rail-note">Accepted formats: PDF, DOC, DOCX</div>
+          <button type="button" class="rail-btn" id="rpSubmit" style="margin-top:.7rem;cursor:pointer;opacity:.55;pointer-events:none" disabled><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg>Submit Application</button>
+          <p class="rail-note" id="rpStatus" hidden style="margin-top:.6rem"></p>
         </div>
         <div class="rail-q">
           <div class="rp-h"><span class="rail-ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg></span>Have Questions?</div>
@@ -1339,15 +1341,34 @@ section{position:relative}
 <script src="assets/nav-component.js"></script>
 <script>
 const VANGUARD_FORM_ENDPOINT='https://script.google.com/a/macros/vstemacad.org/s/AKfycbzl8v21P2ecIc_Sd_P1CpfDqcGrB4ZU2-fgEZvLflk8XYhKbdxWjQKTvvBGmr6Y19te/exec';
-function vanguardSubmitForm(formType,formEl,extraFields){
-  var fd=new FormData(formEl),fields={};
+/* Shared store so the file uploaders (defined in separate scripts below) can hand
+   their selected files to the submit function at submit time. */
+window.VANGUARD_UPLOADS=window.VANGUARD_UPLOADS||{docs:[],paper:[]};
+/* Read a File into a base64 payload the Apps Script backend can decode and attach. */
+function vanguardReadFile(file){
+  return new Promise(function(resolve){
+    var r=new FileReader();
+    r.onload=function(){
+      var res=String(r.result||''),comma=res.indexOf(',');
+      resolve({name:file.name,type:file.type||'application/octet-stream',size:file.size,data:comma>=0?res.slice(comma+1):res});
+    };
+    r.onerror=function(){resolve(null);};
+    r.readAsDataURL(file);
+  });
+}
+function vanguardSubmitForm(formType,formEl,extraFields,files){
+  var fd=formEl?new FormData(formEl):new FormData(),fields={};
   fd.forEach(function(value,key){
+    if(value instanceof File)return; /* files are sent separately, base64-encoded */
     if(fields[key]!==undefined){fields[key]=(Array.isArray(fields[key])?fields[key]:[fields[key]]).concat(value)}
     else{fields[key]=value}
   });
   Object.keys(fields).forEach(function(k){if(Array.isArray(fields[k]))fields[k]=fields[k].join(', ')});
   if(extraFields)Object.assign(fields,extraFields);
-  return fetch(VANGUARD_FORM_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:formType,fields:fields})}).catch(function(err){console.error('Vanguard form submit failed',err)});
+  var list=files&&files.length?Array.prototype.slice.call(files):[];
+  return Promise.all(list.map(vanguardReadFile)).then(function(encoded){
+    return fetch(VANGUARD_FORM_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:formType,fields:fields,files:encoded.filter(Boolean)})});
+  }).catch(function(err){console.error('Vanguard form submit failed',err)});
 }
 (function(){
   const TOTAL=7, titles=['','Applicant Information','Technical Readiness & Relevant Experience','Personal Statement','Program Expectations & Commitment','Supporting Documents','Review & Submit','Confirmation'];
@@ -1397,7 +1418,7 @@ function vanguardSubmitForm(formType,formEl,extraFields){
       if(idEl&&idEl.textContent.trim()==='\u2014')idEl.textContent='VSA-'+now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+'-'+String(Math.floor(1000+Math.random()*9000));
       if(!submitted){
         submitted=true;
-        vanguardSubmitForm('apply',document.getElementById('afForm'),{applicationId:idEl?idEl.textContent.trim():''});
+        vanguardSubmitForm('apply',document.getElementById('afForm'),{applicationId:idEl?idEl.textContent.trim():''},window.VANGUARD_UPLOADS.docs);
       }
     }
     const form=document.getElementById('appform');
@@ -1427,11 +1448,39 @@ function vanguardSubmitForm(formType,formEl,extraFields){
   if(!zone)return;
   var input=document.getElementById('rpUpload');
   var text=document.getElementById('rpUploadText');
+  var submit=document.getElementById('rpSubmit');
+  var status=document.getElementById('rpStatus');
+  function setStatus(msg){if(status){status.hidden=!msg;status.textContent=msg||'';}}
+  function enableSubmit(on){
+    if(!submit)return;
+    submit.disabled=!on;
+    submit.style.opacity=on?'1':'.55';
+    submit.style.pointerEvents=on?'auto':'none';
+  }
   input.addEventListener('change',function(){
     if(input.files&&input.files.length){
       zone.classList.add('has-file');
       text.textContent=input.files[0].name;
+      window.VANGUARD_UPLOADS.paper=[input.files[0]];
+      enableSubmit(true);
+      setStatus('');
     }
+  });
+  if(submit)submit.addEventListener('click',function(){
+    var f=window.VANGUARD_UPLOADS.paper;
+    if(!f||!f.length){setStatus('Please choose your completed form first.');return;}
+    enableSubmit(false);
+    submit.textContent='Submitting…';
+    var now=new Date();
+    var appId='VSA-'+now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+'-'+String(Math.floor(1000+Math.random()*9000));
+    vanguardSubmitForm('apply-paper',null,{applicationId:appId,submittedVia:'Paper application upload'},f).then(function(){
+      submit.textContent='Application Submitted ✓';
+      setStatus('Thank you — your completed form was submitted. Application ID: '+appId);
+    }).catch(function(){
+      enableSubmit(true);
+      submit.textContent='Submit Application';
+      setStatus('Something went wrong. Please try again or email admissions@vstemacad.org.');
+    });
   });
 })();
 </script>
@@ -1442,8 +1491,8 @@ function vanguardSubmitForm(formType,formEl,extraFields){
   if(!drop)return;
   var input=document.getElementById('docFiles');
   var list=document.getElementById('docFileList');
-  var MAX_FILES=10, MAX_SIZE=20*1024*1024;
-  var files=[];
+  var MAX_FILES=10, MAX_SIZE=20*1024*1024, MAX_TOTAL=25*1024*1024;
+  var files=window.VANGUARD_UPLOADS.docs;
 
   function render(){
     list.innerHTML='';
@@ -1472,6 +1521,8 @@ function vanguardSubmitForm(formType,formEl,extraFields){
     Array.prototype.forEach.call(fileList,function(f){
       if(files.length>=MAX_FILES){rejected.push(f.name+' (limit of '+MAX_FILES+' files reached)');return}
       if(f.size>MAX_SIZE){rejected.push(f.name+' (exceeds 20MB)');return}
+      var total=files.reduce(function(s,x){return s+x.size},0);
+      if(total+f.size>MAX_TOTAL){rejected.push(f.name+' (total uploads would exceed 25MB)');return}
       files.push(f);
     });
     if(rejected.length)alert('Some files were not added:\n'+rejected.join('\n'));

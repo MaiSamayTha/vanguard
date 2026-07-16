@@ -364,10 +364,25 @@
 .mp-links > li > a[aria-current="page"] { color: var(--gold-deep); }
 .mp-ic { width: 24px; height: 24px; flex: none; stroke: var(--gold-deep); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .mp-links .caret {
-  width: 13px; height: 13px; margin-left: auto; stroke: var(--gold-deep); stroke-width: 2.4; fill: none;
+  width: 13px; height: 13px; stroke: var(--gold-deep); stroke-width: 2.4; fill: none;
   stroke-linecap: round; stroke-linejoin: round; transition: transform .35s var(--ease); flex: none;
 }
-.mp-links button[aria-expanded="true"] .caret { transform: rotate(180deg); }
+
+/* split row: label navigates, toggle only expands the submenu */
+.mp-links .msub-row { display: flex; align-items: stretch; width: 100%; }
+.mp-links .msub-row .msub-link {
+  flex: 1; min-width: 0; display: flex; align-items: center; gap: .9rem;
+  padding: .95rem .2rem; color: #000; font-family: var(--sans); font-weight: 600;
+  font-size: 1rem; text-decoration: none; transition: color .25s; min-height: 48px;
+}
+.mp-links .msub-row .msub-link:hover,
+.mp-links .msub-row .msub-link[aria-current="page"] { color: var(--gold-deep); }
+.mp-links .msub-row .msub-toggle {
+  flex: none; width: 44px; display: flex; align-items: center; justify-content: center;
+  background: none; border: none; cursor: pointer; padding: 0;
+}
+.mp-links .msub-row .msub-toggle[aria-expanded="true"] { color: var(--gold-deep); }
+.mp-links .msub-row .msub-toggle[aria-expanded="true"] .caret { transform: rotate(180deg); }
 
 /* rich accordion submenu */
 .mp-links .sub { max-height: 0; overflow: hidden; transition: max-height .42s var(--ease); }

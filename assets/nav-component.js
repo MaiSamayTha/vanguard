@@ -88,11 +88,10 @@ class VanguardNav extends HTMLElement {
   <ul class="mp-links">
 
     <li>
-      <button class="msub" aria-expanded="false">
-        <svg class="mp-ic" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7"/><path d="M6 9.5V20h12V9.5"/></svg>
-        Home
-        <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
+      <div class="msub-row">
+        <a href="home.html" class="msub-link"><svg class="mp-ic" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7"/><path d="M6 9.5V20h12V9.5"/></svg>Home</a>
+        <button class="msub-toggle" aria-expanded="false" aria-label="Toggle Home submenu"><svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
       <div class="sub">
         <div class="sub-card">
           <a class="sub-item" href="home.html#path-h">
@@ -114,11 +113,10 @@ class VanguardNav extends HTMLElement {
     <li><a href="leadership.html"><svg class="mp-ic" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4a3 3 0 010 8M18 14c2.4.8 4 2.6 4 6"/></svg>The Leadership Team</a></li>
 
     <li>
-      <button class="msub" aria-expanded="false">
-        <svg class="mp-ic" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg>
-        Programs
-        <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
+      <div class="msub-row">
+        <a href="programs.html" class="msub-link"><svg class="mp-ic" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg>Programs</a>
+        <button class="msub-toggle" aria-expanded="false" aria-label="Toggle Programs submenu"><svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
       <div class="sub">
         <div class="sub-card">
           <a class="sub-item" href="programs.html#coaching">
@@ -154,11 +152,10 @@ class VanguardNav extends HTMLElement {
     </li>
 
     <li>
-      <button class="msub" aria-expanded="false">
-        <svg class="mp-ic" viewBox="0 0 24 24"><path d="M3 21h18M5 21V10h14v11M12 3L3 8h18z"/></svg>
-        The Academy
-        <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
+      <div class="msub-row">
+        <a href="academy.html" class="msub-link"><svg class="mp-ic" viewBox="0 0 24 24"><path d="M3 21h18M5 21V10h14v11M12 3L3 8h18z"/></svg>The Academy</a>
+        <button class="msub-toggle" aria-expanded="false" aria-label="Toggle The Academy submenu"><svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
       <div class="sub">
         <div class="sub-card">
           <a class="sub-item" href="academy.html#overview">
@@ -192,11 +189,10 @@ class VanguardNav extends HTMLElement {
     <li><a href="apply.html"><svg class="mp-ic" viewBox="0 0 24 24"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></svg>Apply to the Academy</a></li>
 
     <li>
-      <button class="msub" aria-expanded="false">
-        <svg class="mp-ic" viewBox="0 0 24 24"><path d="M12 3l2.4 5 5.6.7-4 3.9 1 5.4L12 21l-5-3 1-5.4L4 8.7l5.6-.7z"/></svg>
-        Our Impact
-        <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
+      <div class="msub-row">
+        <a href="impact.html" class="msub-link"><svg class="mp-ic" viewBox="0 0 24 24"><path d="M12 3l2.4 5 5.6.7-4 3.9 1 5.4L12 21l-5-3 1-5.4L4 8.7l5.6-.7z"/></svg>Our Impact</a>
+        <button class="msub-toggle" aria-expanded="false" aria-label="Toggle Our Impact submenu"><svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
       <div class="sub">
         <div class="sub-card">
           <a class="sub-item" href="impact.html#motion">
@@ -232,11 +228,10 @@ class VanguardNav extends HTMLElement {
     </li>
 
     <li>
-      <button class="msub" aria-expanded="false">
-        <svg class="mp-ic" viewBox="0 0 24 24"><path d="M12 18.4s-5.6-3.5-5.6-7.2A3.2 3.2 0 0112 8.9a3.2 3.2 0 015.6 2.3c0 3.7-5.6 7.2-5.6 7.2z"/><path d="M4.5 21c1.4-1.3 3.2-1.9 5.2-1.9h4.6c2 0 3.8.6 5.2 1.9"/></svg>
-        Get Involved
-        <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
-      </button>
+      <div class="msub-row">
+        <a href="get-involved.html" class="msub-link"><svg class="mp-ic" viewBox="0 0 24 24"><path d="M12 18.4s-5.6-3.5-5.6-7.2A3.2 3.2 0 0112 8.9a3.2 3.2 0 015.6 2.3c0 3.7-5.6 7.2-5.6 7.2z"/><path d="M4.5 21c1.4-1.3 3.2-1.9 5.2-1.9h4.6c2 0 3.8.6 5.2 1.9"/></svg>Get Involved</a>
+        <button class="msub-toggle" aria-expanded="false" aria-label="Toggle Get Involved submenu"><svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
       <div class="sub">
         <div class="sub-card">
           <a class="sub-item" href="get-involved.html#partner">
@@ -336,19 +331,19 @@ class VanguardNav extends HTMLElement {
     if (dim) dim.addEventListener('click', closeMenu);
 
     function closeSub(btn) {
-      const sub = btn.nextElementSibling;
+      const sub = btn.closest('.msub-row').nextElementSibling;
       btn.setAttribute('aria-expanded', 'false');
       sub.style.maxHeight = null;
     }
     function openSub(btn) {
-      const sub = btn.nextElementSibling;
+      const sub = btn.closest('.msub-row').nextElementSibling;
       btn.setAttribute('aria-expanded', 'true');
       sub.style.maxHeight = sub.scrollHeight + 'px';
     }
-    this.querySelectorAll('.msub').forEach(btn => {
+    this.querySelectorAll('.msub-toggle').forEach(btn => {
       btn.addEventListener('click', () => {
         const isOpen = btn.getAttribute('aria-expanded') === 'true';
-        this.querySelectorAll('.msub').forEach(b => closeSub(b));
+        this.querySelectorAll('.msub-toggle').forEach(b => closeSub(b));
         if (!isOpen) openSub(btn);
       });
     });
@@ -381,7 +376,7 @@ class VanguardNav extends HTMLElement {
 
     // Auto-update active page state in desktop + mobile nav
     const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    this.querySelectorAll('.navlinks > li > a, .mp-links > li > a').forEach(link => {
+    this.querySelectorAll('.navlinks > li > a, .mp-links > li > a, .mp-links .msub-link').forEach(link => {
       if (link.getAttribute('href') === currentPath) {
         link.setAttribute('aria-current', 'page');
       } else {

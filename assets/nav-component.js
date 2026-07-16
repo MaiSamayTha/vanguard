@@ -77,7 +77,7 @@ class VanguardNav extends HTMLElement {
 <aside class="mobile-panel" id="mobilePanel" aria-label="Mobile menu">
   <div class="mp-head">
     <div class="mp-brand">
-      <span class="mp-crest"><svg viewBox="0 0 24 24"><path d="M12 3l2.1 4.4 4.9.6-3.6 3.3 1 4.8L12 13.9 7.6 16l1-4.8L5 7.9l4.9-.6z"/></svg></span>
+      <span class="mp-crest"><img src="assets/footer-badge.png" alt="Vanguard STEM Academy crest"></span>
       <div>
         <div class="t1">Vanguard</div>
         <div class="t2">STEM Academy</div>
@@ -261,7 +261,7 @@ class VanguardNav extends HTMLElement {
 
   </ul>
   <div class="mp-util">
-    <a href="portal.html" class="btn btn-secondary">Login / Portal</a>
+    <a href="portal.html" class="btn btn-gold">Login / Portal</a>
     <a href="apply.html" class="btn btn-gold">Apply to the Academy</a>
   </div>
 </aside>

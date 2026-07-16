@@ -9,7 +9,7 @@ class VanguardNav extends HTMLElement {
   <div class="container">
     <a href="apply.html">Apply</a>
     <a href="portal.html">Portal Login</a>
-    <a href="get-involved.html#inquire">Contact</a>
+    <a href="mailto:info@vstemacad.org">Contact</a>
     <a href="get-involved.html#sponsor" class="donate">Sponsor a Student</a>
   </div>
 </div>
@@ -111,7 +111,7 @@ class VanguardNav extends HTMLElement {
     <a href="apply.html" class="btn btn-gold">Apply to the Academy</a>
   </div>
   <div style="margin-top:1.4rem;display:flex;flex-wrap:wrap;gap:.4rem 1rem;font-size:.8rem">
-    <a href="get-involved.html#inquire" style="color:#9fb0c6">Contact</a>
+    <a href="mailto:info@vstemacad.org" style="color:#9fb0c6">Contact</a>
     <a href="get-involved.html#sponsor" style="color:var(--gold-light)">Sponsor a Student</a>
   </div>
 </aside>

@@ -7,7 +7,7 @@ class VanguardNav extends HTMLElement {
 <!-- ============ UTILITY BAR ============ -->
 <div class="utilbar">
   <div class="container">
-    <a href="home.html#apply">Apply</a>
+    <a href="apply.html">Apply</a>
     <a href="portal.html">Portal Login</a>
     <a href="get-involved.html#inquire">Contact</a>
     <a href="get-involved.html#sponsor" class="donate">Sponsor a Student</a>

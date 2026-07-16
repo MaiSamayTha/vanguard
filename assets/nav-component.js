@@ -44,7 +44,6 @@ class VanguardNav extends HTMLElement {
           <a href="academy.html#cohorts" role="menuitem"><svg class="di" viewBox="0 0 24 24"><circle cx="8" cy="9" r="2.4"/><circle cx="16" cy="9" r="2.4"/><path d="M3 19c0-2.5 2.2-4.3 5-4.3s5 1.8 5 4.3M13 18.5c.3-2.2 2.3-3.8 4.8-3.8 2.6 0 4.2 1.6 4.2 4"/></svg><span class="dtx"><strong>Our Cohorts, Our Future Leaders</strong><span>View cohort experiences, student collaboration, presentations, and program highlights.</span></span></a>
           <a href="academy.html#cohorts-stevens" role="menuitem"><svg class="di" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a14 14 0 000 18M12 3a14 14 0 010 18M3 12h18"/></svg><span class="dtx"><strong>From Vanguard to Stevens</strong><span>Learn how qualifying students continue their development through summer experiences at Stevens Institute of Technology.</span></span></a>
           <a href="impact.html#recognition" role="menuitem"><svg class="di" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L7.5 21l4.5-2.5L16.5 21 15 13.5"/></svg><span class="dtx"><strong>Achievements &amp; Recognition</strong><span>Explore municipal recognition, academy honors, international engagement, and major student accomplishments.</span></span></a>
-          <a href="get-involved.html#partner" role="menuitem"><svg class="di" viewBox="0 0 24 24"><path d="M8 13l2.5 2.5a2 2 0 002.8 0l.7-.7 3 3M8 13l-3-3a2 2 0 010-2.8l1.2-1.2a2 2 0 012.8 0L14 9l3-3 4 4-5 5"/></svg><span class="dtx"><strong>Trusted by Industry Leaders &amp; Partners</strong><span>View the universities, companies, community organizations, and global leaders supporting Vanguard students.</span></span></a>
         </div>
       </li>
       <li><a href="apply.html">Apply to the Academy</a></li>
@@ -177,10 +176,6 @@ class VanguardNav extends HTMLElement {
           <a class="sub-item" href="impact.html#recognition">
             <svg class="si-ic" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L7.5 21l4.5-2.5L16.5 21 15 13.5"/></svg>
             <span class="si-tx"><strong>Achievements &amp; Recognition</strong><span>Explore municipal recognition, academy honors, international engagement, and major student accomplishments.</span></span>
-          </a>
-          <a class="sub-item" href="get-involved.html#partner">
-            <svg class="si-ic" viewBox="0 0 24 24"><path d="M8 13l2.5 2.5a2 2 0 002.8 0l.7-.7 3 3M8 13l-3-3a2 2 0 010-2.8l1.2-1.2a2 2 0 012.8 0L14 9l3-3 4 4-5 5"/></svg>
-            <span class="si-tx"><strong>Trusted by Industry Leaders &amp; Partners</strong><span>View the universities, companies, community organizations, and global leaders supporting Vanguard students.</span></span>
           </a>
         </div>
       </div>

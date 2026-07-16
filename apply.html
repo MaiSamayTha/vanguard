@@ -852,6 +852,8 @@ section{position:relative}
 .rail-btn:hover{filter:brightness(1.08)}
 .rail-btn.outline{background:transparent;color:var(--gold-light)}
 .rail-btn.outline:hover{background:var(--gold-grad);color:var(--navy)}
+.rail-btn.outline span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rail-btn.outline.has-file{background:rgba(143,193,138,.15);border-color:#8fc18a;color:#8fc18a}
 .rail-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
 .rail-or{text-align:center;font-size:.62rem;font-weight:800;color:var(--gold-light);letter-spacing:.14em;margin:.55rem 0}
 .rail-note{font-size:.62rem;color:#fff;font-weight:600;text-align:center;margin-top:.6rem}
@@ -1277,9 +1279,11 @@ section{position:relative}
         <div class="rail-paper">
           <div class="rp-h"><span class="rail-ic"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></span>Prefer to apply on paper?</div>
           <p>Download the application, complete it, and upload it here.</p>
-          <a href="#" class="rail-btn"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>Download Application</a>
+          <a href="assets/VSA-Programs-Application-Form-2027.pdf" download="VSA Programs Application Form 2027.pdf" class="rail-btn"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>Download Application</a>
           <div class="rail-or">OR</div>
-          <a href="#" class="rail-btn outline"><svg viewBox="0 0 24 24"><path d="M12 15V3M7 8l5-5 5 5M4 21h16"/></svg>Upload Completed Form</a>
+          <label class="rail-btn outline" id="rpUploadZone"><svg viewBox="0 0 24 24"><path d="M12 15V3M7 8l5-5 5 5M4 21h16"/></svg><span id="rpUploadText">Upload Completed Form</span>
+            <input type="file" id="rpUpload" accept=".pdf,.doc,.docx" style="display:none">
+          </label>
           <div class="rail-note">Accepted formats: PDF, DOC, DOCX</div>
         </div>
         <div class="rail-q">
@@ -1408,6 +1412,21 @@ function vanguardSubmitForm(formType,formEl,extraFields){
     if(ackComplete(g.name))ackReveal(g.name,false);
     else if(err&&!err.hidden)ackReveal(g.name,true);
   })));
+})();
+</script>
+<script>
+/* paper-application upload filename display */
+(function(){
+  var zone=document.getElementById('rpUploadZone');
+  if(!zone)return;
+  var input=document.getElementById('rpUpload');
+  var text=document.getElementById('rpUploadText');
+  input.addEventListener('change',function(){
+    if(input.files&&input.files.length){
+      zone.classList.add('has-file');
+      text.textContent=input.files[0].name;
+    }
+  });
 })();
 </script>
 

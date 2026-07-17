@@ -931,13 +931,24 @@ section[aria-labelledby="path-h"]{border-bottom:none!important}
   var btn=document.querySelector('.lp-sound');
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(v&&reduce){try{v.pause();v.removeAttribute('autoplay');}catch(e){}}
+  function reflectState(){
+    if(!btn)return;
+    btn.classList.toggle('is-on',!v.muted);
+    btn.setAttribute('aria-pressed',String(!v.muted));
+    btn.setAttribute('aria-label',v.muted?'Unmute video':'Mute video');
+  }
+  if(v&&!reduce){
+    v.muted=false;
+    var up=v.play();
+    if(up&&up.catch)up.catch(function(){v.muted=true;v.play().catch(function(){});reflectState();});
+    else reflectState();
+    reflectState();
+  }
   if(v&&btn){
     btn.addEventListener('click',function(){
       v.muted=!v.muted;
       if(!v.muted){var p=v.play();if(p&&p.catch)p.catch(function(){});}
-      btn.classList.toggle('is-on',!v.muted);
-      btn.setAttribute('aria-pressed',String(!v.muted));
-      btn.setAttribute('aria-label',v.muted?'Unmute video':'Mute video');
+      reflectState();
     });
   }
   var cue=document.querySelector('.lp-cue'), footer=document.querySelector('.footer');

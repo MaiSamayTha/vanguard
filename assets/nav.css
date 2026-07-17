@@ -219,8 +219,8 @@
   max-width: 360px;
   max-height: 74vh;
   overflow-y: auto;
-  background: var(--navy);
-  border: 1px solid rgba(201,163,65,.4);
+  background: #fff;
+  border: 1px solid rgba(11,34,81,.12);
   border-radius: 14px;
   padding: .6rem;
   opacity: 0;
@@ -237,9 +237,9 @@
   transform: translateX(-50%) rotate(45deg);
   width: 12px;
   height: 12px;
-  background: var(--navy);
-  border-left: 1px solid rgba(201,163,65,.4);
-  border-top: 1px solid rgba(201,163,65,.4);
+  background: #fff;
+  border-left: 1px solid rgba(11,34,81,.12);
+  border-top: 1px solid rgba(11,34,81,.12);
 }
 .navlinks > li:hover .dropdown,
 .navlinks > li:focus-within .dropdown {
@@ -253,16 +253,16 @@
   gap: .7rem;
   padding: .65rem .85rem;
   border-radius: 8px;
-  color: #e8edf5;
+  color: var(--navy);
   transition: all .25s;
   border-left: 2px solid transparent;
 }
-.dropdown a .di { width: 20px; height: 20px; flex: none; margin-top: 2px; stroke: var(--gold-light); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.dropdown a .di { width: 20px; height: 20px; flex: none; margin-top: 2px; stroke: var(--gold); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .dropdown a .dtx { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-.dropdown a strong { font-weight: 600; font-size: .88rem; color: #fff; font-family: var(--sans); }
-.dropdown a span   { font-size: .74rem; color: #9fb0c6; line-height: 1.4; }
-.dropdown a:hover  { background: rgba(201,163,65,.14); border-left-color: var(--gold); padding-left: 1.0rem; }
-.dropdown a:hover strong { color: var(--gold-light); }
+.dropdown a strong { font-weight: 600; font-size: .88rem; color: var(--navy); font-family: var(--sans); }
+.dropdown a span   { font-size: .74rem; color: #6b7688; line-height: 1.4; }
+.dropdown a:hover  { background: rgba(201,163,65,.12); border-left-color: var(--gold); padding-left: 1.0rem; }
+.dropdown a:hover strong { color: var(--navy); }
 
 /* ----------------------------------------------------------
    HAMBURGER (hidden by default, shown via media query)

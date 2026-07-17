@@ -22,7 +22,14 @@ class VanguardNav extends HTMLElement {
       <img src="assets/vanguard-logo-transparent.png" alt="Vanguard STEM Academy crest logo">
     </a>
     <ul class="navlinks desktop-only">
-      <li><a href="home.html" aria-current="page">Home</a></li>
+      <li>
+        <a href="home.html" aria-current="page">Home <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
+        <div class="dropdown" role="menu">
+          <a href="home.html#path-h" role="menuitem"><svg class="di" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="12" r="2.4"/><path d="M8.2 6.6c3 .3 4.4 1.9 4.4 5.4M8.2 17.4c3-.3 4.4-1.9 4.4-5.4"/></svg><span class="dtx"><strong>Choose Your Pathway</strong><span>Find the program that matches your goals.</span></span></a>
+          <a href="programs.html" role="menuitem"><svg class="di" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg><span class="dtx"><strong>Our Core Programs</strong><span>Our primary programs for students and professionals.</span></span></a>
+          <a href="programs.html#mentorship" role="menuitem"><svg class="di" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0012 0M12 17v4M9 21h6"/></svg><span class="dtx"><strong>Executive Fireside Chat Series</strong><span>Connect with leaders across industry and government.</span></span></a>
+        </div>
+      </li>
       <li><a href="leadership.html">The Leadership Team</a></li>
       <li>
         <a href="programs.html">Programs <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
@@ -59,7 +66,15 @@ class VanguardNav extends HTMLElement {
           <a href="impact.html#testimonials" role="menuitem"><svg class="di" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 4v-4H4z"/><path d="M8 9h8M8 12h5"/></svg><span class="dtx"><strong>Video Testimonials</strong><span>Hear from students, parents, partners, and industry leaders.</span></span></a>
         </div>
       </li>
-      <li><a href="get-involved.html">Get Involved</a></li>
+      <li>
+        <a href="get-involved.html">Get Involved <svg class="caret" viewBox="0 0 12 12"><path d="M2 4l4 4 4-4"/></svg></a>
+        <div class="dropdown" role="menu">
+          <a href="get-involved.html#partner" role="menuitem"><svg class="di" viewBox="0 0 24 24"><path d="M8 13l2.5 2.5a2 2 0 002.8 0l.7-.7 3 3M8 13l-3-3a2 2 0 010-2.8l1.2-1.2a2 2 0 012.8 0L14 9l3-3 4 4-5 5"/></svg><span class="dtx"><strong>Partner With Us</strong><span>Partner with Vanguard as a corporate or academic sponsor.</span></span></a>
+          <a href="get-involved.html#sponsor" role="menuitem"><svg class="di" viewBox="0 0 24 24"><path d="M12 20s-6.5-4-6.5-9A3.7 3.7 0 0112 8.5 3.7 3.7 0 0118.5 11c0 5-6.5 9-6.5 9z"/></svg><span class="dtx"><strong>Sponsor a Student</strong><span>Fund a scholarship for a young innovator.</span></span></a>
+          <a href="get-involved.html#volunteer" role="menuitem"><svg class="di" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4a3 3 0 010 8"/></svg><span class="dtx"><strong>Volunteer &amp; Mentor</strong><span>Share your expertise as a mentor or volunteer.</span></span></a>
+          <a href="get-involved.html#inquire" role="menuitem"><svg class="di" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="dtx"><strong>Contact Us</strong><span>Reach the Vanguard team with questions or ideas.</span></span></a>
+        </div>
+      </li>
     </ul>
     <div style="display:flex;align-items:center;gap:.7rem">
       <button class="search-btn" id="searchOpen" aria-label="Open search">

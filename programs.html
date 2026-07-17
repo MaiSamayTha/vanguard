@@ -782,7 +782,8 @@ section{position:relative}
 .pg-head h2{font-family:var(--serif);font-weight:800;font-size:clamp(24px,2.8vw,36px);color:var(--navy);display:inline-flex;align-items:center;gap:1rem;letter-spacing:.04em}
 .pg-head h2::before,.pg-head h2::after{content:"";width:40px;height:2px;background:var(--gold-grad)}
 .pg-head p{color:var(--muted);font-size:.92rem;margin-top:.6rem}
-.prog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem 1.8rem;row-gap:2rem}
+.prog-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem 1.8rem}
+.prog-grid+.prog-grid{margin-top:1.8rem}
 .prog-grid.three{grid-template-columns:repeat(3,1fr);max-width:76%;margin:1.2rem auto 0}
 .pg-card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow-sm);transition:.3s}
 .pg-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--gold)}

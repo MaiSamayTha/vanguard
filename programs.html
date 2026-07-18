@@ -815,23 +815,22 @@ section{position:relative}
 .icp-band{background:var(--gold-grad);text-align:center;padding:.85rem 1rem}
 .icp-band h2{font-family:var(--serif);font-weight:800;font-size:clamp(18px,2vw,26px);letter-spacing:.18em;text-transform:uppercase;color:var(--navy);display:inline-flex;align-items:center;gap:1rem;margin:0}
 .icp-band h2::before,.icp-band h2::after{content:"\2726";font-size:.8em}
-.icp-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(1.6rem,3.4vw,3rem);align-items:start}
-.icp-left h3{font-family:var(--sans);font-weight:800;font-size:1rem;color:var(--navy);margin-bottom:.7rem}
-.icp-left>p{font-size:.85rem;color:var(--muted);line-height:1.65;margin-bottom:1.3rem}
-.track{display:flex;align-items:center;gap:.7rem;background:#fff;border:1px solid var(--line);border-radius:8px;padding:.65rem .85rem;margin-bottom:.55rem;transition:.3s}
-.track:hover{border-color:var(--gold);box-shadow:var(--shadow-sm)}
-.track svg{width:19px;height:19px;stroke:var(--gold-deep);fill:none;stroke-width:1.7;flex:none}
-.track .tk-n{font-weight:700;font-size:.82rem;color:var(--navy);flex:1}
-.track a{font-weight:800;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep);white-space:nowrap}
-.track a:hover{color:var(--burgundy)}
-.track.t1{background:linear-gradient(160deg,#16325f,#0b2251);border-color:transparent}
-.track.t2{background:linear-gradient(160deg,#1f5f5b,#123c39);border-color:transparent}
-.track.t3{background:linear-gradient(160deg,#8a2a3a,#5c1522);border-color:transparent}
-.track.t4{background:linear-gradient(160deg,#5a4585,#3c2d5e);border-color:transparent}
-.track.t1 svg,.track.t2 svg,.track.t3 svg,.track.t4 svg{stroke:var(--gold-light)}
-.track.t1 .tk-n,.track.t2 .tk-n,.track.t3 .tk-n,.track.t4 .tk-n{color:#fff}
-.track.t1 a,.track.t2 a,.track.t3 a,.track.t4 a{color:var(--gold-light)}
-.track.t1 a:hover,.track.t2 a:hover,.track.t3 a:hover,.track.t4 a:hover{color:#fff}
+.icp-head{max-width:760px;margin:0 auto clamp(1.8rem,3.6vw,2.8rem);text-align:center}
+.icp-head h3{font-family:var(--sans);font-weight:800;font-size:clamp(1.05rem,1.8vw,1.35rem);color:var(--navy);margin-bottom:.9rem;letter-spacing:.01em;line-height:1.35}
+.icp-head p{font-size:.9rem;color:var(--muted);line-height:1.8;margin:0}
+.icp-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(1.6rem,3.4vw,3rem);align-items:center}
+.icp-packs{display:flex;flex-direction:column;justify-content:center}
+.track{display:flex;align-items:center;gap:.85rem;border:1px solid transparent;border-radius:10px;padding:.95rem 1.1rem;margin-bottom:.7rem;transition:.3s}
+.track:hover{box-shadow:var(--shadow-sm);filter:brightness(1.06)}
+.track svg{width:20px;height:20px;stroke:var(--gold-light);fill:none;stroke-width:1.7;flex:none}
+.track .tk-n{font-weight:700;font-size:.9rem;color:#fff;flex:1;line-height:1.25}
+.track a{font-weight:800;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-light);white-space:nowrap}
+.track a:hover{color:#fff}
+.track:nth-child(1){background:var(--navy)}
+.track:nth-child(2){background:#2f6b46}
+.track:nth-child(3){background:var(--burgundy)}
+.track:nth-child(4){background:linear-gradient(120deg,#3a2a5e 0%,#5a3a7a 100%)}
+.track:nth-child(5){background:linear-gradient(120deg,#0b2251 0%,#123063 100%)}
 .pack-label{text-align:center;font-weight:800;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1rem}
 .pack-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem}
 .pack{border-radius:12px;padding:1.4rem 1rem 1.1rem;text-align:center;display:flex;flex-direction:column;position:relative;border:1px solid}
@@ -1021,23 +1020,27 @@ section{position:relative}
 
 <!-- ============ ICP DETAIL ============ -->
 <section class="sec white" aria-label="Individual coaching program details" data-screen-label="Coaching packages" style="padding:clamp(2.4rem,4.6vw,3.4rem) 0">
-  <div class="container icp-grid">
-    <div class="icp-left reveal">
+  <div class="container">
+    <div class="icp-head reveal">
       <h3>Personalized Coaching. Proven Results. Real Career Growth.</h3>
       <p>Whether you are preparing for college, strengthening academic performance, transitioning into a new career, interviewing with top companies, or building technical skills, Vanguard provides high-touch coaching designed around your goals.</p>
-      <div class="track t1"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg><span class="tk-n">Academic Coaching</span><a href="#packs">View Packages &rarr;</a></div>
-      <div class="track t2"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg><span class="tk-n">Career Development</span><a href="formB.html?service=Career%20Development">Schedule Consultation &rarr;</a></div>
-      <div class="track t3"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg><span class="tk-n">Business Intelligence Coaching</span><a href="formB.html?service=Business%20Intelligence%20Coaching">Request Information &rarr;</a></div>
-      <div class="track t4"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="tk-n">Executive Coaching</span><a href="formB.html?service=Executive%20Coaching">Book Consultation &rarr;</a></div>
-      <div class="track t1"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10h14v11M12 3L3 8h18z"/></svg><span class="tk-n">College &amp; Graduate Admissions</span><a href="formB.html?service=College%20%26%20Graduate%20Admissions">Schedule Consultation &rarr;</a></div>
     </div>
-    <div class="reveal d1" id="packs">
-      <p class="pack-label">Academic Coaching Packages</p>
-      <div class="pack-grid">
-        <div class="pack p1"><div class="pk-tier">Foundation</div><div class="pk-wk">4 Weeks</div><div class="pk-price">$795</div><div class="pk-ses">4 private<br>60-minute sessions</div><p>Focused support, weekly accountability, and a personalized learning plan.</p><a href="icp-registration.html?pkg=Foundation%20Package&amp;weeks=4%20Weeks&amp;sessions=4%20Private%2060-Minute%20Sessions&amp;price=%24795" class="pk-btn">Get Started</a></div>
-        <div class="pack p2"><span class="pk-pop">Most Popular</span><div class="pk-tier">Achievement</div><div class="pk-wk">8 Weeks</div><div class="pk-price">$1,590</div><div class="pk-ses">8 private<br>60-minute sessions</div><p>Sustained support, progress tracking, and parent/student updates.</p><a href="icp-registration.html?pkg=Achievement%20Package&amp;weeks=8%20Weeks&amp;sessions=8%20Private%2060-Minute%20Sessions&amp;price=%241%2C590" class="pk-btn">Get Started</a></div>
-        <div class="pack p3"><div class="pk-tier">Excellence</div><div class="pk-wk">12 Weeks</div><div class="pk-price">$2,385</div><div class="pk-ses">12 private<br>60-minute sessions</div><p>Exam preparation, academic recovery, and full-semester support.</p><a href="icp-registration.html?pkg=Excellence%20Package&amp;weeks=12%20Weeks&amp;sessions=12%20Private%2060-Minute%20Sessions&amp;price=%242%2C385" class="pk-btn">Get Started</a></div>
-        <div class="pack p4"><div class="pk-tier">Mastery</div><div class="pk-wk">16 Weeks</div><div class="pk-price">$3,180</div><div class="pk-ses">16 private<br>60-minute sessions</div><p>Comprehensive semester coaching, priority scheduling, and high-touch support.</p><a href="icp-registration.html?pkg=Mastery%20Package&amp;weeks=16%20Weeks&amp;sessions=16%20Private%2060-Minute%20Sessions&amp;price=%243%2C180" class="pk-btn">Get Started</a></div>
+    <div class="icp-grid">
+      <div class="icp-left reveal">
+        <div class="track t1"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg><span class="tk-n">Academic Coaching</span><a href="#packs">View Packages &rarr;</a></div>
+        <div class="track t2"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2"/></svg><span class="tk-n">Career Development</span><a href="formB.html?service=Career%20Development">Schedule Consultation &rarr;</a></div>
+        <div class="track t3"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg><span class="tk-n">Business Intelligence Coaching</span><a href="formB.html?service=Business%20Intelligence%20Coaching">Request Information &rarr;</a></div>
+        <div class="track t4"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="tk-n">Executive Coaching</span><a href="formB.html?service=Executive%20Coaching">Book Consultation &rarr;</a></div>
+        <div class="track t1"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10h14v11M12 3L3 8h18z"/></svg><span class="tk-n">College &amp; Graduate Admissions</span><a href="formB.html?service=College%20%26%20Graduate%20Admissions">Schedule Consultation &rarr;</a></div>
+      </div>
+      <div class="reveal d1 icp-packs" id="packs">
+        <p class="pack-label">Academic Coaching Packages</p>
+        <div class="pack-grid">
+          <div class="pack p1"><div class="pk-tier">Foundation</div><div class="pk-wk">4 Weeks</div><div class="pk-price">$795</div><div class="pk-ses">4 private<br>60-minute sessions</div><p>Focused support, weekly accountability, and a personalized learning plan.</p><a href="icp-registration.html?pkg=Foundation%20Package&amp;weeks=4%20Weeks&amp;sessions=4%20Private%2060-Minute%20Sessions&amp;price=%24795" class="pk-btn">Get Started</a></div>
+          <div class="pack p2"><span class="pk-pop">Most Popular</span><div class="pk-tier">Achievement</div><div class="pk-wk">8 Weeks</div><div class="pk-price">$1,590</div><div class="pk-ses">8 private<br>60-minute sessions</div><p>Sustained support, progress tracking, and parent/student updates.</p><a href="icp-registration.html?pkg=Achievement%20Package&amp;weeks=8%20Weeks&amp;sessions=8%20Private%2060-Minute%20Sessions&amp;price=%241%2C590" class="pk-btn">Get Started</a></div>
+          <div class="pack p3"><div class="pk-tier">Excellence</div><div class="pk-wk">12 Weeks</div><div class="pk-price">$2,385</div><div class="pk-ses">12 private<br>60-minute sessions</div><p>Exam preparation, academic recovery, and full-semester support.</p><a href="icp-registration.html?pkg=Excellence%20Package&amp;weeks=12%20Weeks&amp;sessions=12%20Private%2060-Minute%20Sessions&amp;price=%242%2C385" class="pk-btn">Get Started</a></div>
+          <div class="pack p4"><div class="pk-tier">Mastery</div><div class="pk-wk">16 Weeks</div><div class="pk-price">$3,180</div><div class="pk-ses">16 private<br>60-minute sessions</div><p>Comprehensive semester coaching, priority scheduling, and high-touch support.</p><a href="icp-registration.html?pkg=Mastery%20Package&amp;weeks=16%20Weeks&amp;sessions=16%20Private%2060-Minute%20Sessions&amp;price=%243%2C180" class="pk-btn">Get Started</a></div>
+        </div>
       </div>
     </div>
   </div>

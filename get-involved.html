@@ -973,10 +973,11 @@ section{position:relative}
 .tv-item .tv-play svg{width:13px;height:13px;fill:var(--gold-2);stroke:none;margin-left:2px}
 .tv-item .tv-cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(4,12,32,.92));color:#e8edf5;font-size:.58rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-align:center;padding:1rem .3rem .4rem;z-index:2}
 .story-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
-.story-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1rem;box-shadow:var(--shadow-sm);display:flex;gap:.8rem;align-items:flex-start;transition:.3s}
+.story-card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;transition:.3s}
 .story-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:var(--shadow-md)}
-.story-card .st-ph{flex:none;width:64px;border-radius:8px;overflow:hidden}
-.story-card .st-ph .ph{aspect-ratio:1/1.2}
+.story-card .st-ph{flex:none;width:100%;border-radius:0}
+.story-card .st-ph .ph{aspect-ratio:1/1}
+.story-card .st-body{padding:1rem}
 .story-card h4{font-size:.8rem;font-weight:800;color:var(--gold-deep);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.15rem}
 .story-card .st-role{font-size:.64rem;font-weight:700;color:var(--navy);margin-bottom:.35rem}
 .story-card p{font-size:.64rem;color:var(--muted);line-height:1.5;margin:0}
@@ -1215,11 +1216,11 @@ section{position:relative}
 
     <div class="gold-banner-full reveal" style="margin:clamp(2rem,4vw,2.6rem) 0 1.5rem"><h2>Featured Student Success Stories</h2></div>
     <div class="story-grid reveal">
-      <div class="story-card"><div class="st-ph"><div class="ph" role="img" aria-label="Yichi photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Yichi photo</span></div></div><div><h4>Yichi</h4><div class="st-role">Equity Trader</div><p>From Vanguard STEM Academy to Wall Street success in finance.</p></div></div>
-      <div class="story-card"><div class="st-ph"><div class="ph" role="img" aria-label="Philip photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Philip photo</span></div></div><div><h4>Philip</h4><div class="st-role">Investment Banking Analyst</div><p>From classroom learning to a thriving career in investment banking.</p></div></div>
-      <div class="story-card"><div class="st-ph"><div class="ph" role="img" aria-label="Shahnushca photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Shahnushca photo</span></div></div><div><h4>Shahnushca</h4><div class="st-role">Nursing Student</div><p>From almost failing nursing to earning honors and leading with confidence.</p></div></div>
-      <div class="story-card"><div class="st-ph"><div class="ph" role="img" aria-label="Jose photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Jose photo</span></div></div><div><h4>Jose</h4><div class="st-role">Data Analyst</div><p>First-generation college student who launched his career in investment banking through mentorship and professional development.</p></div></div>
-      <div class="story-card"><div class="st-ph"><div class="ph" role="img" aria-label="Lourdes photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Lourdes photo</span></div></div><div><h4>Lourdes</h4><div class="st-role">High School Graduate</div><p>Graduated one year early and now pursuing her college and career dreams.</p></div></div>
+      <div class="story-card"><div class="st-ph"><div class="ph" role="img" aria-label="Yichi photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Yichi photo</span></div></div><div class="st-body"><h4>Yichi</h4><div class="st-role">Equity Trader</div><p>From Vanguard STEM Academy to Wall Street success in finance.</p></div></div>
+      <div class="story-card"><div class="st-ph"><div class="ph" role="img" aria-label="Philip photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Philip photo</span></div></div><div class="st-body"><h4>Philip</h4><div class="st-role">Investment Banking Analyst</div><p>From classroom learning to a thriving career in investment banking.</p></div></div>
+      <div class="story-card"><div class="st-ph"><div class="ph" role="img" aria-label="Shahnushca photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Shahnushca photo</span></div></div><div class="st-body"><h4>Shahnushca</h4><div class="st-role">Nursing Student</div><p>From almost failing nursing to earning honors and leading with confidence.</p></div></div>
+      <div class="story-card"><div class="st-ph"><div class="ph" role="img" aria-label="Jose photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Jose photo</span></div></div><div class="st-body"><h4>Jose</h4><div class="st-role">Data Analyst</div><p>First-generation college student who launched his career in investment banking through mentorship and professional development.</p></div></div>
+      <div class="story-card"><div class="st-ph"><div class="ph" role="img" aria-label="Lourdes photo"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Lourdes photo</span></div></div><div class="st-body"><h4>Lourdes</h4><div class="st-role">High School Graduate</div><p>Graduated one year early and now pursuing her college and career dreams.</p></div></div>
     </div>
     <div class="reveal" style="text-align:center;margin-top:1.3rem">
       <a href="impact.html#stories" class="btn btn-primary" style="padding:.75rem 1.4rem;font-size:.66rem">View All Student Stories &nbsp;&rarr;</a>

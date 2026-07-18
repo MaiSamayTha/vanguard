@@ -892,19 +892,20 @@ section{position:relative}
 .motion-grid .mo-p{color:var(--muted);font-size:.88rem;line-height:1.65;max-width:38ch;margin-bottom:1.3rem}
 .big-video{border:2.5px solid var(--gold);border-radius:12px;overflow:hidden;background:#04102b;box-shadow:var(--shadow-lg)}
 .bv-screen{position:relative}
-.bv-screen .ph{aspect-ratio:16/7.4}
+.bv-vid{width:100%;aspect-ratio:16/7.4;object-fit:cover;object-position:center;display:block;background:#04102b}
 .bv-title{position:absolute;left:0;right:0;top:9%;text-align:center;z-index:3;pointer-events:none}
 .bv-title .t1{font-family:var(--serif);font-weight:800;font-size:clamp(15px,1.6vw,24px);color:#fff;letter-spacing:.06em;text-transform:uppercase;text-shadow:0 2px 12px rgba(0,0,0,.6)}
 .bv-title .t2{font-weight:700;font-size:clamp(9px,.8vw,12px);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-light);margin-top:.25rem}
-.bv-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(8,26,60,.7);border:2px solid var(--gold);display:grid;place-items:center;z-index:3;cursor:pointer;transition:.3s}
+.bv-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:rgba(8,26,60,.7);border:2px solid var(--gold);display:grid;place-items:center;z-index:3;cursor:pointer;transition:opacity .3s,background .3s;opacity:1}
 .bv-play:hover{background:var(--gold-grad)}
-.bv-play svg{width:22px;height:22px;fill:var(--gold-2);stroke:none;margin-left:3px}
+.bv-play svg{width:22px;height:22px;fill:var(--gold-2);stroke:none}
+.bv-play .play{margin-left:3px}
 .bv-play:hover svg{fill:var(--navy)}
-.bv-bar{display:flex;align-items:center;gap:.7rem;background:#04102b;padding:.6rem .9rem;border-top:1px solid rgba(201,163,65,.35)}
-.bv-bar svg{width:15px;height:15px;stroke:#c3cee2;fill:none;stroke-width:1.8;flex:none}
-.bv-bar span{color:#8ea3c0;font-size:.64rem;font-weight:600;white-space:nowrap}
-.bv-bar .tl{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.18);position:relative}
-.bv-bar .tl i{position:absolute;left:0;top:0;bottom:0;width:0%;border-radius:2px;background:var(--gold-grad)}
+.bv-play .pause{display:none}
+.bv-play.is-playing .play{display:none}
+.bv-play.is-playing .pause{display:block}
+.bv-play.is-playing{opacity:0;pointer-events:none}
+.bv-screen:hover .bv-play.is-playing{opacity:1;pointer-events:auto}
 .burg-banner{background:linear-gradient(120deg,#5c1522,#7a2334 50%,#5c1522);border-top:2px solid var(--gold);border-bottom:2px solid var(--gold);padding:.85rem 0;text-align:center;border-radius:8px}
 .burg-banner h2{font-family:var(--serif);font-size:clamp(16px,1.7vw,23px);letter-spacing:.06em;text-transform:uppercase;color:#fff;display:inline-flex;align-items:center;gap:.8rem}
 .burg-banner h2::before,.burg-banner h2::after{content:"\2726";color:var(--gold-2);font-size:.8rem}
@@ -1031,11 +1032,15 @@ section{position:relative}
     </div>
     <div class="big-video reveal d1">
       <div class="bv-screen">
-        <div class="ph" role="img" aria-label="Impact film — students, boardrooms, ceremonies"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg><span class="phl">Impact film — students, boardrooms, ceremonies</span></div>
+        <video class="bv-vid" playsinline preload="metadata">
+          <source src="assets/student-example.mp4" type="video/mp4">
+        </video>
         <div class="bv-title"><div class="t1">Vanguard STEM Academy</div><div class="t2">Building Leaders. Changing Futures.</div></div>
-        <span class="bv-play" role="button" aria-label="Play impact video"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span>
+        <button class="bv-play" type="button" aria-label="Play impact video" aria-pressed="false">
+          <svg class="play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg>
+          <svg class="pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg>
+        </button>
       </div>
-      <div class="bv-bar" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg><svg viewBox="0 0 24 24"><path d="M6 5h3v14H6zM13 5l8 7-8 7z" transform="scale(.9) translate(1 1)"/></svg><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9zM16 9a4 4 0 010 6"/></svg><span>0:00 / 2:45</span><div class="tl"><i></i></div><svg viewBox="0 0 24 24"><rect x="3" y="8" width="12" height="8" rx="1"/><path d="M15 10l6-3v10l-6-3"/></svg><svg viewBox="0 0 24 24"><path d="M4 4h6v6M20 20h-6v-6M20 4l-7 7M4 20l7-7"/></svg></div>
     </div>
   </div>
 </section>
@@ -1214,6 +1219,31 @@ section{position:relative}
 /* ============ BACK TO TOP ============ */
 const toTop=document.getElementById('toTop');
 if(toTop)toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ============ IMPACT VIDEO PLAY/PAUSE ============ */
+(function(){
+  var v=document.querySelector('.bv-vid');
+  var btn=document.querySelector('.bv-play');
+  if(!v||!btn)return;
+  btn.addEventListener('click',function(){
+    if(v.paused){
+      v.play();
+      btn.classList.add('is-playing');
+      btn.setAttribute('aria-pressed','true');
+      btn.setAttribute('aria-label','Pause impact video');
+    }else{
+      v.pause();
+      btn.classList.remove('is-playing');
+      btn.setAttribute('aria-pressed','false');
+      btn.setAttribute('aria-label','Play impact video');
+    }
+  });
+  v.addEventListener('ended',function(){
+    btn.classList.remove('is-playing');
+    btn.setAttribute('aria-pressed','false');
+    btn.setAttribute('aria-label','Play impact video');
+  });
+})();
 
 /* ============ GENERIC CAROUSEL ============ */
 function makeCarousel(root,{slideSel,dotsSel,interval=5500,arrows=false}){

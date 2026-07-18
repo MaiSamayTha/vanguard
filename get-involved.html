@@ -874,12 +874,14 @@ section{position:relative}
 .gi-action-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.6rem,3.2vw,2.6rem);align-items:center}
 .gi-video{border:2px solid var(--gold);border-radius:10px;overflow:hidden;background:#04102b;position:relative}
 .gi-video .gi-vid{width:100%;aspect-ratio:16/8.6;object-fit:cover;display:block}
-.gi-playpause{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:rgba(4,16,43,.55);border:2px solid var(--gold);color:var(--gold-light);display:grid;place-items:center;cursor:pointer;transition:.3s}
+.gi-playpause{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:rgba(4,16,43,.55);border:2px solid var(--gold);color:var(--gold-light);display:grid;place-items:center;cursor:pointer;transition:opacity .3s,background .3s;opacity:1}
 .gi-playpause:hover{background:rgba(4,16,43,.85)}
 .gi-playpause svg{width:24px;height:24px;fill:currentColor;stroke:none}
 .gi-playpause .pause{display:none}
 .gi-playpause.is-playing .play{display:none}
 .gi-playpause.is-playing .pause{display:block}
+.gi-playpause.is-playing{opacity:0;pointer-events:none}
+.gi-video:hover .gi-playpause.is-playing{opacity:1;pointer-events:auto}
 .gi-action h2{font-family:var(--serif);font-size:clamp(20px,2.2vw,30px);color:#fff;text-transform:uppercase;letter-spacing:.03em;margin-bottom:.7rem}
 .gi-action h2 span{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
 .gi-action p{color:#c3cee2;font-size:.88rem;line-height:1.65;max-width:44ch;margin-bottom:1.3rem}

@@ -275,9 +275,16 @@ function vanguardSubmitForm(formType,formEl,extraFields){
   return fetch(VANGUARD_FORM_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:formType,fields:fields})}).catch(function(err){console.error('Vanguard form submit failed',err)});
 }
 // Package can be passed via URL: icp-registration.html?pkg=Achievement%20Package&weeks=8&sessions=8%20Private%2060-Minute%20Sessions&price=%241%2C590
+var PACKAGE_PAYMENT_LINKS={
+  'Foundation Package':'https://buy.stripe.com/fZudR80Jvfde5tIe5I5kk01',
+  'Achievement Package':'https://buy.stripe.com/eVqcN4fEp4yA7BQ4v85kk02',
+  'Excellence Package':'https://buy.stripe.com/4gM6oG4ZLaWY2hwd1E5kk03',
+  'Mastery Package':'https://buy.stripe.com/aFaeVcbo93uw1ds4v85kk04'
+};
+var currentPkg=null;
 (function(){
   var q=new URLSearchParams(location.search);
-  if(q.get('pkg'))document.getElementById('pkgName').textContent=q.get('pkg').toUpperCase();
+  if(q.get('pkg')){currentPkg=q.get('pkg');document.getElementById('pkgName').textContent=currentPkg.toUpperCase();}
   if(q.get('weeks'))document.getElementById('pkgWeeks').textContent=q.get('weeks');
   if(q.get('sessions'))document.getElementById('pkgSessions').textContent=q.get('sessions');
   if(q.get('price'))document.getElementById('pkgPrice').textContent=q.get('price');
@@ -297,6 +304,8 @@ document.getElementById('icpForm').addEventListener('submit',function(e){
   document.getElementById('pkgBanner').style.display='none';
   document.getElementById('successBox').style.display='block';
   window.scrollTo({top:0,behavior:'smooth'});
+  var payLink=currentPkg&&PACKAGE_PAYMENT_LINKS[currentPkg];
+  if(payLink)setTimeout(function(){window.location.href=payLink},1800);
 });
 </script>
 </body>

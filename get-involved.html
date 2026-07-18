@@ -872,13 +872,14 @@ section{position:relative}
 .gi-hero-img .ph{position:absolute;inset:0;border-radius:0}
 .gi-action{background:linear-gradient(100deg,#081a3c 0%,#0d2452 55%,#123063 100%);padding:clamp(1.8rem,3.4vw,2.6rem) 0;border-top:3px solid var(--gold);border-bottom:3px solid var(--gold)}
 .gi-action-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.6rem,3.2vw,2.6rem);align-items:center}
-.gi-video{border:2px solid var(--gold);border-radius:10px;overflow:hidden;background:#04102b}
-.gi-video .ph{aspect-ratio:16/8.6}
-.gi-vbar{display:flex;align-items:center;gap:.7rem;background:#04102b;padding:.55rem .8rem;border-top:1px solid rgba(201,163,65,.35)}
-.gi-vbar svg{width:15px;height:15px;stroke:#c3cee2;fill:none;stroke-width:1.8;flex:none}
-.gi-vbar .tl{flex:1;height:4px;border-radius:2px;background:rgba(255,255,255,.18);position:relative}
-.gi-vbar .tl i{position:absolute;left:0;top:0;bottom:0;width:42%;border-radius:2px;background:var(--gold-grad)}
-.gi-vbar span{color:#8ea3c0;font-size:.62rem;font-weight:600;white-space:nowrap}
+.gi-video{border:2px solid var(--gold);border-radius:10px;overflow:hidden;background:#04102b;position:relative}
+.gi-video .gi-vid{width:100%;aspect-ratio:16/8.6;object-fit:cover;display:block}
+.gi-playpause{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:62px;height:62px;border-radius:50%;background:rgba(4,16,43,.55);border:2px solid var(--gold);color:var(--gold-light);display:grid;place-items:center;cursor:pointer;transition:.3s}
+.gi-playpause:hover{background:rgba(4,16,43,.85)}
+.gi-playpause svg{width:24px;height:24px;fill:currentColor;stroke:none}
+.gi-playpause .pause{display:none}
+.gi-playpause.is-playing .play{display:none}
+.gi-playpause.is-playing .pause{display:block}
 .gi-action h2{font-family:var(--serif);font-size:clamp(20px,2.2vw,30px);color:#fff;text-transform:uppercase;letter-spacing:.03em;margin-bottom:.7rem}
 .gi-action h2 span{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
 .gi-action p{color:#c3cee2;font-size:.88rem;line-height:1.65;max-width:44ch;margin-bottom:1.3rem}
@@ -1065,8 +1066,13 @@ section{position:relative}
   <div class="container gi-action-grid">
     <div class="reveal">
       <div class="gi-video">
-        <div class="ph" role="img" aria-label="Impact video — students around boardroom table"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5.5 3.5-5.5 3.5z"/></svg><span class="phl">Impact video — students around boardroom table</span></div>
-        <div class="gi-vbar" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M10 8.5l5.5 3.5-5.5 3.5z"/></svg><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9zM16 9a4 4 0 010 6"/></svg><span>1:08 / 2:45</span><div class="tl"><i></i></div><svg viewBox="0 0 24 24"><path d="M4 4h6v6M20 20h-6v-6M20 4l-7 7M4 20l7-7"/></svg></div>
+        <video class="gi-vid" playsinline preload="metadata">
+          <source src="assets/landingpage.mp4" type="video/mp4">
+        </video>
+        <button class="gi-playpause" type="button" aria-label="Play video" aria-pressed="false">
+          <svg class="play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg>
+          <svg class="pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg>
+        </button>
       </div>
     </div>
     <div class="reveal d1">
@@ -1289,6 +1295,31 @@ section{position:relative}
 /* ============ BACK TO TOP ============ */
 const toTop=document.getElementById('toTop');
 if(toTop)toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ============ IMPACT VIDEO PLAY/PAUSE ============ */
+(function(){
+  var v=document.querySelector('.gi-vid');
+  var btn=document.querySelector('.gi-playpause');
+  if(!v||!btn)return;
+  btn.addEventListener('click',function(){
+    if(v.paused){
+      v.play();
+      btn.classList.add('is-playing');
+      btn.setAttribute('aria-pressed','true');
+      btn.setAttribute('aria-label','Pause video');
+    }else{
+      v.pause();
+      btn.classList.remove('is-playing');
+      btn.setAttribute('aria-pressed','false');
+      btn.setAttribute('aria-label','Play video');
+    }
+  });
+  v.addEventListener('ended',function(){
+    btn.classList.remove('is-playing');
+    btn.setAttribute('aria-pressed','false');
+    btn.setAttribute('aria-label','Play video');
+  });
+})();
 
 /* ============ GENERIC CAROUSEL ============ */
 function makeCarousel(root,{slideSel,dotsSel,interval=5500,arrows=false}){

@@ -117,7 +117,7 @@ section{position:relative}
    UTILITY BAR
    ============================================================ */
 /* ============================================================
-   UTILITY BAR + MAIN NAV: moved to assets/nav.css (loaded at end of <head>)
+   UTILITY BAR + MAIN NAV: moved to assets/css/nav.css (loaded at end of <head>)
    ============================================================ */
 
 /* ============================================================
@@ -125,7 +125,7 @@ section{position:relative}
    ============================================================ */
 .hero{background:var(--cream);position:relative;overflow:hidden;padding:clamp(3rem,6vw,5.5rem) 0 clamp(5rem,9vw,8rem)}
 /* WELCOME BANNER */
-.welcome-hero{position:relative;min-height:min(88vh,760px);display:grid;place-items:center;text-align:center;padding:2rem clamp(1rem,4vw,2.5rem);background:#04101f url('assets/welcome-hero.webp') center/cover no-repeat}
+.welcome-hero{position:relative;min-height:min(88vh,760px);display:grid;place-items:center;text-align:center;padding:2rem clamp(1rem,4vw,2.5rem);background:#04101f url('assets/images/welcome-hero.webp') center/cover no-repeat}
 .welcome-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,12,28,.5),rgba(4,12,28,.42) 45%,rgba(4,12,28,.66))}
 .welcome-inner{position:relative;z-index:1;max-width:1120px}
 .welcome-pre{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.3rem,3vw,2.15rem);color:#EAD08A;margin:0 0 .5rem;text-shadow:0 2px 16px rgba(0,0,0,.65)}
@@ -206,7 +206,7 @@ section{position:relative}
    ============================================================ */
 .mv-heading{font-family:var(--serif);font-style:italic;font-weight:600;text-align:center;color:var(--gold-deep);font-size:clamp(2.4rem,6vw,4.4rem);line-height:1.05;margin:0 0 clamp(1.6rem,3vw,2.6rem)}
 .mv-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:41px}
-.mv-card{position:relative;width:426px;max-width:100%;aspect-ratio:426/428;background-image:url('assets/card-bg.png');background-size:100% 100%;background-repeat:no-repeat}
+.mv-card{position:relative;width:426px;max-width:100%;aspect-ratio:426/428;background-image:url('assets/images/card-bg.png');background-size:100% 100%;background-repeat:no-repeat}
 .mv-card .mv-fit{position:absolute;inset:10% 7%;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .mv-card p{margin:0;font-family:var(--serif);font-weight:600;font-size:25.5px;line-height:1.33;letter-spacing:.01em;text-transform:uppercase;text-align:center;color:#fff;text-wrap:pretty}
 .values-row{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;margin-top:3rem}
@@ -370,8 +370,8 @@ section{position:relative}
    ============================================================ */
 .footer{background:#0b2251;color:#c6d2e2;border-top:3px solid;border-image:var(--gold-grad) 1;padding-top:3rem;position:relative;overflow:hidden}
 .footer::before,.footer::after{content:"";position:absolute;top:0;bottom:0;width:clamp(110px,17vw,240px);background-repeat:no-repeat;background-position:center;background-size:contain;pointer-events:none;z-index:0}
-.footer::before{left:0;background-image:url('assets/left-laurel.png')}
-.footer::after{right:0;background-image:url('assets/right-laurel.png')}
+.footer::before{left:0;background-image:url('assets/images/left-laurel.png')}
+.footer::after{right:0;background-image:url('assets/images/right-laurel.png')}
 .footer-inner{max-width:940px;margin:0 auto;position:relative;z-index:1}
 .footer-badge{display:flex;justify-content:center;margin-bottom:.4rem}
 .footer-badge img{width:clamp(108px,14vw,146px);height:auto;filter:drop-shadow(0 12px 26px rgba(0,0,0,.45))}
@@ -621,7 +621,7 @@ section{position:relative}
 
 /* fireside burgundy band */
 .fire2{background:linear-gradient(150deg,#5c1522,#7a2334 55%,#5c1522);color:#fff;padding:3.6rem 0 2.6rem;position:relative;overflow:hidden;border-top:3px solid var(--gold);border-bottom:3px solid var(--gold)}
-.fire2::before,.fire2::after{content:"";position:absolute;top:50%;transform:translateY(-50%);height:min(76%,480px);aspect-ratio:329/641;background:url('assets/leaf-gold.png') no-repeat center/contain;pointer-events:none;opacity:.9}
+.fire2::before,.fire2::after{content:"";position:absolute;top:50%;transform:translateY(-50%);height:min(76%,480px);aspect-ratio:329/641;background:url('assets/images/leaf-gold.png') no-repeat center/contain;pointer-events:none;opacity:.9}
 .fire2::before{left:clamp(2px,1.2vw,26px);transform:translateY(-50%) scaleX(-1)}
 .fire2::after{right:clamp(2px,1.2vw,26px)}
 @media(max-width:1240px){.fire2::before,.fire2::after{display:none}}
@@ -773,7 +773,7 @@ section{position:relative}
 .fc-crest{width:76px;height:76px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.5);border:2px solid var(--gold-light);position:relative;z-index:1}
 .fc-crest img{width:82%;height:auto;display:block}
 .fc-bio{padding:clamp(1.8rem,3.4vw,3rem);position:relative;overflow:hidden}
-.fc-bio::after{content:"";position:absolute;right:-30px;top:24px;width:240px;height:300px;background:url('assets/vanguard-logo-transparent.png') no-repeat center/contain;opacity:.06;pointer-events:none}
+.fc-bio::after{content:"";position:absolute;right:-30px;top:24px;width:240px;height:300px;background:url('assets/images/vanguard-logo-transparent.png') no-repeat center/contain;opacity:.06;pointer-events:none}
 .fc-bio>*{position:relative;z-index:1}
 .fc-bio .eyebrow{justify-content:flex-start}
 .fc-bio h1{font-family:var(--serif);font-weight:800;font-size:clamp(28px,3vw,44px);color:var(--navy);margin:.2rem 0 .3rem}
@@ -854,9 +854,9 @@ section{position:relative}
   .lq-inner{gap:.6rem}
 }
 
-/* nav overrides live in assets/nav.css */
+/* nav overrides live in assets/css/nav.css */
 </style>
-<link rel="stylesheet" href="assets/nav.css">
+<link rel="stylesheet" href="assets/css/nav.css">
 </head>
 <body>
 
@@ -870,8 +870,8 @@ section{position:relative}
   <div class="container">
     <div class="founder-card reveal in">
       <div class="fc-photo">
-        <img class="lead-photo" src="assets/ashley-delpeche.jpeg" alt="Portrait of Ashley E. Delpeche, Founder and Executive Director">
-        <div class="fc-corner"><div class="fc-crest"><img src="assets/vanguard-logo-transparent.png" alt="Vanguard STEM Academy crest logo"></div></div>
+        <img class="lead-photo" src="assets/images/ashley-delpeche.jpeg" alt="Portrait of Ashley E. Delpeche, Founder and Executive Director">
+        <div class="fc-corner"><div class="fc-crest"><img src="assets/images/vanguard-logo-transparent.png" alt="Vanguard STEM Academy crest logo"></div></div>
       </div>
       <div class="fc-bio">
         <p class="eyebrow" style="margin-bottom:.4rem;color:var(--gold-deep)">Executive Director</p>
@@ -914,7 +914,7 @@ section{position:relative}
     </div>
     <div class="team-grid">
       <div class="tm-card reveal">
-        <div class="tm-photo"><img class="lead-photo" src="assets/ashley-delpeche.jpeg" alt="Ashley E. Delpeche headshot"></div>
+        <div class="tm-photo"><img class="lead-photo" src="assets/images/ashley-delpeche.jpeg" alt="Ashley E. Delpeche headshot"></div>
         <div class="tm-body"><h3>Ashley E. Delpeche</h3><div class="tm-role">Founder &amp;<br>Executive Director</div><p>Engineer, STEM education leader, and workforce development strategist with experience spanning Columbia University, Meta, and Soci&eacute;t&eacute; G&eacute;n&eacute;rale. Former Zone 1 Vice Chair of the National Society of Black Engineers and featured by Influential Women Magazine as a trailblazer.</p><a class="tm-li" href="https://www.linkedin.com/in/adelpeche/" target="_blank" rel="noopener" aria-label="Ashley E. Delpeche on LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.06h4.56V23H.22zM8.34 8.06h4.37v2.04h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v8.28h-4.55v-7.34c0-1.75-.03-4-2.44-4-2.44 0-2.81 1.9-2.81 3.87V23H8.34z" transform="scale(.92) translate(1 0)"/></svg></a></div>
       </div>
       <div class="tm-card reveal d1">
@@ -926,15 +926,15 @@ section{position:relative}
         <div class="tm-body"><h3>Odile Tatlot</h3><div class="tm-role">Director of Investment Curriculum &amp; Global Engagement</div><p>Wall Street professional with more than 20 years of experience in investment banking, financial markets, and global engagement. She has managed and mentored more than 30 interns worldwide and leads Vanguard&rsquo;s investment curriculum, international relationships, and global learning opportunities.</p><a class="tm-li" href="#" aria-label="Odile Tatlot on LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.06h4.56V23H.22zM8.34 8.06h4.37v2.04h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v8.28h-4.55v-7.34c0-1.75-.03-4-2.44-4-2.44 0-2.81 1.9-2.81 3.87V23H8.34z" transform="scale(.92) translate(1 0)"/></svg></a></div>
       </div>
       <div class="tm-card reveal d3">
-        <div class="tm-photo"><img class="lead-photo" src="assets/Candic-Carrington.jpg" alt="Candice Carrington headshot"></div>
+        <div class="tm-photo"><img class="lead-photo" src="assets/images/Candic-Carrington.jpg" alt="Candice Carrington headshot"></div>
         <div class="tm-body"><h3>Candice Carrington</h3><div class="tm-role">Chief Legal Director</div><p>Award-recognized attorney and trained mediator with expertise in nonprofit governance, compliance, risk management, and organizational policy. She was named to Boston Magazine&rsquo;s 2023 Top Lawyers list.</p><a class="tm-li" href="https://www.linkedin.com/in/candice-carrington-esq-8b870b6a/" target="_blank" rel="noopener" aria-label="Candice Carrington on LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.06h4.56V23H.22zM8.34 8.06h4.37v2.04h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v8.28h-4.55v-7.34c0-1.75-.03-4-2.44-4-2.44 0-2.81 1.9-2.81 3.87V23H8.34z" transform="scale(.92) translate(1 0)"/></svg></a></div>
       </div>
       <div class="tm-card reveal">
-        <div class="tm-photo"><img class="lead-photo" src="assets/krishanu-agarwal.jpg" alt="Krishanu Agrawal headshot" style="object-position:center 20%"></div>
+        <div class="tm-photo"><img class="lead-photo" src="assets/images/krishanu-agarwal.jpg" alt="Krishanu Agrawal headshot" style="object-position:center 20%"></div>
         <div class="tm-body"><h3>Krishanu Agrawal</h3><div class="tm-role">Chief Artificial Intelligence &amp; Innovation Officer</div><p>Artificial intelligence and innovation leader with more than 15 years of experience across finance, insurance, and education. He guides Vanguard&rsquo;s AI strategy, innovation initiatives, and real-world technology learning experiences.</p><a class="tm-li" href="https://www.linkedin.com/in/krishanuagrawal/" target="_blank" rel="noopener" aria-label="Krishanu Agrawal on LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.06h4.56V23H.22zM8.34 8.06h4.37v2.04h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v8.28h-4.55v-7.34c0-1.75-.03-4-2.44-4-2.44 0-2.81 1.9-2.81 3.87V23H8.34z" transform="scale(.92) translate(1 0)"/></svg></a></div>
       </div>
       <div class="tm-card reveal d1">
-        <div class="tm-photo"><img class="lead-photo" src="assets/vaibhavi-tiwari.jpeg" alt="Vaibhavi Tiwari headshot" style="object-position:center 15%"></div>
+        <div class="tm-photo"><img class="lead-photo" src="assets/images/vaibhavi-tiwari.jpeg" alt="Vaibhavi Tiwari headshot" style="object-position:center 15%"></div>
         <div class="tm-body"><h3>Vaibhavi Tiwari</h3><div class="tm-role">Chief Technology &amp; Engineering Officer</div><p>AI and engineering leader with a master&rsquo;s degree from MIT and experience across software engineering, healthcare technology, and education. She serves on the Computer Science Advisory Board at William Paterson University and advances Vanguard&rsquo;s engineering curriculum, technical strategy, and hands-on innovation experiences.</p><a class="tm-li" href="#" aria-label="Vaibhavi Tiwari on LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8.06h4.56V23H.22zM8.34 8.06h4.37v2.04h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v8.28h-4.55v-7.34c0-1.75-.03-4-2.44-4-2.44 0-2.81 1.9-2.81 3.87V23H8.34z" transform="scale(.92) translate(1 0)"/></svg></a></div>
       </div>
     </div>
@@ -978,7 +978,7 @@ section{position:relative}
 <footer class="footer">
   <div class="footer-inner container">
     <div class="footer-badge">
-      <a href="/home" aria-label="Vanguard STEM Academy home"><img src="assets/footer-badge.png" alt="Vanguard STEM Academy crest"></a>
+      <a href="/home" aria-label="Vanguard STEM Academy home"><img src="assets/images/footer-badge.png" alt="Vanguard STEM Academy crest"></a>
     </div>
     <div class="footer-cols">
       <div>
@@ -1017,7 +1017,7 @@ section{position:relative}
 <a href="/apply" class="apply-pill" id="applyPill"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Apply to the Academy</a>
 <button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 
-<script src="assets/nav-component.js"></script>
+<script src="assets/js/nav-component.js"></script>
 <script>
 
 /* ============ GENERIC CAROUSEL ============ */

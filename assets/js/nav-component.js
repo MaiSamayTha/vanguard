@@ -72,7 +72,7 @@ class VanguardNav extends HTMLElement {
           <a href="/get-involved/partner" role="menuitem"><svg class="di" viewBox="0 0 24 24"><path d="M8 13l2.5 2.5a2 2 0 002.8 0l.7-.7 3 3M8 13l-3-3a2 2 0 010-2.8l1.2-1.2a2 2 0 012.8 0L14 9l3-3 4 4-5 5"/></svg><span class="dtx"><strong>Partner With Us</strong><span>Partner with Vanguard as a corporate or academic sponsor.</span></span></a>
           <a href="/get-involved/sponsor" role="menuitem"><svg class="di" viewBox="0 0 24 24"><path d="M12 20s-6.5-4-6.5-9A3.7 3.7 0 0112 8.5 3.7 3.7 0 0118.5 11c0 5-6.5 9-6.5 9z"/></svg><span class="dtx"><strong>Sponsor a Student</strong><span>Fund a scholarship for a young innovator.</span></span></a>
           <a href="/get-involved/volunteer" role="menuitem"><svg class="di" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4a3 3 0 010 8"/></svg><span class="dtx"><strong>Volunteer &amp; Mentor</strong><span>Share your expertise as a mentor or volunteer.</span></span></a>
-          <a href="/get-involved/inquire" role="menuitem"><svg class="di" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="dtx"><strong>Contact Us</strong><span>Reach the Vanguard team with questions or ideas.</span></span></a>
+          <a href="mailto:info@vstemacad.org" role="menuitem"><svg class="di" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span class="dtx"><strong>Contact Us</strong><span>Reach the Vanguard team with questions or ideas.</span></span></a>
         </div>
       </li>
     </ul>
@@ -256,7 +256,7 @@ class VanguardNav extends HTMLElement {
             <svg class="si-ic" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4a3 3 0 010 8"/></svg>
             <span class="si-tx"><strong>Volunteer &amp; Mentor</strong><span>Share your expertise as a mentor or volunteer.</span></span>
           </a>
-          <a class="sub-item" href="/get-involved/inquire">
+          <a class="sub-item" href="mailto:info@vstemacad.org">
             <svg class="si-ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
             <span class="si-tx"><strong>Contact Us</strong><span>Reach the Vanguard team with questions or ideas.</span></span>
           </a>

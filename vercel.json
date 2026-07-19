@@ -1,0 +1,16 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/the-leadership-team", "destination": "/leadership.html" },
+    { "source": "/the-academy", "destination": "/academy.html" },
+    { "source": "/the-academy/:section", "destination": "/academy.html" },
+    { "source": "/our-impact", "destination": "/impact.html" },
+    { "source": "/our-impact/:section", "destination": "/impact.html" },
+    { "source": "/programs/:section", "destination": "/programs.html" },
+    { "source": "/get-involved/:section", "destination": "/get-involved.html" },
+    { "source": "/home/:section", "destination": "/home.html" },
+    { "source": "/legal", "destination": "/Vanguard-legal.html" }
+  ]
+}
